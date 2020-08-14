@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* Navigation Bar */
 nav {
     width: 100vw;
     display: flex;
@@ -15,6 +16,8 @@ nav {
     min-height: 10vh;
     background-color: #1c1c1c;
     font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    z-index: 10;
 }
 
 .logo {
@@ -44,7 +47,7 @@ nav {
     font-size: 14px;
 }
 
-.nav-links a.active {
+.nav-links a.active, .nav-links a:hover {
     color: #f50057;
 }
 
@@ -131,5 +134,85 @@ nav {
     to {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+
+/* Hero */
+#hero {
+    width: 100%;
+    height: 100vh;
+    background-color: #efefef;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    font-family: "Montserrat", sans-serif;
+
+}
+  
+@media (min-width: 992px) {
+    #hero {
+      padding-left: 160px;
+    }
+}
+  
+#hero h1 {
+    margin: 0;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #45505b;
+}
+
+#hero h1  span{
+    color: #f50057;
+}
+  
+#hero p {
+    color: #45505b;
+    margin: 15px 0 0 0;
+    font-size: 26px;
+}
+  
+#hero p span {
+    color: #f50057;
+    border-right: 1px solid #f50057;
+    letter-spacing: 1px;
+}
+  
+#hero .social-links {
+    margin-top: 30px;
+}
+  
+#hero .social-links a {
+    font-size: 24px;
+    display: inline-block;
+    color: #45505b;
+    line-height: 1;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+  
+#hero .social-links a:hover {
+    color: #0563bb;
+}
+  
+@media (max-width: 992px) {
+    #hero {
+      text-align: center;
+    }
+    #hero h1 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+    #hero p {
+      margin-top: 10px;
+      font-size: 20px;
+      line-height: 24px;
+    }
+    #hero .social-links a {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
