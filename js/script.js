@@ -1,3 +1,6 @@
+// 
+// Mobile Nav
+// 
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const mobileNav = document.querySelector('.nav-links');
@@ -23,8 +26,9 @@ const app = () => {
 app();
 
 
-
+// 
 // Typewriter
+// 
 class TypeWriter {
     constructor(txtElement, words, wait) {
         this.txtElement = txtElement;
@@ -55,7 +59,7 @@ class TypeWriter {
         this.txtElement.innerHTML = `${this.txt}`;
     
         // Initial Type Speed
-        let typeSpeed = 150;
+        let typeSpeed = 100;
     
         // If word is complete
         if(!this.isDeleting && this.txt === fullTxt) {

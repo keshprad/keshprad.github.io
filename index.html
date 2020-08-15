@@ -1,24 +1,33 @@
 <html>
     <head>
+        
+        <title>keshprad</title>
+
         <!-- Fonts & Icons-->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-        <!-- Stylesheets -->
+        <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        
+        <!-- Animate -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css" integrity="sha512-kb1CHTNhoLzinkElTgWn246D6pX22xj8jFNKsDmVwIQo+px7n1yjJUZraVuR/ou6Kmgea4vZXZeUDbqKtXkEMg==" crossorigin="anonymous" />
+        
+        <!-- My Styles -->
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <nav>
             <div class="logo">
-                <a href="#home"><img src="img/logo.png" alt=""></a>
+                <a href="#home" class="home-link"><img src="img/logo.png" alt=""></a>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#teams">Teams</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#about" class="hover-underline">About</a></li>
+                <li><a href="#projects" class="hover-underline">Projects</a></li>
+                <li><a href="#work" class="hover-underline">Work</a></li>
+                <li><a href="#teams" class="hover-underline">Teams</a></li>
+                <li><a href="#education" class="hover-underline">Education</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -32,7 +41,7 @@
         <section id="home">
             <div class="container">
                 <h1>Hi, I'm <span>keshprad</span></h1>
-                <p>I'm a&nbsp;<span class="typewriter" data-wait="1500" data-words='["Student", "Programmer", "Physics", "B99 Fan"]'></span></p>
+                <p>I'm a&nbsp;<span class="typewriter" data-wait="2000" data-words='["Student", "Programmer", "Physics", "Space Enthusiast", "B99 Fan"]'></span></p>
                 <div class="social-links">
                     <a href="https://github.com/keshprad" target="_blank" class="github"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/keshprad/" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
@@ -45,22 +54,23 @@
         </section><!-- End Hero -->
 
         <!-- About -->
-        <!-- <section id="about">
-            <div class="title">
-                <h2>About Me</h2>
+        <section id="about" class="basic">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <hr>
+                    <p>I am currently an 12th grade student at Lynbrook High. I’m a quick learner, and I'm very interested in physics and software development. I am always happy to connect with new people and collaborate on projects. In my free time, I enjoy listening to music, and I satisfy my curiosity by learning from online courses and creating projects.</p>
+                    <p>You can read more about me on my <a href="https://www.linkedin.com/in/keshprad" target="_blank" class="hover-underline">LinkedIn</a>!</p>
+                </div>
             </div>
-            <div class="description">
-                <p>I am currently an 12th grade student at Lynbrook High. I’m a quick learner, and I'm very interested in physics and software development. I am always happy to connect with new people and collaborate on projects. In my free time, I enjoy listening to music, and I satisfy my curiosity by learning from online courses and creating projects.</p>
-                <p>You can read more about me on my <a href="https://www.linkedin.com/in/keshprad" target="_blank">LinkedIn</a>!</p>
-            </div>
-        </section> -->
+        </section>
 
         <section id="projects" class="basic">
             <div class="container">
                 <div class="section-title">
                     <h2>Projects</h2>
                     <hr>
-                    <p>Here are some of my projects. You can find more on my <a href="https://www.github.com/keshprad" target="_blank">GitHub</a>!</p>
+                    <p>Here are some of my projects. You can find more on my <a href="https://www.github.com/keshprad" target="_blank" class="hover-underline">GitHub</a>!</p>
                 </div>
                 <div class="row">
                     <div class="project">
@@ -70,20 +80,20 @@
                                 <i class="fas fa-calculator"></i>
                             </div>
                             <div class="content">
-                                <h4>Algorithms</h4>
+                                <h4 class="hover-underline">Algorithms</h4>
                                 <p>A repository full of various algorithms and data structures that I find interesting.</p>
                             </div>
                         </a>
                     </div>
 
                     <div class="project">
-                        <a href="https://github.com/keshprad/Algorithms" target="_blank">
+                        <a href="https://github.com/keshprad/RAD_GAME" target="_blank">
                             <div class="icon">
                                 <img src="img/blobs/blob3.svg" alt="">
                                 <i class="fas fa-gamepad"></i>
                             </div>
                             <div class="content">
-                                <h4>RAD_GAME</h4>
+                                <h4 class="hover-underline">RAD_GAME</h4>
                                 <p>Escape the GMOBS! Fight against computer controlled players and enemies to be the last one standing! This is a 2D, tile-based, pixel game built with Java.</p>
                             </div>
                         </a>
@@ -91,13 +101,22 @@
                 </div>
             </div>
         </section>
+        <section id="work" class="basic">
 
+        </section>
+        <section id="teams" class="basic">
+
+        </section>
+        <section id="education" class="basic">
+
+        </section>
         <!-- Bootstrap -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-        <!-- More Scripts -->
+        <!-- My Scripts -->
         <script src="js/script.js"></script>
+        <script src="js/observers.js"></script>
     </body>
 </html>
