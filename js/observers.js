@@ -1,10 +1,6 @@
 const nav = document.querySelector("nav");
 const home = document.querySelector("#home");
-const sections = [document.querySelector("#about"), document.querySelector("#projects"), document.querySelector("#work"),
-    document.querySelector("#teams"), document.querySelector("#education")];
-const sectionLinks = [document.querySelector(".about-link"), document.querySelector(".projects-link"), 
-    document.querySelector(".work-link"), document.querySelector(".teams-link"), document.querySelector(".education-link")];
-let sectionLink = '';
+const faders = document.querySelectorAll(".fade-in");
 
 
 const homeObserver = new IntersectionObserver(function(entries) {
@@ -20,3 +16,26 @@ const homeObserver = new IntersectionObserver(function(entries) {
 });
 
 homeObserver.observe(home);
+
+
+// const appearOptions = {
+//     threshold: 1, rootMargin: "0px 0px -100px 0px"
+// };
+// const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+//     entries.forEach (entry => {
+//         if (!entry.isIntersecting){
+//             return;
+//         } else {
+//             if (entry.target.classList.contains("from-right")) {
+//                 entry.target.classList.add("animate__animated animate__fadeInRight");
+//             } else if (entry.target.classList.contains("from-left")) {
+//                 entry.target.classList.add("animate__animated animate__fadeInLeft");
+//             }
+//             appearOnScroll.unobserve(entry.target);
+//         }
+//     })
+// }, appearOptions);
+
+// faders.forEach(fader => {
+//     appearOnScroll.observe(fader);
+// });
