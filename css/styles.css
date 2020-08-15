@@ -58,6 +58,7 @@ section.basic .section-title {
 
 section.basic .section-title h2 {
     font-size: 36px;
+    font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 30px;
 }

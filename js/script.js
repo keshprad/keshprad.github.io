@@ -29,7 +29,7 @@ app();
 // 
 // Typewriter
 // 
-class TypeWriter {
+class TypeWriter {  
     constructor(txtElement, words, wait) {
         this.txtElement = txtElement;
         this.words = words;
@@ -90,3 +90,25 @@ function init() {
     const wait = txt.getAttribute('data-wait');
     new TypeWriter(txt, words, wait);
 }
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+// 
+// Animation Delay
+// 
+const delayAnimate = async() => {
+    const delayedObjects = [document.querySelector(".logo")];
+    
+    while (true) {
+        await sleep(5000);
+        delayedObjects.forEach((object) => {
+            object.classList.add("animate__animated", "animate__headShake");
+        });
+        await sleep(1000);
+        delayedObjects.forEach((object) => {
+            object.classList.remove("animate__animated", "animate__headShake");
+        });
+        
+    }
+}
+
+delayAnimate();
