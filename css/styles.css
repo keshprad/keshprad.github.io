@@ -40,7 +40,7 @@ section.basic {
     display: flex;
     justify-content: center;
     box-sizing: border-box; 
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -54,6 +54,7 @@ section.basic .container {
 
 section.basic .section-title {
     margin-bottom: 30px;
+    font-size: 24px;
 }
 
 section.basic .section-title h2 {
@@ -81,7 +82,7 @@ section.basic .section-title p a::before {
 
 @media (max-width: 1000px) {
     section.basic .container {
-        width: 90vw;
+        width: 95vw;
     }
 }
 
@@ -195,7 +196,6 @@ ul.nav-links {
     }
     .burger {
         display: block;
-        height: 100%;
     }
     .nav-links {
         position: absolute;
@@ -315,7 +315,29 @@ ul.nav-links {
 }
 
 /* About */
+#about .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
 
+#about .content img{
+    width: 300px;
+    height: auto;
+}
+
+#about .content p {
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    line-height: 2rem;
+}
+
+@media (max-width: 768px) {
+    #about .content {
+        flex-direction: column;
+    }
+}
 
 /* Projects */
 #projects .container .row {
@@ -365,6 +387,7 @@ ul.nav-links {
 }
 
 .project .content p {
+    font-family: "Open Sans", sans-serif
     margin: 0px 5px;
 }
 
