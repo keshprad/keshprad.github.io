@@ -110,27 +110,40 @@ nav.scrolled {
     box-shadow: 0px 5px 8px #000;
 }
 
-.logo {
+nav .logo {
     height: 70%;
 }
 
-.logo img {
+nav .logo img {
     height: 100%;
 }
 
-.nav-links {
+ul.nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 650px;
-}
-
-ul.nav-links {
     margin-top: 0;
     margin-bottom: 0;
 }
+/* Link specifics */
+ul.nav-links li:nth-child(1) a{
+    animation-delay: 250ms;
+}
+ul.nav-links li:nth-child(2) a{
+    animation-delay: 500ms;
+}
+ul.nav-links li:nth-child(3) a{
+    animation-delay: 750ms;
+}
+ul.nav-links li:nth-child(4) a{
+    animation-delay: 1000ms;
+}
+ul.nav-links li:nth-child(5) a{
+    animation-delay: 1250ms;
+} /* End of Link specifics */
 
-.nav-links li {
+ul.nav-links li {
     list-style: none;
 }
 
@@ -254,23 +267,25 @@ ul.nav-links {
     }
 }
   
-#home h2 {
+#home .container h2 {
     margin: 0;
     font-size: 58px;
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
+    animation-delay: 1500ms;
 }
 
-#home h2 div{
+#home .container h2 div{
     color: #f50057;
     display: inline-block;
 }
   
-#home p {
+#home .container p {
     color: #45505b;
     margin: 15px 0 0 0;
     font-size: 26px;
+    animation-delay: 1750ms;
 }
   
 #home p span {
@@ -295,6 +310,27 @@ ul.nav-links {
 #home .social-links a:hover {
     transform: scale(1.2);
     color: #f50057;
+}
+
+/* Icon specifics */
+#home .social-links a:nth-last-child(1) {
+    animation-delay: 2000ms;
+    animation-duration: 200ms;
+}
+#home .social-links a:nth-last-child(2) {
+    animation-delay: 2100ms;
+}
+#home .social-links a:nth-last-child(3) {
+    animation-delay: 2200ms;
+}
+#home .social-links a:nth-last-child(4) {
+    animation-delay: 2300ms;
+}
+#home .social-links a:nth-last-child(5) {
+    animation-delay: 2400ms;
+}
+#home .social-links a:nth-last-child(6) {
+    animation-delay: 2500ms;
 }
   
 @media (max-width: 992px) {
@@ -500,6 +536,9 @@ ul.nav-links {
 
 
 /* Teams Section */
+#teams .content {
+    margin-top: 50px;
+}
 #teams .btn.focus, .btn:focus {
     box-shadow: none;
 }
