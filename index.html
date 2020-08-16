@@ -64,9 +64,9 @@
                     <hr data-aos="fade" data-aos-offset="200" data-aos-easing="ease-in-out-quad">
                     <p data-aos="fade-left" data-aos-offset="200" data-aos-duration="750" data-aos-easing="ease-in-out-quad">I'm Rishi K Pradeep, and here is a bit about me:</p>
                 </div>
-                <div class="content">
-                    <img src="img/about1.jpg" alt="" data-aos="zoom-in-left" data-aos-offset="300" data-aos-duration="750" data-aos-easing="ease-in-out-quad">
-                    <p data-aos="zoom-in-right" data-aos-offset="300" data-aos-duration="750" data-aos-easing="ease-in-out-quad">I am currently an 12th grade student at Lynbrook High. I’m a quick learner, and I'm very interested in software development and space engineering. I am always happy to connect with new people and collaborate on projects. In my free time I enjoy listening to music, and I satisfy my curiosity by learning online and creating projects.</p>
+                <div class="content" data-aos="zoom-in" data-aos-offset="300" data-aos-duration="750" data-aos-easing="ease-in-out-quad">
+                    <img src="img/about1.jpg" alt="">
+                    <p data-aos="zoom-in-right">I am currently an 12th grade student at Lynbrook High. I’m a quick learner, and I'm very interested in software development and space engineering. I am always happy to connect with new people and collaborate on projects. In my free time I enjoy listening to music, and I satisfy my curiosity by learning online and creating projects.</p>
                 </div>
             </div>
         </section> <!-- End About -->
@@ -149,10 +149,37 @@
                     <p data-aos="fade-right" data-aos-offset="200" data-aos-duration="750" data-aos-easing="ease-in-out-quad">Here are some teams I am a part of:</p>
                 </div>
                 <div class="content">
-                    <!-- Lynbrook Me to We -->
-                    <!-- Lynbrook Web Dev -->
-                    <!-- Elevate the Future -->
+                    <div class="accordion" id="team-accordion">
+                        <div class="card">
+                            <div class="card-header" id="lwd-card-head">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#lwd-card-body" aria-expanded="false" aria-controls="lwd-card-body">
+                                        <span class="hover-underline">Lynbrook Web Dev</span>&nbsp;&nbsp;<a href="https://github.com/lhswebdev" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="lwd-card-body" class="collapse" aria-labelledby="lwd-card-head" data-parent="#team-accordion">
+                                <div class="card-body">
+                                    We run an interest club at Lynbrook focused on Website Development and Networking.
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="card">
+                            <div class="card-header" id="etf-card-head">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse" data-target="#etf-card-body" aria-expanded="false" aria-controls="etf-card-body">
+                                        <span class="hover-underline">Elevate the Future</span>&nbsp;&nbsp;<a href="https://github.com/Elevate-the-Future" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="etf-card-body" class="collapse" aria-labelledby="etf-card-head" data-parent="#team-accordion">
+                                <div class="card-body">
+                                    Since founding the organization in 2019, my friends and I have expanded the nonprofit to 43 chapters across 18 states in the US and 16 countries across the globe. I managed all of <a class="hover-underline" href="https://falcon.elevatethefuture.org/" target="_blank">Project Falcon</a>, including its X clients and Y students and Z volunteers. In Project Falcon, we build websites for small businesses, especially those whose operations were shutdown during the COVID-19 outbreak.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section><!-- End Teams -->

@@ -495,79 +495,75 @@ ul.nav-links {
     transform-origin: bottom left;
 }
 
+
 /* Work Section */
-#work {
-    box-sizing:border-box;
-    font-family:"Raleway";
+
+
+/* Teams Section */
+#teams .btn.focus, .btn:focus {
+    box-shadow: none;
 }
 
-#work .content {
-    display: flex;
-    justify-content: center;
+#teams .accordion {
+    border-radius: 10px;
 }
 
-#work .content .tabs {
-    margin: 5vh 0;
-    width:90%;
-    height:500px;
-    padding:30px 20px;
-    background:#f5f5f5;
-    box-shadow:5px 5px 10px 5px #ccc;
-    overflow:hidden;
-    box-shadow: 5px 5px 8px #000;
+#teams .accordion .card {
+    background-color: #272626;
+    border: none;
 }
 
-#work .content .tab-header {
-    float:left;
-    width: 25%;
-    height:100%;
-    border-right:1px solid #ccc;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    overflow-y: auto;
-    white-space: nowrap;
+#teams .accordion > .card:first-of-type {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
-#work .content .tab-header::-webkit-scrollbar {
-    display: none;
+#teams .accordion > .card:last-of-type {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-#work .content .tab-header > div {
-    height:20%;
-    line-height:50px;
-    font-size:16px;
-    font-weight:600;
-    color:#888;
-    cursor:pointer;
-    padding-left:10px;
-    padding-right:10px;
+#teams .accordion .card-header button {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
 }
 
-#work .content .tab-header > div:hover,
-#work .content .tab-header > div.active {
-    color:#00acee;
+#teams .accordion .card-header button i {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: 0.5s;
 }
 
-#work .content .tab-header > div.active {
-    border-right: 4px solid #00acee;
-
+#teams .accordion .card-header button i:hover {
+    transform: scale(1.2);
+    color: transparent;
+    background: linear-gradient(to right, #f50057, #d47f9d);
+    -webkit-background-clip: text;
 }
 
-#work .content .tab-content {
-    position:relative;
-    height:100%;
-    overflow:hidden;
-    color: #212529;
+
+#teams .accordion .card-body {
+    background-color: #2b2b2b;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 1.75rem;
 }
 
-#work .content .tab-content > div {
-    position:absolute;
-    text-align:center;
-    padding:40px 20px;
-    top:-200%;
-    transition:all 500ms ease-in-out;
+#teams .accordion .card-body a {
+    color: #f50057;
+    text-decoration: none;
 }
 
-#work .content .tab-content > div.active {
-    top:0px;
+#teams .accordion .card-body a::before {
+    top: 0;
+}
+
+#teams .accordion .card-header:hover span.hover-underline::before {
+    transform: scale(1);
+    transform-origin: bottom left;
 }
