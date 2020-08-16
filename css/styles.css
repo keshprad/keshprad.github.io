@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -247,12 +249,12 @@ ul.nav-links {
 }
   
 @media (min-width: 992px) {
-    #hero {
+    #home {
       padding-left: 160px;
     }
 }
   
-#home h1 {
+#home h2 {
     margin: 0;
     font-size: 58px;
     font-weight: 700;
@@ -260,7 +262,7 @@ ul.nav-links {
     color: #45505b;
 }
 
-#home h1  div{
+#home h2 div{
     color: #f50057;
     display: inline-block;
 }
@@ -296,23 +298,43 @@ ul.nav-links {
 }
   
 @media (max-width: 992px) {
-    #hero {
+    #home {
       text-align: center;
     }
-    #hero h1 {
-      font-size: 32px;
+    #home h2 {
+      font-size: 50px;
       line-height: 36px;
     }
-    #hero p {
-      margin-top: 10px;
+    #home p {
+      margin-top: 25px;
       font-size: 20px;
       line-height: 24px;
     }
-    #hero .social-links a {
+    #home .social-links a {
         margin-left: 10px;
         margin-right: 10px;
     }
 }
+
+@media screen and (max-width: 645px) {
+    #home {
+        padding: 60px 10px;
+    }
+
+    #home h2 {
+        font-size: 42px
+    }
+}
+
+@media screen and (max-width: 420px) {
+    #home h2 {
+        font-size: 34px;
+    }
+    #home div.social-links {
+        font-size: 18px;
+    }
+}
+
 
 /* About */
 #about .content {
@@ -328,6 +350,7 @@ ul.nav-links {
 }
 
 #about .content p {
+    margin: 0px;
     padding: 10px 30px;
     letter-spacing: 2px;
     line-height: 2rem;
@@ -343,6 +366,7 @@ ul.nav-links {
 #projects .container .row {
     display: flex;
     justify-content: space-between;
+    align-content: center;
 }
 
 #projects .row .project {
@@ -351,7 +375,7 @@ ul.nav-links {
     justify-content: space-between;
     width: 300px !important;
     height: 350px !important;
-    margin: 20px 0px;
+    margin: 20px auto;
     padding: 30px 30px;
     border-radius: 10px;
     background-color: #272626;
@@ -405,7 +429,7 @@ ul.nav-links {
 .project:nth-child(5n-4):hover img {
     filter: invert(42%) sepia(38%) saturate(963%) hue-rotate(313deg) brightness(110%) contrast(90%);
 } 
-.project .links i:hover {
+.project:nth-child(5n-4) .links i:hover {
     color: #f25f5c;
     transform: scale(1.2);
 } /* End of Project 1 */
@@ -416,6 +440,10 @@ ul.nav-links {
 }
 .project:nth-child(5n-3):hover img {
     filter: invert(59%) sepia(72%) saturate(3425%) hue-rotate(347deg) brightness(103%) contrast(96%);
+}
+.project:nth-child(5n-3) .links i:hover {
+    color: #fa7921;
+    transform: scale(1.2);
 } /* End of Project 2 */
 
 /* Project 3 */
@@ -424,6 +452,10 @@ ul.nav-links {
 }
 .project:nth-child(5n-2):hover img {
     filter: invert(82%) sepia(58%) saturate(3440%) hue-rotate(2deg) brightness(107%) contrast(99%);
+}
+.project:nth-child(5n-2) .links i:hover {
+    color: #fec601;
+    transform: scale(1.2);
 } /* End of Project 3 */
 
 /* Project 4 */
@@ -432,6 +464,10 @@ ul.nav-links {
 }
 .project:nth-child(5n-1):hover img {
     filter: invert(65%) sepia(12%) saturate(2169%) hue-rotate(37deg) brightness(111%) contrast(80%);
+}
+.project:nth-child(5n-1) .links i:hover {
+    color: #9bc53d;
+    transform: scale(1.2);
 } /* End of Project 4 */
 
 /* Project 5 */
@@ -440,6 +476,10 @@ ul.nav-links {
 }
 .project:nth-child(5n):hover img {
     filter: invert(76%) sepia(5%) saturate(5862%) hue-rotate(167deg) brightness(95%) contrast(93%);
+}
+.project:nth-child(5n) .links i:hover {
+    color: #5bc0eb;
+    transform: scale(1.2);
 } /* End of Project 5 */
 
 .project .content h4 {
@@ -453,4 +493,81 @@ ul.nav-links {
 .project:hover h4::before {
     transform: scale(1);
     transform-origin: bottom left;
+}
+
+/* Work Section */
+#work {
+    box-sizing:border-box;
+    font-family:"Raleway";
+}
+
+#work .content {
+    display: flex;
+    justify-content: center;
+}
+
+#work .content .tabs {
+    margin: 5vh 0;
+    width:90%;
+    height:500px;
+    padding:30px 20px;
+    background:#f5f5f5;
+    box-shadow:5px 5px 10px 5px #ccc;
+    overflow:hidden;
+    box-shadow: 5px 5px 8px #000;
+}
+
+#work .content .tab-header {
+    float:left;
+    width: 25%;
+    height:100%;
+    border-right:1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+#work .content .tab-header::-webkit-scrollbar {
+    display: none;
+}
+
+#work .content .tab-header > div {
+    height:20%;
+    line-height:50px;
+    font-size:16px;
+    font-weight:600;
+    color:#888;
+    cursor:pointer;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+#work .content .tab-header > div:hover,
+#work .content .tab-header > div.active {
+    color:#00acee;
+}
+
+#work .content .tab-header > div.active {
+    border-right: 4px solid #00acee;
+
+}
+
+#work .content .tab-content {
+    position:relative;
+    height:100%;
+    overflow:hidden;
+    color: #212529;
+}
+
+#work .content .tab-content > div {
+    position:absolute;
+    text-align:center;
+    padding:40px 20px;
+    top:-200%;
+    transition:all 500ms ease-in-out;
+}
+
+#work .content .tab-content > div.active {
+    top:0px;
 }
