@@ -179,7 +179,11 @@ nav.scrolled {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 nav img.logo-img {
+=======
+.logo img {
+>>>>>>> parent of ed74965... add hero animations
 =======
 .logo img {
 >>>>>>> parent of ed74965... add hero animations
@@ -187,10 +191,13 @@ nav img.logo-img {
     transition: transform 1000ms;
 }
 
+<<<<<<< HEAD
 nav img.logo-img:hover {
     transform: rotate(360deg) translateZ(0);
 }
 
+=======
+>>>>>>> parent of ed74965... add hero animations
 .nav-links {
     display: flex;
     justify-content: space-between;
@@ -202,6 +209,7 @@ ul.nav-links {
     margin-top: 0;
     margin-bottom: 0;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* Link specifics */
 ul.nav-links li:nth-child(1) a{
@@ -219,6 +227,8 @@ ul.nav-links li:nth-child(4) a{
 ul.nav-links li:nth-child(5) a{
     animation-delay: calc(var(--hero-animationDelay) + 1250ms);
 } /* End of Link specifics */
+=======
+>>>>>>> parent of ed74965... add hero animations
 =======
 >>>>>>> parent of ed74965... add hero animations
 
@@ -365,7 +375,10 @@ ul.nav-links li:nth-child(5) a{
     line-height: 56px;
     color: #45505b;
 <<<<<<< HEAD
+<<<<<<< HEAD
     animation-delay: calc(var(--hero-animationDelay) + 1500ms);
+=======
+>>>>>>> parent of ed74965... add hero animations
 =======
 >>>>>>> parent of ed74965... add hero animations
 }
@@ -380,7 +393,10 @@ ul.nav-links li:nth-child(5) a{
     margin: 15px 0 0 0;
     font-size: 26px;
 <<<<<<< HEAD
+<<<<<<< HEAD
     animation-delay: calc(var(--hero-animationDelay) + 1750ms);
+=======
+>>>>>>> parent of ed74965... add hero animations
 =======
 >>>>>>> parent of ed74965... add hero animations
 }
@@ -394,6 +410,7 @@ ul.nav-links li:nth-child(5) a{
 #home .social-links {
     margin-top: 30px;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /* Icon specifics */
@@ -421,6 +438,10 @@ ul.nav-links li:nth-child(5) a{
   
 #home .social-links a {
 >>>>>>> parent of ed74965... add hero animations
+=======
+  
+#home .social-links a {
+>>>>>>> parent of ed74965... add hero animations
     font-size: 24px;
     display: inline-block;
     color: #45505b;
@@ -430,7 +451,11 @@ ul.nav-links li:nth-child(5) a{
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #home .social-links i:hover {
+=======
+#home .social-links a:hover {
+>>>>>>> parent of ed74965... add hero animations
 =======
 #home .social-links a:hover {
 >>>>>>> parent of ed74965... add hero animations
