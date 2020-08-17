@@ -10,6 +10,14 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --hero-animationDelay: 5000ms;
+}
+
 /* Hover Underline Animation */
 .hover-underline {
     display: inline-block;
@@ -32,7 +40,7 @@ html {
 .hover-underline:hover::before {
     transform: scale(1);
     transform-origin: bottom left;
-}
+} /* End of Hover Underline Animation */
 
 /* Basic Sections */
 section.basic {
@@ -48,6 +56,8 @@ section.basic {
     line-height: 1.5;
     color: #fff;
     text-align: center;
+    display: none;
+    animation: 0ms display-basic-sections ease forwards var(--hero-animationDelay);
 }
 
 section.basic .container {
@@ -86,7 +96,59 @@ section.basic .section-title p a::before {
     section.basic .container {
         width: 95vw;
     }
+} 
+@keyframes display-basic-sections {
+    from {
+        display: none;
+    }
+    to {
+        display: block;
+    }
+} /* End of Basic Sections */
+
+
+
+/* logo svg animation */
+#logo-svg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #efefef;
+    position: absolute;
+    z-index: 5;
+    overflow-x: hidden;
 }
+
+#logo-svg svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    animation: logo-fill 1000ms ease-in-out forwards 3000ms;
+}
+
+#logo-svg svg path:nth-child(1) {
+    stroke-dasharray: 1352.05419921875px;
+    stroke-dashoffset: 1352.05419921875px;
+
+    animation: logo-animation 2500ms ease-in-out forwards 500ms;
+}
+
+@keyframes logo-animation {
+    to {
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes logo-fill {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: #302F2F;
+    }
+} /* End of logo svg animation */
+
 
 /* Navigation Bar */
 nav {
@@ -101,8 +163,9 @@ nav {
     background-color: #efefef;
     font-family: 'Montserrat', sans-serif;
     position: fixed;
-    z-index: 10;
+    z-index: 4;
     transition: 500ms;
+    animation: bring-nav-front 0ms ease forwards var(--hero-animationDelay);
 }
 
 nav.scrolled {
@@ -112,10 +175,16 @@ nav.scrolled {
 
 nav .logo {
     height: 70%;
+    animation-delay: var(--hero-animationDelay);
 }
 
-nav .logo img {
+nav img.logo-img {
     height: 100%;
+    transition: transform 1000ms;
+}
+
+nav img.logo-img:hover {
+    transform: rotate(360deg) translateZ(0);
 }
 
 ul.nav-links {
@@ -128,19 +197,19 @@ ul.nav-links {
 }
 /* Link specifics */
 ul.nav-links li:nth-child(1) a{
-    animation-delay: 250ms;
+    animation-delay: calc(var(--hero-animationDelay) + 250ms);
 }
 ul.nav-links li:nth-child(2) a{
-    animation-delay: 500ms;
+    animation-delay: calc(var(--hero-animationDelay) + 500ms);
 }
 ul.nav-links li:nth-child(3) a{
-    animation-delay: 750ms;
+    animation-delay: calc(var(--hero-animationDelay) + 750ms);
 }
 ul.nav-links li:nth-child(4) a{
-    animation-delay: 1000ms;
+    animation-delay: calc(var(--hero-animationDelay) + 1000ms);
 }
 ul.nav-links li:nth-child(5) a{
-    animation-delay: 1250ms;
+    animation-delay: calc(var(--hero-animationDelay) + 1250ms);
 } /* End of Link specifics */
 
 ul.nav-links li {
@@ -245,7 +314,13 @@ ul.nav-links li {
         opacity: 1;
         transform: translateX(0px);
     }
-}
+} 
+
+@keyframes bring-nav-front {
+    to {
+        z-index: 10;
+    }
+} /* End of Nav */
 
 /* Hero */
 #home {
@@ -258,9 +333,15 @@ ul.nav-links li {
     justify-content: center;
     padding: 60px;
     font-family: "Montserrat", sans-serif;
-
+    animation: bring-home-front 0ms ease forwards var(--hero-animationDelay);
 }
-  
+ 
+@keyframes bring-home-front {
+    to {
+        z-index: 5;
+    }
+}
+
 @media (min-width: 992px) {
     #home {
       padding-left: 160px;
@@ -273,7 +354,7 @@ ul.nav-links li {
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
-    animation-delay: 1500ms;
+    animation-delay: calc(var(--hero-animationDelay) + 1500ms);
 }
 
 #home .container h2 div{
@@ -285,7 +366,7 @@ ul.nav-links li {
     color: #45505b;
     margin: 15px 0 0 0;
     font-size: 26px;
-    animation-delay: 1750ms;
+    animation-delay: calc(var(--hero-animationDelay) + 1750ms);
 }
   
 #home p span {
@@ -297,8 +378,28 @@ ul.nav-links li {
 #home .social-links {
     margin-top: 30px;
 }
-  
-#home .social-links a {
+
+/* Icon specifics */
+#home .social-links a:nth-last-child(1) {
+    animation-delay: calc(var(--hero-animationDelay) + 2000ms);
+}
+#home .social-links a:nth-last-child(2) {
+    animation-delay: calc(var(--hero-animationDelay) + 2100ms);
+}
+#home .social-links a:nth-last-child(3) {
+    animation-delay: calc(var(--hero-animationDelay) + 2200ms);
+}
+#home .social-links a:nth-last-child(4) {
+    animation-delay: calc(var(--hero-animationDelay) + 2300ms);
+}
+#home .social-links a:nth-last-child(5) {
+    animation-delay: calc(var(--hero-animationDelay) + 2400ms);
+}
+#home .social-links a:nth-last-child(6) {
+    animation-delay: calc(var(--hero-animationDelay) + 2500ms);
+} /* End of Icon Spcifics */
+
+#home .social-links i {
     font-size: 24px;
     display: inline-block;
     color: #45505b;
@@ -307,30 +408,9 @@ ul.nav-links li {
     transition: transform 300ms;
 }
 
-#home .social-links a:hover {
+#home .social-links i:hover {
     transform: scale(1.2);
     color: #f50057;
-}
-
-/* Icon specifics */
-#home .social-links a:nth-last-child(1) {
-    animation-delay: 2000ms;
-    animation-duration: 200ms;
-}
-#home .social-links a:nth-last-child(2) {
-    animation-delay: 2100ms;
-}
-#home .social-links a:nth-last-child(3) {
-    animation-delay: 2200ms;
-}
-#home .social-links a:nth-last-child(4) {
-    animation-delay: 2300ms;
-}
-#home .social-links a:nth-last-child(5) {
-    animation-delay: 2400ms;
-}
-#home .social-links a:nth-last-child(6) {
-    animation-delay: 2500ms;
 }
   
 @media (max-width: 992px) {
@@ -358,7 +438,7 @@ ul.nav-links li {
     }
 
     #home h2 {
-        font-size: 42px
+        font-size: 42px;
     }
 }
 
@@ -369,8 +449,7 @@ ul.nav-links li {
     #home div.social-links {
         font-size: 18px;
     }
-}
-
+} /* End of Home */
 
 /* About */
 #about .content {
@@ -447,7 +526,7 @@ ul.nav-links li {
 }
 
 .project .content p {
-    font-family: "Open Sans", sans-serif
+    font-family: "Open Sans", sans-serif;
     margin: 0px 5px;
 }
 
