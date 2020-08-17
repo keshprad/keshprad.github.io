@@ -91,7 +91,7 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 // Logo Animation Delay
 // 
 const delayAnimate = async() => {
-    const delayedObjects = [document.querySelector(".logo-img")];
+    const delayedObjects = [document.querySelector(".logo")];
     
     while (true) {
         await sleep(5000);

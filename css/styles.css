@@ -173,12 +173,16 @@ nav.scrolled {
     box-shadow: 0px 5px 8px #000;
 }
 
-nav .logo {
+.logo {
     height: 70%;
     animation-delay: var(--hero-animationDelay);
 }
 
+<<<<<<< HEAD
 nav img.logo-img {
+=======
+.logo img {
+>>>>>>> parent of ed74965... add hero animations
     height: 100%;
     transition: transform 1000ms;
 }
@@ -187,14 +191,18 @@ nav img.logo-img:hover {
     transform: rotate(360deg) translateZ(0);
 }
 
-ul.nav-links {
+.nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 650px;
+}
+
+ul.nav-links {
     margin-top: 0;
     margin-bottom: 0;
 }
+<<<<<<< HEAD
 /* Link specifics */
 ul.nav-links li:nth-child(1) a{
     animation-delay: calc(var(--hero-animationDelay) + 250ms);
@@ -211,8 +219,10 @@ ul.nav-links li:nth-child(4) a{
 ul.nav-links li:nth-child(5) a{
     animation-delay: calc(var(--hero-animationDelay) + 1250ms);
 } /* End of Link specifics */
+=======
+>>>>>>> parent of ed74965... add hero animations
 
-ul.nav-links li {
+.nav-links li {
     list-style: none;
 }
 
@@ -348,25 +358,31 @@ ul.nav-links li {
     }
 }
   
-#home .container h2 {
+#home h2 {
     margin: 0;
     font-size: 58px;
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
+<<<<<<< HEAD
     animation-delay: calc(var(--hero-animationDelay) + 1500ms);
+=======
+>>>>>>> parent of ed74965... add hero animations
 }
 
-#home .container h2 div{
+#home h2 div{
     color: #f50057;
     display: inline-block;
 }
   
-#home .container p {
+#home p {
     color: #45505b;
     margin: 15px 0 0 0;
     font-size: 26px;
+<<<<<<< HEAD
     animation-delay: calc(var(--hero-animationDelay) + 1750ms);
+=======
+>>>>>>> parent of ed74965... add hero animations
 }
   
 #home p span {
@@ -378,6 +394,7 @@ ul.nav-links li {
 #home .social-links {
     margin-top: 30px;
 }
+<<<<<<< HEAD
 
 /* Icon specifics */
 #home .social-links a:nth-last-child(1) {
@@ -400,6 +417,10 @@ ul.nav-links li {
 } /* End of Icon Spcifics */
 
 #home .social-links i {
+=======
+  
+#home .social-links a {
+>>>>>>> parent of ed74965... add hero animations
     font-size: 24px;
     display: inline-block;
     color: #45505b;
@@ -408,7 +429,11 @@ ul.nav-links li {
     transition: transform 300ms;
 }
 
+<<<<<<< HEAD
 #home .social-links i:hover {
+=======
+#home .social-links a:hover {
+>>>>>>> parent of ed74965... add hero animations
     transform: scale(1.2);
     color: #f50057;
 }
@@ -615,9 +640,6 @@ ul.nav-links li {
 
 
 /* Teams Section */
-#teams .content {
-    margin-top: 50px;
-}
 #teams .btn.focus, .btn:focus {
     box-shadow: none;
 }
