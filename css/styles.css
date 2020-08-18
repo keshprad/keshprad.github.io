@@ -96,7 +96,7 @@ section.basic .section-title p a::before {
 div.logo-svg {
     width: 100vw;
     height: 100vh;
-    background-color: #efefef;
+    background-color: transparent;
     position: fixed;
     overflow-x: hidden;
 }
@@ -172,6 +172,11 @@ nav .logo {
 
 nav .logo img {
     height: 100%;
+    transition: transform 1000ms;
+}
+
+nav .logo img:hover {
+    transform: rotate(360deg) translateZ(0);
 }
 
 ul.nav-links {
@@ -373,10 +378,13 @@ ul.nav-links li {
     color: #45505b;
     line-height: 1;
     margin-right: 20px;
+}
+
+#home .social-links a i {
     transition: transform 300ms;
 }
 
-#home .social-links a:hover {
+#home .social-links a i:hover {
     transform: scale(1.2);
     color: #f50057;
 }
