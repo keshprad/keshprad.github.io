@@ -225,7 +225,7 @@ ul.nav-links li {
 .burger div {
     width: 25px;
     height: 2.5px;
-    background-color: #db96ae;
+    background-color: #f50057;
     margin: 5px;
 }
 
@@ -251,10 +251,13 @@ ul.nav-links li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-around !important;
         transform: translateX(100%);
         transition: transform 500ms ease-in-out;
         width: 50%;
+    }
+    .nav-links.scrolled {
+        background-color: #919191;
     }
     .nav-links li {
         opacity: 0;
@@ -277,10 +280,13 @@ ul.nav-links li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-around !important;
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
         width: 100%;
+    }
+    .nav-links.scrolled {
+        background-color: #777777;
     }
     .nav-links li {
         opacity: 0;

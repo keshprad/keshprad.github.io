@@ -1,14 +1,17 @@
 const nav = document.querySelector("nav");
 const home = document.querySelector("#home");
+const navLinks = document.querySelector("ul.nav-links");
 const faders = document.querySelectorAll(".fade-in");
 
 
 const homeObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
-            nav.classList.add("scrolled")
+            nav.classList.add("scrolled");
+            navLinks.classList.add("scrolled");
         } else {
-            nav.classList.remove("scrolled")
+            nav.classList.remove("scrolled");
+            navLinks.classList.remove("scrolled");
         }
     })
 }, {
