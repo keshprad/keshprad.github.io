@@ -126,13 +126,13 @@ function enableScroll() {
     window.onscroll = function() {}; 
 } 
 
-// window.onload = async() => {
-//     window.scrollTo({ top: 0, behavior: 'smooth' });
-//     await sleep(750);
-//     disableScroll();
-//     await sleep(5000);
-//     enableScroll();
-// }
+window.onload = async() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    await sleep(750);
+    disableScroll();
+    await sleep(5000);
+    enableScroll();
+}
 
 
 

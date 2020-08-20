@@ -704,6 +704,32 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
 }
 
 #footer .socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#footer .socials a {
+    margin: 0 10px;
+}
+
+#footer .socials i {
+    font-size: 24px;
     color: #45505b;
+    transition: transform 300ms;
+}
+
+#footer .socials i:hover {
+    transform: scale(1.2);
+    color: #f50057;
+}
+
+#footer .copyright {
+    margin: 10px 0;
+}
+
+#footer .copyright p {
+    margin: 0;
 }
 /* End of Footer */
