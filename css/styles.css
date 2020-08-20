@@ -610,34 +610,34 @@ ul.nav-links li {
 /* Work Section */
 
 
-/* Teams Section */
-#teams .content {
+/* Collapse/Show */
+section.hasAccordion .content {
     margin-top: 50px;
 }
-#teams .btn.focus, .btn:focus {
+section.hasAccordion .btn.focus, .btn:focus {
     box-shadow: none;
 }
 
-#teams .accordion {
+section.hasAccordion .accordion {
     border-radius: 10px;
 }
 
-#teams .accordion .card {
+section.hasAccordion .accordion .card {
     background-color: #272626;
     border: none;
 }
 
-#teams .accordion > .card:first-of-type {
+section.hasAccordion .accordion > .card:first-of-type {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
 
-#teams .accordion > .card:last-of-type {
+section.hasAccordion .accordion > .card:last-of-type {
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-#teams .accordion .card-header button {
+section.hasAccordion .accordion .card-header button {
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 500;
@@ -645,13 +645,13 @@ ul.nav-links li {
     color: #fff;
 }
 
-#teams .accordion .card-header button i {
+section.hasAccordion .accordion .card-header button i {
     color: #fff;
     font-size: 1.2rem;
     transition: 0.5s;
 }
 
-#teams .accordion .card-header button i:hover {
+section.hasAccordion .accordion .card-header button i:hover {
     transform: scale(1.2);
     color: transparent;
     background: linear-gradient(to right, #f50057, #d47f9d);
@@ -659,7 +659,7 @@ ul.nav-links li {
 }
 
 
-#teams .accordion .card-body {
+section.hasAccordion .accordion .card-body {
     background-color: #2b2b2b;
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
@@ -668,25 +668,42 @@ ul.nav-links li {
     padding: 1.75rem;
 }
 
-#teams .accordion .card-body a {
+section.hasAccordion .accordion .card-body a {
     color: #f50057;
     text-decoration: none;
 }
 
-#teams .accordion .card-body a::before {
+section.hasAccordion .accordion .card-body a::before {
     top: 0;
 }
 
-#teams .accordion .card-header:hover span.hover-underline::before {
+section.hasAccordion .accordion .card-header:hover span.hover-underline::before {
     transform: scale(1);
     transform-origin: bottom left;
 }
 
 @media (max-width: 550px) {
-    #teams .accordion .card-header button {
+    section.hasAccordion .accordion .card-header button {
         font-size: 1.2rem;
     }
-    #teams .accordion .card-header button i {
+    section.hasAccordion .accordion .card-header button i {
         font-size: 1rem;
     }
 }
+
+
+/* Footer */
+#footer {
+   background-color: #efefef;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: #45505b;
+   padding: 20px 0;
+}
+
+#footer .socials {
+    color: #45505b;
+}
+/* End of Footer */
