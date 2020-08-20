@@ -604,13 +604,13 @@ ul.nav-links li {
 .project:hover h4::before {
     transform: scale(1);
     transform-origin: bottom left;
-}
+} /* End of Projects */
 
 
 /* Work Section */
 
 
-/* Collapse/Show */
+/* Accordion */
 section.hasAccordion .content {
     margin-top: 50px;
 }
@@ -658,22 +658,31 @@ section.hasAccordion .accordion .card-header button i:hover {
     -webkit-background-clip: text;
 }
 
-
 section.hasAccordion .accordion .card-body {
     background-color: #2b2b2b;
+    padding: 1.75rem;
+}
+
+section.hasAccordion .accordion .card-body p {
     font-family: "Montserrat", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    padding: 1.75rem;
+    margin: 10px;
 }
 
-section.hasAccordion .accordion .card-body a {
+section.hasAccordion .accordion .card-body p.dates {
+    text-align: end;
+    font-style: italic;
+    color: #aaaaaa;
+}
+
+section.hasAccordion .accordion .card-body p a {
     color: #f50057;
     text-decoration: none;
 }
 
-section.hasAccordion .accordion .card-body a::before {
+section.hasAccordion .accordion .card-body p a::before {
     top: 0;
 }
 
@@ -689,7 +698,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     section.hasAccordion .accordion .card-header button i {
         font-size: 1rem;
     }
-}
+} /* End of Accordion */
 
 
 /* Footer */
@@ -708,6 +717,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    z-index: 0;
 }
 
 #footer .socials a {
@@ -731,5 +741,4 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
 
 #footer .copyright p {
     margin: 0;
-}
-/* End of Footer */
+} /* End of Footer */
