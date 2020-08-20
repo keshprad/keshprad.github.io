@@ -669,6 +669,12 @@ section.hasAccordion .accordion .card-body p {
     font-weight: 400;
     line-height: 1.5;
     margin: 10px;
+    text-align: start;
+}
+
+section.hasAccordion .accordion .card-body p.position {
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
 section.hasAccordion .accordion .card-body p.dates {
