@@ -183,7 +183,7 @@ ul.nav-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 650px;
+    width: 750px;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -202,6 +202,9 @@ ul.nav-links li:nth-child(4) a{
 }
 ul.nav-links li:nth-child(5) a{
     animation-delay: calc(var(--hero-animationDelay) + 1250ms);
+} 
+ul.nav-links li:nth-child(6) a{
+    animation-delay: calc(var(--hero-animationDelay) + 1500ms);
 } /* End of Link specifics */
 
 ul.nav-links li {
@@ -347,7 +350,7 @@ ul.nav-links li {
     font-weight: 700;
     line-height: 56px;
     color: #45505b;
-    animation-delay: calc(var(--hero-animationDelay) + 1500ms);
+    animation-delay: calc(var(--hero-animationDelay) + 1750ms);
 }
 
 #home .container h2 div{
@@ -359,7 +362,7 @@ ul.nav-links li {
     color: #45505b;
     margin: 15px 0 0 0;
     font-size: 26px;
-    animation-delay: calc(var(--hero-animationDelay) + 1750ms);
+    animation-delay: calc(var(--hero-animationDelay) + 2000ms);
 }
   
 #home p span {
@@ -697,7 +700,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     transform-origin: bottom left;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 755px) {
     section.hasAccordion .accordion .card-header button {
         font-size: 1.2rem;
     }
@@ -706,6 +709,23 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     }
 } /* End of Accordion */
 
+/* Awards & Certifications */
+@media (max-width: 500px) {
+    section#awards .accordion .card-header button {
+        font-size: 1rem;
+    }
+    section#awards .accordion .card-header button i {
+        font-size: 1rem;
+    }
+} 
+@media (max-width: 430px) {
+    section#awards .accordion .card-header button {
+        font-size: 0.8rem;
+    }
+    section#awards .accordion .card-header button i {
+        font-size: 0.8rem;
+    }
+} /* End of Awards & Certifications */
 
 /* Footer */
 #footer {
