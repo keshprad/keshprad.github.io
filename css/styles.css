@@ -237,11 +237,11 @@ ul.nav-links li {
     margin: 5px;
 }
 
-@media screen and (max-width: 1100px) {
+/* @media screen and (max-width: 1100px) {
     .nav-links {
-        width: 550px;
+        width: 550px !important;
     }
-}
+} */
 
 @media screen and (max-width: 1024px) {
     body {
@@ -262,7 +262,7 @@ ul.nav-links li {
         justify-content: space-around !important;
         transform: translateX(100%);
         transition: transform 500ms ease-in-out;
-        width: 50%;
+        width: 50% !important;
     }
     .nav-links.scrolled {
         background-color: #919191;
@@ -291,7 +291,7 @@ ul.nav-links li {
         justify-content: space-around !important;
         transform: translateX(100%);
         transition: transform 0.5s ease-in-out;
-        width: 100%;
+        width: 100% !important;
     }
     .nav-links.scrolled {
         background-color: #777777;
