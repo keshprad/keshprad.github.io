@@ -417,7 +417,7 @@ ul.nav-links li {
 @media (max-width: 992px) {
     #home {
       text-align: center;
-      /* background-size: 100% auto; */
+      background-size: 100% auto;
     }
     #home h2 {
       font-size: 50px;
