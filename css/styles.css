@@ -322,6 +322,8 @@ ul.nav-links li {
     width: 100%;
     height: 100vh;
     background-color: #efefef;
+    background-repeat: no-repeat;
+    background-position: right bottom;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -415,6 +417,7 @@ ul.nav-links li {
 @media (max-width: 992px) {
     #home {
       text-align: center;
+      /* background-size: 100% auto; */
     }
     #home h2 {
       font-size: 50px;
@@ -434,6 +437,8 @@ ul.nav-links li {
 @media screen and (max-width: 645px) {
     #home {
         padding: 60px 10px;
+        /* background-size: 130% auto;
+        background-position-x: center; */
     }
 
     #home h2 {
