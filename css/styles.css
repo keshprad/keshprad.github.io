@@ -324,6 +324,7 @@ ul.nav-links li {
     background-repeat: no-repeat;
     background-position: right bottom, left bottom;
     background-size: auto auto, 100% auto;
+    background-attachment: fixed;
     position: relative;
     display: flex;
     flex-direction: column;
