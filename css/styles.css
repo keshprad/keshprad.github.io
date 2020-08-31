@@ -437,7 +437,7 @@ ul.nav-links li {
 @media screen and (max-width: 785px) {
     #home {
         background-size: 130% auto, 100% auto;
-        background-position-x: center;
+        background-position-x: center, left;
     }
 }
 @media screen and (max-width: 645px) {
