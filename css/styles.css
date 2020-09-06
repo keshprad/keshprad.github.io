@@ -681,7 +681,6 @@ section.hasAccordion .accordion .card-header button {
 
 section.hasAccordion .accordion .card-header button i {
     color: #fff;
-    /* font-size: 1.2rem; */
     transition: 0.5s;
 }
 
@@ -734,9 +733,6 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
 @media (max-width: 755px) {
     section.hasAccordion .accordion .card-header button {
         font-size: 1.2rem;
-    }
-    section.hasAccordion .accordion .card-header button i {
-        /* font-size: 1rem; */
     }
 } /* End of Accordion */
 
