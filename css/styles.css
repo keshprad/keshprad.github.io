@@ -621,37 +621,37 @@ div.bg.martian-hero {
 
 /* Project 3 */
 #projects .row .project:nth-child(5n-2) .icon i {
-    color: #fec601;
+    color: #9bc53d;
 }
 .project:nth-child(5n-2):hover img {
-    filter: invert(82%) sepia(58%) saturate(3440%) hue-rotate(2deg) brightness(107%) contrast(99%);
+    filter: invert(65%) sepia(12%) saturate(2169%) hue-rotate(37deg) brightness(111%) contrast(80%);
 }
 .project:nth-child(5n-2) .links i:hover {
-    color: #fec601;
+    color: #9bc53d;
     transform: scale(1.2);
 } /* End of Project 3 */
 
 /* Project 4 */
 #projects .row .project:nth-child(5n-1) .icon i {
-    color: #9bc53d;
+    color: #5bc0eb;
 }
 .project:nth-child(5n-1):hover img {
-    filter: invert(65%) sepia(12%) saturate(2169%) hue-rotate(37deg) brightness(111%) contrast(80%);
+    filter: invert(76%) sepia(5%) saturate(5862%) hue-rotate(167deg) brightness(95%) contrast(93%);
 }
 .project:nth-child(5n-1) .links i:hover {
-    color: #9bc53d;
+    color: #5bc0eb;
     transform: scale(1.2);
 } /* End of Project 4 */
 
 /* Project 5 */
 #projects .row .project:nth-child(5n) .icon i {
-    color: #5bc0eb;
+    color: #9381FF;
 }
 .project:nth-child(5n):hover img {
-    filter: invert(76%) sepia(5%) saturate(5862%) hue-rotate(167deg) brightness(95%) contrast(93%);
+    filter: invert(75%) sepia(52%) saturate(6929%) hue-rotate(216deg) brightness(101%) contrast(102%);
 }
 .project:nth-child(5n) .links i:hover {
-    color: #5bc0eb;
+    color: #9381FF;
     transform: scale(1.2);
 } /* End of Project 5 */
 
