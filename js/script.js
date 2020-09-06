@@ -140,11 +140,16 @@ window.onload = async() => {
 // hero scroll background
 // 
 martian_hero = document.querySelector(".martian-hero");
+shapes_bg = document.querySelector(".shapes-bg");
 window.addEventListener("scroll", function(event){
     var scroll = this.scrollY;
 
     // martian-hero
     martian_hero.style.bottom = -scroll * 0.3 + "px";
+    
+    // shapes-bg
+    shapes_bg.style.top = scroll * 0.3 + "px";
+
 })
 
 

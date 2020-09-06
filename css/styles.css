@@ -343,6 +343,10 @@ div.bg {
     z-index: -2;
     position: absolute;
     bottom: 0;
+} 
+
+div.after-hero-content {
+    position: relative;
 } /* End of backgrounds general */
 
 /* Specific bgs */
@@ -354,6 +358,12 @@ div.bg.hero-slope {
 div.bg.martian-hero {
     background-position: right bottom;
     background-size: auto auto;
+}
+
+div.bg.shapes-bg {
+    background-repeat: repeat;
+    top: 0;
+    z-index: 0;
 }
 
 @media screen and (max-width: 1024px) {
