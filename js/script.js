@@ -137,6 +137,19 @@ window.onload = async() => {
 
 
 // 
+// hero scroll background
+// 
+martian_hero = document.querySelector(".martian-hero");
+window.addEventListener("scroll", function(event){
+    var scroll = this.scrollY;
+
+    // martian-hero
+    martian_hero.style.bottom = -scroll * 0.3 + "px";
+})
+
+
+
+// 
 // App
 // 
 const app = () => {
