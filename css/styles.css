@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 :root {
     --hero-animationDelay: 5000ms;
 }
