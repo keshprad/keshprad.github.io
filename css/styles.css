@@ -361,9 +361,7 @@ div.bg.martian-hero {
 }
 
 div.bg.shapes-bg {
-    /* background-reoeat: repeat; */
-    height: 65%;
-    background-size: 100% auto;
+    background-repeat: repeat;
     top: 0;
     z-index: 0;
 }
