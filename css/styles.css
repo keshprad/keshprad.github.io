@@ -36,7 +36,31 @@ html {
 .hover-underline:hover::before {
     transform: scale(1);
     transform-origin: bottom left;
-} /* End of hover underline */
+} 
+
+.hover-overline {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-overline::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #f50057, #d47f9d);
+    transform-origin: bottom right;
+    transition: transform 500ms ease-out;
+}
+
+.hover-overline:hover::before {
+    transform: scale(1);
+    transform-origin: bottom left;
+} 
+/* End of hover underline */
 
 /* Basic Sections */
 section.basic {
@@ -80,10 +104,6 @@ section.basic .section-title hr {
 section.basic .section-title p a {
     color: #f50057;
     text-decoration: none;
-}
-
-section.basic .section-title p a::before {
-    top: 0;
 }
 
 @media (max-width: 1000px) {
@@ -661,12 +681,11 @@ section.hasAccordion .accordion .card-header button {
 
 section.hasAccordion .accordion .card-header button i {
     color: #fff;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     transition: 0.5s;
 }
 
 section.hasAccordion .accordion .card-header button i:hover {
-    transform: scale(1.2);
     color: transparent;
     background: linear-gradient(to right, #f50057, #d47f9d);
     -webkit-background-clip: text;
@@ -689,6 +708,7 @@ section.hasAccordion .accordion .card-body p {
 section.hasAccordion .accordion .card-body p.position {
     font-size: 1.3rem;
     font-weight: 600;
+    color: #fff;
 }
 
 section.hasAccordion .accordion .card-body p.dates {
@@ -698,12 +718,12 @@ section.hasAccordion .accordion .card-body p.dates {
 }
 
 section.hasAccordion .accordion .card-body p a {
-    color: #f50057;
+    color: #fff;
     text-decoration: none;
 }
 
-section.hasAccordion .accordion .card-body p a::before {
-    top: 0;
+section.hasAccordion .accordion .card-body p:not(.position) a {
+    color: #f50057;
 }
 
 section.hasAccordion .accordion .card-header:hover span.hover-underline::before {
@@ -716,7 +736,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
         font-size: 1.2rem;
     }
     section.hasAccordion .accordion .card-header button i {
-        font-size: 1rem;
+        /* font-size: 1rem; */
     }
 } /* End of Accordion */
 
@@ -725,15 +745,9 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     section#awards .accordion .card-header button {
         font-size: 1rem;
     }
-    section#awards .accordion .card-header button i {
-        font-size: 1rem;
-    }
 } 
 @media (max-width: 430px) {
     section#awards .accordion .card-header button {
-        font-size: 0.8rem;
-    }
-    section#awards .accordion .card-header button i {
         font-size: 0.8rem;
     }
 } /* End of Awards & Certifications */
