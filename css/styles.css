@@ -583,12 +583,16 @@ div.bg.martian-hero {
     margin-bottom: 20px;
 }
 
+.project .content h4 a:hover {
+    text-decoration: none;
+}
+
 .project .content a {
     color: #fff;
 }
 
 .project .content p {
-    font-family: "Open Sans", sans-serif
+    font-family: "Open Sans", sans-serif;
     margin: 0px 5px;
 }
 
