@@ -16,6 +16,8 @@ html::-webkit-scrollbar {
 
 :root {
     --hero-animationDelay: 5000ms;
+    --theme-red: #f50057;
+    --gradient-right: linear-gradient(to right, #f50057, #d47f9d);
 }
 
 body {
@@ -36,7 +38,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to right, #f50057, #d47f9d);
+    background: var(--gradient-right);
     transform-origin: bottom right;
     transition: transform 500ms ease-out;
 }
@@ -59,7 +61,7 @@ body {
     height: 2px;
     top: 0;
     left: 0;
-    background: linear-gradient(to right, #f50057, #d47f9d);
+    background: var(--gradient-right);
     transform-origin: bottom right;
     transition: transform 500ms ease-out;
 }
@@ -106,11 +108,11 @@ section.basic .section-title hr {
     margin-bottom: 20px;
     border: 0;
     height: 3px;
-    background: linear-gradient(to right, #f50057, #d47f9d);
+    background: var(--gradient-right);
 }
 
 section.basic .section-title p a {
-    color: #f50057;
+    color: var(--theme-red);
     text-decoration: none;
 }
 
@@ -240,7 +242,7 @@ ul.nav-links li {
 }
 
 .nav-links a {
-    color: #f50057;
+    color: var(--theme-red);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -249,7 +251,7 @@ ul.nav-links li {
 }
 
 .nav-links li.active a, .nav-links a:hover {
-    color: #f50057;
+    color: var(--theme-red);
 }
 
 .burger {
@@ -260,7 +262,7 @@ ul.nav-links li {
 .burger div {
     width: 25px;
     height: 2.5px;
-    background-color: #f50057;
+    background-color: var(--theme-red);
     margin: 5px;
 }
 
@@ -417,7 +419,7 @@ div.bg.martian-hero {
 }
 
 #home .container h2 div{
-    color: #f50057;
+    color: var(--theme-red);
     display: inline-block;
 }
   
@@ -429,8 +431,8 @@ div.bg.martian-hero {
 }
   
 #home p span {
-    color: #f50057;
-    border-right: 1px solid #f50057;
+    color: var(--theme-red);
+    border-right: 1px solid var(--theme-red);
     letter-spacing: 1px;
 }
   
@@ -452,7 +454,7 @@ div.bg.martian-hero {
 
 #home .social-links a i:hover {
     transform: scale(1.2);
-    color: #f50057;
+    color: var(--theme-red);
 }
 
 /* Icon specifics */
@@ -576,7 +578,7 @@ div.bg.martian-hero {
 .project .icon i {
     position: absolute;
     font-size: 36px;
-    color: #f50057;
+    color: var(--theme-red);
 }
 
 .project .content {
@@ -722,7 +724,7 @@ section.hasAccordion .accordion .card-header button i {
 
 section.hasAccordion .accordion .card-header button i:hover {
     color: transparent;
-    background: linear-gradient(to right, #f50057, #d47f9d);
+    background: var(--gradient-right);
     -webkit-background-clip: text;
 }
 
@@ -758,7 +760,7 @@ section.hasAccordion .accordion .card-body p a {
 }
 
 section.hasAccordion .accordion .card-body p:not(.position) a {
-    color: #f50057;
+    color: var(--theme-red);
 }
 
 section.hasAccordion .accordion .card-header:hover span.hover-underline::before {
@@ -815,7 +817,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
 
 #footer .socials i:hover {
     transform: scale(1.2);
-    color: #f50057;
+    color: var(--theme-red);
 }
 
 #footer .copyright {
