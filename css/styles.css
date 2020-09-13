@@ -112,7 +112,9 @@ section.basic .section-title hr {
 }
 
 section.basic .section-title p a {
-    color: var(--theme-red);
+    background: var(--gradient-right);
+    -webkit-background-clip: text;
+    color: transparent;
     text-decoration: none;
 }
 
