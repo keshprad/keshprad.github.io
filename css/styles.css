@@ -112,9 +112,7 @@ section.basic .section-title hr {
 }
 
 section.basic .section-title p a {
-    background: var(--gradient-right);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: var(--theme-red);
     text-decoration: none;
 }
 
@@ -454,8 +452,8 @@ div.bg.martian-hero {
     transition: transform 300ms;
 }
 
-#home .social-links a i:hover {
-    transform: scale(1.2);
+#home .social-links a:hover i {
+    transform: scale(1.2) rotateZ(-10deg);
     color: var(--theme-red);
 }
 
@@ -817,8 +815,8 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
     transition: transform 300ms;
 }
 
-#footer .socials i:hover {
-    transform: scale(1.2);
+#footer .socials a:hover i {
+    transform: scale(1.2) rotateZ(-10deg);
     color: var(--theme-red);
 }
 
