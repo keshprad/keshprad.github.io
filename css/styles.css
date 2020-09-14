@@ -20,10 +20,6 @@ html::-webkit-scrollbar {
     --gradient-right: linear-gradient(to right, var(--theme-color), #d47f9d);
 }
 
-body {
-    background-color: #efefef;
-}
-
 /* Hover Underline Animation */
 .hover-underline {
     display: inline-block;
@@ -352,6 +348,10 @@ div.bg {
 } /* End of backgrounds general */
 
 /* Specific bgs */
+div.bg.behind {
+    background: #efefef;
+}
+
 div.bg.hero-slope {
     background-position: left bottom;
     background-size: 100% auto;
@@ -605,6 +605,10 @@ div.bg.martian-hero {
     transition: 300ms;
 }
 
+.project .links a:hover i {
+    transform: scale(1.2) rotateZ(-10deg);
+}
+
 /* Project 1 */
 #projects .row .project:nth-child(5n-4) .icon i {
     color: #f25f5c;
@@ -614,7 +618,6 @@ div.bg.martian-hero {
 } 
 .project:nth-child(5n-4) .links i:hover {
     color: #f25f5c;
-    transform: scale(1.2);
 } /* End of Project 1 */
 
 /* Project 2 */
@@ -626,7 +629,6 @@ div.bg.martian-hero {
 }
 .project:nth-child(5n-3) .links i:hover {
     color: #fa7921;
-    transform: scale(1.2);
 } /* End of Project 2 */
 
 /* Project 3 */
@@ -638,7 +640,6 @@ div.bg.martian-hero {
 }
 .project:nth-child(5n-2) .links i:hover {
     color: #9bc53d;
-    transform: scale(1.2);
 } /* End of Project 3 */
 
 /* Project 4 */
@@ -650,7 +651,6 @@ div.bg.martian-hero {
 }
 .project:nth-child(5n-1) .links i:hover {
     color: #5bc0eb;
-    transform: scale(1.2);
 } /* End of Project 4 */
 
 /* Project 5 */
@@ -662,7 +662,6 @@ div.bg.martian-hero {
 }
 .project:nth-child(5n) .links i:hover {
     color: #9381FF;
-    transform: scale(1.2);
 } /* End of Project 5 */
 
 .project .content h4 {
