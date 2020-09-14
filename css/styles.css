@@ -16,8 +16,8 @@ html::-webkit-scrollbar {
 
 :root {
     --hero-animationDelay: 5000ms;
-    --theme-red: #f50057;
-    --gradient-right: linear-gradient(to right, #f50057, #d47f9d);
+    --theme-color: #f50057;
+    --gradient-right: linear-gradient(to right, var(--theme-color), #d47f9d);
 }
 
 body {
@@ -39,7 +39,7 @@ body {
     bottom: 0;
     left: 0;
     background: var(--gradient-right);
-    transform-origin: bottom right;
+    transform-origin: bottom left;
     transition: transform 500ms ease-out;
 }
 
@@ -62,7 +62,7 @@ body {
     top: 0;
     left: 0;
     background: var(--gradient-right);
-    transform-origin: bottom right;
+    transform-origin: bottom left;
     transition: transform 500ms ease-out;
 }
 
@@ -112,7 +112,7 @@ section.basic .section-title hr {
 }
 
 section.basic .section-title p a {
-    color: var(--theme-red);
+    color: var(--theme-color);
     text-decoration: none;
 }
 
@@ -242,7 +242,7 @@ ul.nav-links li {
 }
 
 .nav-links a {
-    color: var(--theme-red);
+    color: var(--theme-color);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -251,7 +251,7 @@ ul.nav-links li {
 }
 
 .nav-links li.active a, .nav-links a:hover {
-    color: var(--theme-red);
+    color: var(--theme-color);
 }
 
 .burger {
@@ -262,7 +262,7 @@ ul.nav-links li {
 .burger div {
     width: 25px;
     height: 2.5px;
-    background-color: var(--theme-red);
+    background-color: var(--theme-color);
     margin: 5px;
 }
 
@@ -419,7 +419,7 @@ div.bg.martian-hero {
 }
 
 #home .container h2 div{
-    color: var(--theme-red);
+    color: var(--theme-color);
     display: inline-block;
 }
   
@@ -431,8 +431,8 @@ div.bg.martian-hero {
 }
   
 #home p span {
-    color: var(--theme-red);
-    border-right: 1px solid var(--theme-red);
+    color: var(--theme-color);
+    border-right: 1px solid var(--theme-color);
     letter-spacing: 1px;
 }
   
@@ -454,7 +454,7 @@ div.bg.martian-hero {
 
 #home .social-links a:hover i {
     transform: scale(1.2) rotateZ(-10deg);
-    color: var(--theme-red);
+    color: var(--theme-color);
 }
 
 /* Icon specifics */
@@ -578,7 +578,7 @@ div.bg.martian-hero {
 .project .icon i {
     position: absolute;
     font-size: 36px;
-    color: var(--theme-red);
+    color: var(--theme-color);
 }
 
 .project .content {
@@ -760,7 +760,7 @@ section.hasAccordion .accordion .card-body p a {
 }
 
 section.hasAccordion .accordion .card-body p:not(.position) a {
-    color: var(--theme-red);
+    color: var(--theme-color);
 }
 
 section.hasAccordion .accordion .card-header:hover span.hover-underline::before {
@@ -817,7 +817,7 @@ section.hasAccordion .accordion .card-header:hover span.hover-underline::before 
 
 #footer .socials a:hover i {
     transform: scale(1.2) rotateZ(-10deg);
-    color: var(--theme-red);
+    color: var(--theme-color);
 }
 
 #footer .copyright {
