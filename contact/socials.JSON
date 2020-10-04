@@ -1,5 +1,5 @@
-{
-  "keshprad": {
+[
+  {
     "title": "keshprad",
     "href": "https://www.keshprad.ml",
     "target": "",
@@ -8,7 +8,7 @@
       "FAClass": "fas fa-home"
     }
   },
-  "GitHub": {
+  {
     "title": "GitHub",
     "href": "https://github.com/keshprad",
     "target": "_blank",
@@ -17,7 +17,7 @@
       "FAClass": "fab fa-github"
     }
   },
-  "LinkedIn": {
+  {
     "title": "LinkedIn",
     "href": "https://www.linkedin.com/in/keshprad/",
     "target": "_blank",
@@ -26,7 +26,7 @@
       "FAClass": "fab fa-linkedin-in"
     }
   },
-  "Twitter": {
+  {
     "title": "Twitter",
     "href": "https://twitter.com/r_keshprad",
     "target": "_blank",
@@ -35,7 +35,7 @@
       "FAClass": "fab fa-twitter"
     }
   },
-  "Instagram": {
+  {
     "title": "Instagram",
     "href": "https://www.instagram.com/r_keshprad/",
     "target": "_blank",
@@ -44,7 +44,7 @@
       "FAClass": "fab fa-instagram"
     }
   },
-  "Facebook": {
+  {
     "title": "Facebook",
     "href": "https://www.facebook.com/keshprad",
     "target": "_blank",
@@ -53,4 +53,4 @@
       "FAClass": "fab fa-facebook-f"
     }
   }
-}
+]
