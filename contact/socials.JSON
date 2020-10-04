@@ -1,56 +1,58 @@
-[
-  {
-    "title": "keshprad",
-    "href": "https://www.keshprad.ml",
-    "target": "",
-    "icon": {
-      "ReactComponent": "<FaHome />",
-      "FAClass": "fas fa-home"
+{
+  "socials": [
+    {
+      "title": "keshprad",
+      "href": "https://www.keshprad.ml",
+      "target": "",
+      "icon": {
+        "ReactComponent": "<FaHome />",
+        "FAClass": "fas fa-home"
+      }
+    },
+    {
+      "title": "GitHub",
+      "href": "https://github.com/keshprad",
+      "target": "_blank",
+      "icon": {
+        "ReactComponent": "<FaGithub />",
+        "FAClass": "fab fa-github"
+      }
+    },
+    {
+      "title": "LinkedIn",
+      "href": "https://www.linkedin.com/in/keshprad/",
+      "target": "_blank",
+      "icon": {
+        "ReactComponent": "<FaLinkedinIn />",
+        "FAClass": "fab fa-linkedin-in"
+      }
+    },
+    {
+      "title": "Twitter",
+      "href": "https://twitter.com/r_keshprad",
+      "target": "_blank",
+      "icon": {
+        "ReactComponent": "<FaTwitter />",
+        "FAClass": "fab fa-twitter"
+      }
+    },
+    {
+      "title": "Instagram",
+      "href": "https://www.instagram.com/r_keshprad/",
+      "target": "_blank",
+      "icon": {
+        "ReactComponent": "<FaInstagram />",
+        "FAClass": "fab fa-instagram"
+      }
+    },
+    {
+      "title": "Facebook",
+      "href": "https://www.facebook.com/keshprad",
+      "target": "_blank",
+      "icon": {
+        "ReactComponent": "<FaFacebookF />",
+        "FAClass": "fab fa-facebook-f"
+      }
     }
-  },
-  {
-    "title": "GitHub",
-    "href": "https://github.com/keshprad",
-    "target": "_blank",
-    "icon": {
-      "ReactComponent": "<FaGithub />",
-      "FAClass": "fab fa-github"
-    }
-  },
-  {
-    "title": "LinkedIn",
-    "href": "https://www.linkedin.com/in/keshprad/",
-    "target": "_blank",
-    "icon": {
-      "ReactComponent": "<FaLinkedinIn />",
-      "FAClass": "fab fa-linkedin-in"
-    }
-  },
-  {
-    "title": "Twitter",
-    "href": "https://twitter.com/r_keshprad",
-    "target": "_blank",
-    "icon": {
-      "ReactComponent": "<FaTwitter />",
-      "FAClass": "fab fa-twitter"
-    }
-  },
-  {
-    "title": "Instagram",
-    "href": "https://www.instagram.com/r_keshprad/",
-    "target": "_blank",
-    "icon": {
-      "ReactComponent": "<FaInstagram />",
-      "FAClass": "fab fa-instagram"
-    }
-  },
-  {
-    "title": "Facebook",
-    "href": "https://www.facebook.com/keshprad",
-    "target": "_blank",
-    "icon": {
-      "ReactComponent": "<FaFacebookF />",
-      "FAClass": "fab fa-facebook-f"
-    }
-  }
-]
+  ]
+}

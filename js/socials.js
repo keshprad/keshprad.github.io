@@ -3,9 +3,8 @@ const url = "https://www.keshprad.ml/contact/socials.JSON";
 // fetch data
 async function fetchData(load_url) {
   const url_response = await fetch(load_url);
-  var socials = await url_response.json();
-
-  showSocials(socials);
+  var allSocials = await url_response.json();
+  showSocials(allSocials.socials);
 }
 fetchData(url);
 
@@ -13,11 +12,12 @@ fetchData(url);
 function showSocials(socials) {
   var code = ``;
 
-  for (let social in socials) {
-    if (social != "keshprad") {
-      code += `<a href="${socials[social].href}" target="${socials[social].target}" class="animate__animated animate__rollIn"><i class="${socials[social].icon.FAClass}"></i></a>`;
+  socials.forEach((social) => {
+    if (social.title != "keshprad") {
+      console.log(social.title);
+      code += `<a href="${social.href}" target="${social.target}" class="animate__animated animate__rollIn"><i class="${social.icon.FAClass}"></i></a>`;
     }
-  }
+  });
 
   const containers = [
     document.querySelector("#home .container .social-links"),
