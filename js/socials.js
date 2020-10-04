@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:5500/contact/socials.JSON";
+const url = "https://keshprad.ml/contact/socials.JSON";
 
 // fetch data
 async function fetchData(load_url) {
