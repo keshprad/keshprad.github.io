@@ -5,7 +5,6 @@
       "href": "https://www.keshprad.ml",
       "target": "",
       "icon": {
-        "ReactComponent": "<FaHome />",
         "FAClass": "fas fa-home"
       }
     },
@@ -14,7 +13,6 @@
       "href": "https://github.com/keshprad",
       "target": "_blank",
       "icon": {
-        "ReactComponent": "<FaGithub />",
         "FAClass": "fab fa-github"
       }
     },
@@ -23,7 +21,6 @@
       "href": "https://www.linkedin.com/in/keshprad/",
       "target": "_blank",
       "icon": {
-        "ReactComponent": "<FaLinkedinIn />",
         "FAClass": "fab fa-linkedin-in"
       }
     },
@@ -32,7 +29,6 @@
       "href": "https://twitter.com/r_keshprad",
       "target": "_blank",
       "icon": {
-        "ReactComponent": "<FaTwitter />",
         "FAClass": "fab fa-twitter"
       }
     },
@@ -41,7 +37,6 @@
       "href": "https://www.instagram.com/r_keshprad/",
       "target": "_blank",
       "icon": {
-        "ReactComponent": "<FaInstagram />",
         "FAClass": "fab fa-instagram"
       }
     },
@@ -50,7 +45,6 @@
       "href": "https://www.facebook.com/keshprad",
       "target": "_blank",
       "icon": {
-        "ReactComponent": "<FaFacebookF />",
         "FAClass": "fab fa-facebook-f"
       }
     }

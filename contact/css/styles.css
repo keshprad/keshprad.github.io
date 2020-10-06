@@ -142,7 +142,6 @@ section#intro .contact li.home a {
   color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  background-clip: text;
 }
 section#intro .contact li.home a i {
   color: #f50057;
@@ -170,7 +169,6 @@ section#intro .contact li.instagram a {
   color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  background-clip: text;
 }
 section#intro .contact li.instagram a i {
   color: #fd1d1d;
@@ -180,7 +178,6 @@ section#intro .contact li.facebook a {
   color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  background-clip: text;
 }
 section#intro .contact li.facebook a i {
   color: #3b579d;

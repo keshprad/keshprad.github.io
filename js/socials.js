@@ -1,4 +1,4 @@
-const url = "https://keshprad.ml/contact/socials.JSON";
+const url = "https://www.keshprad.ml/contact/socials.JSON";
 
 // fetch data
 async function fetchData(load_url) {
