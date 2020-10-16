@@ -76,11 +76,15 @@ section#intro {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media (max-width: 1070px) {
+  section#intro {
+    flex-direction: column;
+  }
 }
 
 section#intro div.container {
-  margin: 0 5vw;
+  margin: 5vh 5vw;
 }
 
 section#intro .name h1 {
@@ -119,9 +123,7 @@ section#intro .contact li {
 }
 
 section#intro .contact li a {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
+  display: inline-block;
   text-decoration: none;
   color: black;
   font-weight: 500;
@@ -174,7 +176,7 @@ section#intro .contact li.instagram a i {
   color: #fd1d1d;
 }
 section#intro .contact li.facebook a {
-  background: linear-gradient(to left, #5aa0fc, #3b579d);
+  background-image: linear-gradient(to right, #3b579d, #5aa0fc);
   color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
