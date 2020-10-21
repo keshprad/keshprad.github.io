@@ -39,7 +39,7 @@
       <section id="intro">
         <div class="container name">
           <h1>Hi, I'm <div class="animate__animated animate__bounce animate__slow animate__repeat-3">keshprad</div></h1>
-          <h2><a href="#" onclick="javascript:goTo('section#form', false, true)">Let's talk &rarr;</a></h2>
+          <h2><button onclick="javascript:goTo('section#form', true, false)">Let's talk &rarr;</button></h2>
         </div>
         <div class="container contact">
           <ul>
@@ -74,13 +74,11 @@
             <input type="email" class="form-control" placeholder="Your Email" name="Email" required>
           </div>
           <div class="form-group black-box">
-            <input type="tel" class="form-control" placeholder="Phone Number" name="Phone" required">
+            <textarea id="" cols="30" rows="7" class="form-control" placeholder="Message" name="Message"></textarea>
           </div>
-          <div class="form-group black-box">
-            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" name="Message"></textarea>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="submit-btn">Submit</button>
+          <div class="form-group button-container">
+            <button type="submit" class="submit-btn">Submit <span>&#10003;</span></button>
+            <button type="button" class="back" onclick="javascript:goTo('section#intro', false, true)"><span>&larr;</span> Back</button>
           </div>
         </form>
       </section>

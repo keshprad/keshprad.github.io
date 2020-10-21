@@ -4,6 +4,7 @@
   --theme-primary-color: #f50057;
   --theme-light-color: #d47f9d;
   --theme-dark-color: #000000;
+  --form-bg: #d6d6d6;
   --gradient-light-right: linear-gradient(
     to right,
     var(--theme-primary-color),
@@ -102,18 +103,24 @@ section#intro .name h1 div {
 }
 
 section#intro .name h2 {
-  font-size: 3rem;
-  text-align: center;
   margin-top: 3rem;
+  text-align: center;
 }
-section#intro .name h2 a {
+
+section#intro .name h2 button {
+  font-size: 3rem;
+  font-weight: 700;
   color: var(--theme-dark-color);
   text-decoration: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
   transition: 250ms;
 }
 
-section#intro .name h2 a:hover {
+section#intro .name h2 button:hover {
   letter-spacing: 3px;
+  cursor: pointer;
 }
 
 section#intro .contact li {
@@ -277,21 +284,32 @@ section#form .form-group textarea {
   resize: none;
 }
 
-section#form .form-group .submit-btn {
+section#form .form-group.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+section#form .form-group.button-container button {
   cursor: pointer;
-  background-color: var(--theme-primary-color);
-  color: #fff;
   padding: 1rem 2rem;
-  transition: 500ms;
   border: 2px solid var(--theme-dark-color);
+  background-color: var(--theme-primary-color);
   box-shadow: 1px 1px var(--theme-primary-color),
     2px 2px var(--theme-primary-color), 3px 3px var(--theme-primary-color),
     4px 4px var(--theme-primary-color), 5px 5px var(--theme-dark-color),
     6px 6px var(--theme-dark-color);
+  outline: none;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: 500ms;
 }
 
-section#form .form-group .submit-btn:hover {
+section#form .form-group.button-container button span {
+  color: var(--theme-primary-color);
+}
+
+section#form .form-group button:hover {
+  border-color: transparent;
   color: var(--theme-primary-color);
   background-color: transparent;
-  border-radius: 30px;
 }

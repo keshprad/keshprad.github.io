@@ -86,30 +86,30 @@ html::-webkit-scrollbar {
   visibility: visible;
 }
 
-.go-home a {
+.go-home button {
   width: 50px;
   height: 50px;
-  display: table;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   text-decoration: none;
-  text-align: center;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
+  border: none;
   border-radius: 4px;
 }
 
-.go-home a i {
-  height: 50px;
-  display: table-cell;
-  vertical-align: middle;
+.go-home button:focus {
+  outline: none;
+}
+
+.go-home button i {
   -webkit-transition: 500ms;
   -o-transition: 500ms;
   transition: 500ms;
 }
 
-.go-home a:hover i {
+.go-home button:hover i {
   color: var(--theme-color);
 } /* End of Go to top */
 
@@ -241,6 +241,17 @@ nav .logo {
   height: 70%;
 }
 
+nav .logo button {
+  height: 100%;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+nav .logo button:focus {
+  outline: none;
+}
+
 nav .logo img {
   height: 100%;
   transition: transform 1000ms;
@@ -254,45 +265,52 @@ ul.nav-links {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 750px;
+  width: 850px;
   margin-top: 0;
   margin-bottom: 0;
 }
 /* Link specifics */
-ul.nav-links li:nth-child(1) a {
+ul.nav-links li:nth-child(1) button {
   animation-delay: calc(var(--hero-animationDelay) + 250ms);
 }
-ul.nav-links li:nth-child(2) a {
+ul.nav-links li:nth-child(2) button {
   animation-delay: calc(var(--hero-animationDelay) + 500ms);
 }
-ul.nav-links li:nth-child(3) a {
+ul.nav-links li:nth-child(3) button {
   animation-delay: calc(var(--hero-animationDelay) + 750ms);
 }
-ul.nav-links li:nth-child(4) a {
+ul.nav-links li:nth-child(4) button {
   animation-delay: calc(var(--hero-animationDelay) + 1000ms);
 }
-ul.nav-links li:nth-child(5) a {
+ul.nav-links li:nth-child(5) button {
   animation-delay: calc(var(--hero-animationDelay) + 1250ms);
 }
-ul.nav-links li:nth-child(6) a {
+ul.nav-links li:nth-child(6) button {
   animation-delay: calc(var(--hero-animationDelay) + 1500ms);
 } /* End of Link specifics */
 
 ul.nav-links li {
   list-style: none;
+  padding: 3px 0;
 }
 
-.nav-links a {
+.nav-links button {
+  background-color: transparent;
   color: var(--theme-color);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
+  border: none;
 }
 
-.nav-links li.active a,
-.nav-links a:hover {
+.nav-links button:focus {
+  outline: none;
+}
+
+.nav-links li.active button,
+.nav-links button:hover {
   color: var(--theme-color);
 }
 

@@ -23,7 +23,7 @@
     <body>
         <!-- Go to top -->
         <div class="go-home">
-            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+            <button onclick="javascript:goTo('section#home', false, true)"><i class="fas fa-arrow-up"></i></button>
         </div>
         <!-- End of Go to top -->
 
@@ -48,15 +48,16 @@
         
         <nav>
             <div class="logo animate__animated animate__fadeInDown animate__faster animate__delay-5s">
-                <a href="#home"><img src="img/logo.png" alt="" class="logo-img"></a>
+                <button onclick="javascript:goTo('section#home', false, true)"><img src="img/logo.png" alt="" class="logo-img"></button>
             </div>
             <ul class="nav-links">
-                <li><a href="#about" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">About</a></li>
-                <li><a href="#projects" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">Projects</a></li>
-                <li><a href="#work" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">Work</a></li>
-                <li><a href="#teams" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">Teams</a></li>
-                <li><a href="#awards" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">Awards</a></li>
-                <li><a href="#education" class="hover-underline animate__animated animate__lightSpeedInRight animate__faster">Education</a></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#about', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">About</button></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#projects', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">Projects</button></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#work', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">Work</button></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#teams', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">Teams</button></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#awards', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">Awards</button></li>
+                <li class="hover-underline"><button onclick="javascript:goTo('section#education', false, true)" class="animate__animated animate__lightSpeedInRight animate__faster">Education</button></li>
+                <!-- <li class="hover-underline"><button onclick="window.location.href='/contact/';" class="animate__animated animate__lightSpeedInRight animate__faster">Contact</button></li> -->
             </ul>
             <div class="burger">
                 <div class="line1"></div>

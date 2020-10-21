@@ -8,13 +8,13 @@ function goTo(ele_query, xBool, yBool) {
       left: ele_pos.left,
       behavior: "smooth",
     });
-  } else if (yBool) {
+  } else if (xBool) {
     window.scrollTo({
       top: 0,
       left: ele_pos.left,
       behavior: "smooth",
     });
-  } else if (xBool) {
+  } else if (yBool) {
     window.scrollTo({
       top: ele_pos.top,
       left: 0,
