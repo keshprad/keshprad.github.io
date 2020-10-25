@@ -15,7 +15,7 @@ html::-webkit-scrollbar {
 }
 
 :root {
-  --hero-animationDelay: 5000ms;
+  --hero-animationDelay: 4000ms;
   --theme-color: #f50057;
   --gradient-right: linear-gradient(to right, var(--theme-color), #d47f9d);
 }
@@ -170,6 +170,7 @@ div.logo-svg {
   background-color: transparent;
   position: fixed;
   overflow-x: hidden;
+  animation-delay: calc(var(--hero-animationDelay) - 1000ms);
 }
 
 .logo-svg svg {
@@ -179,13 +180,13 @@ div.logo-svg {
   transform: translate(-50%, -50%);
   opacity: 1;
   z-index: -1;
-  animation: logo-fill 1000ms ease-in-out forwards 3000ms;
+  animation: logo-fill 500ms ease-in-out forwards 2500ms;
 }
 
 .logo-svg svg path:nth-child(1) {
   stroke-dasharray: 1352.05419921875px;
   stroke-dashoffset: 1352.05419921875px;
-  animation: logo-animation 2500ms ease-in-out forwards 500ms;
+  animation: logo-animation 2000ms ease-in-out forwards 500ms;
 }
 
 @keyframes logo-animation {
@@ -221,15 +222,9 @@ nav {
   background-color: #efefef;
   font-family: "Montserrat", sans-serif;
   position: fixed;
-  z-index: -2;
+  z-index: 10;
   transition: 500ms;
-  animation: bring-nav-front 0ms ease forwards var(--hero-animationDelay);
-}
-
-@keyframes bring-nav-front {
-  to {
-    z-index: 10;
-  }
+  animation-delay: var(--hero-animationDelay);
 }
 
 nav.scrolled {
@@ -269,25 +264,6 @@ ul.nav-links {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* Link specifics */
-ul.nav-links li:nth-child(1) button {
-  animation-delay: calc(var(--hero-animationDelay) + 250ms);
-}
-ul.nav-links li:nth-child(2) button {
-  animation-delay: calc(var(--hero-animationDelay) + 500ms);
-}
-ul.nav-links li:nth-child(3) button {
-  animation-delay: calc(var(--hero-animationDelay) + 750ms);
-}
-ul.nav-links li:nth-child(4) button {
-  animation-delay: calc(var(--hero-animationDelay) + 1000ms);
-}
-ul.nav-links li:nth-child(5) button {
-  animation-delay: calc(var(--hero-animationDelay) + 1250ms);
-}
-ul.nav-links li:nth-child(6) button {
-  animation-delay: calc(var(--hero-animationDelay) + 1500ms);
-} /* End of Link specifics */
 
 ul.nav-links li {
   list-style: none;
@@ -424,6 +400,7 @@ div.bg.hero-slope {
 div.bg.martian-hero {
   background-position: right bottom;
   background-size: auto auto;
+  animation-delay: calc(var(--hero-animationDelay) - 1000ms);
 }
 
 @media screen and (max-width: 1024px) {
@@ -479,7 +456,7 @@ div.bg.martian-hero {
   font-weight: 700;
   line-height: 56px;
   color: #45505b;
-  animation-delay: calc(var(--hero-animationDelay) + 1750ms);
+  animation-delay: var(--hero-animationDelay);
 }
 
 #home .container h2 div {
@@ -491,7 +468,7 @@ div.bg.martian-hero {
   color: #45505b;
   margin: 15px 0 0 0;
   font-size: 26px;
-  animation-delay: calc(var(--hero-animationDelay) + 2000ms);
+  animation-delay: var(--hero-animationDelay);
 }
 
 #home p span {
@@ -510,6 +487,7 @@ div.bg.martian-hero {
   color: #45505b;
   line-height: 1;
   margin-right: 20px;
+  animation-delay: calc(var(--hero-animationDelay) + 200ms);
 }
 
 #home .social-links a i {
@@ -520,26 +498,6 @@ div.bg.martian-hero {
   transform: scale(1.2) rotateZ(-10deg);
   color: var(--theme-color);
 }
-
-/* Icon specifics */
-#home .social-links a:nth-last-child(1) {
-  animation-delay: calc(var(--hero-animationDelay) + 2000ms);
-}
-#home .social-links a:nth-last-child(2) {
-  animation-delay: calc(var(--hero-animationDelay) + 2100ms);
-}
-#home .social-links a:nth-last-child(3) {
-  animation-delay: calc(var(--hero-animationDelay) + 2200ms);
-}
-#home .social-links a:nth-last-child(4) {
-  animation-delay: calc(var(--hero-animationDelay) + 2300ms);
-}
-#home .social-links a:nth-last-child(5) {
-  animation-delay: calc(var(--hero-animationDelay) + 2400ms);
-}
-#home .social-links a:nth-last-child(6) {
-  animation-delay: calc(var(--hero-animationDelay) + 2500ms);
-} /* End of Icon specifics */
 
 @media (max-width: 992px) {
   #home {

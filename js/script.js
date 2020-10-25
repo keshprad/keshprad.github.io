@@ -102,24 +102,6 @@ function init() {
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
 //
-// Logo Animation Delay
-//
-const delayAnimate = async () => {
-  const delayedObjects = [document.querySelector(".logo-img")];
-
-  while (true) {
-    await sleep(5000);
-    delayedObjects.forEach((object) => {
-      object.classList.add("animate__animated", "animate__headShake");
-    });
-    await sleep(1000);
-    delayedObjects.forEach((object) => {
-      object.classList.remove("animate__animated", "animate__headShake");
-    });
-  }
-};
-
-//
 // temporary no scroll
 //
 function disableScroll() {
@@ -185,6 +167,5 @@ function goTo(ele_query, xBool, yBool) {
 //
 const app = () => {
   navSlide();
-  delayAnimate();
 };
 app();
