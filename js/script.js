@@ -120,10 +120,10 @@ function enableScroll() {
 
 window.onload = async () => {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  await sleep(750);
-  disableScroll();
-  await sleep(3000);
-  enableScroll();
+  // await sleep(750);
+  // disableScroll();
+  // await sleep(3000);
+  // enableScroll();
 };
 
 //
