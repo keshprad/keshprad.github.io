@@ -1,6 +1,6 @@
 function goTo(ele_query, xBool, yBool) {
-  ele = $(ele_query);
-  ele_pos = ele.position();
+  ele = document.querySelector(ele_query);
+  ele_pos = ele.getBoundingClientRect();
 
   if (xBool && yBool) {
     window.scrollTo({
