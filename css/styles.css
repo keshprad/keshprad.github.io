@@ -589,13 +589,15 @@ div.bg.martian-hero {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-}
-
-.project .icon,
-.project .icon img {
-  transition: filter 500ms linear;
   width: 100px;
   height: 100px;
+}
+
+.project .icon img {
+  transition: opacity 500ms linear;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
 }
 
 .project .icon i {
@@ -633,60 +635,75 @@ div.bg.martian-hero {
 }
 
 /* Project 1 */
+.project:nth-child(5n-4) img {
+  filter: invert(42%) sepia(38%) saturate(963%) hue-rotate(313deg)
+    brightness(110%) contrast(90%);
+}
 #projects .row .project:nth-child(5n-4) .icon i {
   color: #f25f5c;
 }
 .project:nth-child(5n-4):hover img {
-  filter: invert(42%) sepia(38%) saturate(963%) hue-rotate(313deg)
-    brightness(110%) contrast(90%);
+  opacity: 1;
 }
 .project:nth-child(5n-4) .links a:hover i {
   color: #f25f5c;
 } /* End of Project 1 */
 
 /* Project 2 */
+.project:nth-child(5n-3) img {
+  filter: invert(59%) sepia(72%) saturate(3425%) hue-rotate(347deg)
+    brightness(103%) contrast(96%);
+}
 #projects .row .project:nth-child(5n-3) .icon i {
   color: #fa7921;
 }
 .project:nth-child(5n-3):hover img {
-  filter: invert(59%) sepia(72%) saturate(3425%) hue-rotate(347deg)
-    brightness(103%) contrast(96%);
+  opacity: 1;
 }
 .project:nth-child(5n-3) .links a:hover i {
   color: #fa7921;
 } /* End of Project 2 */
 
 /* Project 3 */
+.project:nth-child(5n-2) img {
+  filter: invert(65%) sepia(12%) saturate(2169%) hue-rotate(37deg)
+    brightness(111%) contrast(80%);
+}
 #projects .row .project:nth-child(5n-2) .icon i {
   color: #9bc53d;
 }
 .project:nth-child(5n-2):hover img {
-  filter: invert(65%) sepia(12%) saturate(2169%) hue-rotate(37deg)
-    brightness(111%) contrast(80%);
+  opacity: 1;
 }
 .project:nth-child(5n-2) .links a:hover i {
   color: #9bc53d;
 } /* End of Project 3 */
 
 /* Project 4 */
+.project:nth-child(5n-1) img {
+  filter: invert(76%) sepia(5%) saturate(5862%) hue-rotate(167deg)
+    brightness(95%) contrast(93%);
+}
 #projects .row .project:nth-child(5n-1) .icon i {
   color: #5bc0eb;
 }
 .project:nth-child(5n-1):hover img {
-  filter: invert(76%) sepia(5%) saturate(5862%) hue-rotate(167deg)
-    brightness(95%) contrast(93%);
+  opacity: 1;
 }
 .project:nth-child(5n-1) .links a:hover i {
   color: #5bc0eb;
 } /* End of Project 4 */
 
 /* Project 5 */
+.project:nth-child(5n) img {
+  filter: invert(75%) sepia(52%) saturate(6929%) hue-rotate(216deg)
+    brightness(101%) contrast(102%);
+}
 #projects .row .project:nth-child(5n) .icon i {
   color: #9381ff;
 }
 .project:nth-child(5n):hover img {
-  filter: invert(75%) sepia(52%) saturate(6929%) hue-rotate(216deg)
-    brightness(101%) contrast(102%);
+  opacity: 1;
 }
 .project:nth-child(5n) .links a:hover i {
   color: #9381ff;
