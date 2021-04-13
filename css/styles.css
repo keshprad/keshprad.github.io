@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   margin: 0px;
@@ -15,7 +15,7 @@ html::-webkit-scrollbar {
 }
 
 :root {
-  --hero-animationDelay: 4000ms;
+  --hero-animationDelay: 000ms;
   --theme-color: #f50057;
   --gradient-right: linear-gradient(to right, var(--theme-color), #d47f9d);
 }
@@ -27,7 +27,7 @@ html::-webkit-scrollbar {
 }
 
 .hover-underline::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -50,7 +50,7 @@ html::-webkit-scrollbar {
 }
 
 .hover-overline::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -121,7 +121,7 @@ section.basic {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -163,52 +163,6 @@ section.basic .section-title p a {
   }
 } /* End of basic section */
 
-/* logo svg animation */
-div.logo-svg {
-  width: 100vw;
-  height: 100vh;
-  background-color: transparent;
-  position: fixed;
-  overflow-x: hidden;
-  animation-delay: calc(var(--hero-animationDelay) - 1000ms);
-}
-
-.logo-svg svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 1;
-  z-index: -1;
-  animation: logo-fill 500ms ease-in-out forwards 2500ms;
-}
-
-.logo-svg svg path:nth-child(1) {
-  stroke-dasharray: 1352.05419921875px;
-  stroke-dashoffset: 1352.05419921875px;
-  animation: logo-animation 2000ms ease-in-out forwards 500ms;
-}
-
-@keyframes logo-animation {
-  to {
-    stroke-dashoffset: 0px;
-  }
-}
-
-@keyframes logo-fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: #302f2f;
-  }
-}
-@keyframes moveback {
-  to {
-    z-index: -1;
-  }
-} /* End of logo svg animation */
-
 /* Navigation Bar */
 nav {
   width: 100vw;
@@ -220,7 +174,7 @@ nav {
   height: 70px;
   min-height: 10vh;
   background-color: #efefef;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   position: fixed;
   z-index: 10;
   transition: 500ms;
@@ -400,7 +354,7 @@ div.bg.hero-slope {
 div.bg.martian-hero {
   background-position: right bottom;
   background-size: auto auto;
-  animation-delay: calc(var(--hero-animationDelay) - 1000ms);
+  animation-delay: var(--hero-animationDelay);
 }
 
 @media screen and (max-width: 1024px) {
@@ -433,7 +387,7 @@ div.bg.martian-hero {
   flex-direction: column;
   justify-content: center;
   padding: 60px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   z-index: -3;
   animation: bring-home-front 0ms ease forwards var(--hero-animationDelay);
 }
@@ -619,7 +573,7 @@ div.bg.martian-hero {
 }
 
 .project .content p {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0px 5px;
 }
 
@@ -777,7 +731,7 @@ section.hasAccordion .accordion .card-body {
 }
 
 section.hasAccordion .accordion .card-body p {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
