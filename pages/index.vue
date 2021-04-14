@@ -1,5 +1,8 @@
 <template>
-  <Intro />
+  <v-component id="portfolio">
+    <Intro />
+    <div style="height: 100vh"></div>
+  </v-component>
 </template>
 
 <script>

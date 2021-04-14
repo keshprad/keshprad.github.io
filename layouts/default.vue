@@ -17,4 +17,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.portfolio {
+  max-width: 100vw;
+}
+</style>
