@@ -17,11 +17,7 @@
           <v-icon>mdi-github</v-icon>
         </v-btn>
         <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
-        <v-btn
-          text
-          href="https://media-exp1.licdn.com/dms/document/C562DAQGw5vHDzt84qg/profile-treasury-document-pdf-analyzed/0/1618380683177?e=1618509600&v=beta&t=d-hl2tBNbPR5mOADhMvINdawU3Jc2Tgzu4r-fRoStSs"
-          >Resume</v-btn
-        >
+        <v-btn text href="https://keshprad.ml/resume.pdf">Resume</v-btn>
       </div>
     </v-toolbar>
   </v-card>
@@ -37,6 +33,6 @@ a.title {
   text-decoration: none;
 }
 a:hover {
-  color: #9575cd;
+  color: #7e57c2;
 }
 </style>

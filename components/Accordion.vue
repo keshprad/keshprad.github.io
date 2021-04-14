@@ -96,7 +96,7 @@ export default {
   padding: 4px;
 }
 .content-body >>> a {
-  color: #9575cd;
+  color: #7e57c2;
   text-decoration: none;
 }
 .content-icons-row {
@@ -109,7 +109,7 @@ export default {
 }
 .content-icon:hover > i,
 .content-icon:hover > button {
-  color: #9575cd;
+  color: #7e57c2;
 }
 .content-icon:hover > i {
   transform: scale(1.2) rotateZ(-10deg);
