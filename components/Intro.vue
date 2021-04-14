@@ -30,4 +30,7 @@ export default {
 .content {
   max-width: 900px;
 }
+.content p {
+  margin-top: 16px;
+}
 </style>
