@@ -13,27 +13,6 @@
               <span v-if="item.header.subtitle" class="header-subtitle">
                 - {{ item.header.subtitle }}
               </span>
-
-              <!-- <v-col class="text-no-wrap" cols="5" sm="3">
-                <v-chip
-                  v-if="item.new"
-                  :color="`${item.color} lighten-4`"
-                  class="ml-0 mr-2 black--text"
-                  label
-                  small
-                >
-                  {{ item.new }} new
-                </v-chip>
-                <strong>{{ item.title }}</strong>
-              </v-col>
-
-              <v-col
-                v-if="item.excerpt"
-                class="grey--text text-truncate hidden-sm-and-down"
-              >
-                &mdash;
-                {{ item.excerpt }}
-              </v-col> -->
             </v-row>
           </v-expansion-panel-header>
 
@@ -47,8 +26,34 @@
               v-html="p"
             ></v-card-text>
             <!--eslint-enable-->
-            <v-card-text v-if="item.content.dates" class="content-dates">
+            <span v-if="item.content.dates" class="content-dates">
               ({{ item.content.dates }})
+            </span>
+            <v-card-text
+              v-if="item.content.links && item.content.links.length > 0"
+              class="content-body"
+            >
+              <span v-for="(link, j) in item.content.links" :key="j">
+                | <a :href="link.href">{{ link.text }}</a> |
+              </span>
+            </v-card-text>
+            <v-card-text
+              v-if="item.content.icons && item.content.icons.length > 0"
+              class="content-icons-row"
+            >
+              <a
+                v-for="(icon, j) in item.content.icons"
+                :key="j"
+                class="content-icon"
+                :href="icon.link"
+              >
+                <v-icon v-if="icon.icon" v-text="icon.icon"></v-icon>
+                <v-btn
+                  v-else-if="icon.iconText"
+                  text
+                  v-text="icon.iconText"
+                ></v-btn>
+              </a>
             </v-card-text>
           </v-expansion-panel-content>
         </v-expansion-panel>
@@ -79,6 +84,9 @@ export default {
 .header {
   font-size: 1.1rem;
 }
+.header-title a {
+  text-decoration: none;
+}
 .header-subtitle {
   font-style: italic;
 }
@@ -88,12 +96,26 @@ export default {
   padding: 4px;
 }
 .content-body >>> a {
-  color: #ff8a65;
+  color: #9575cd;
   text-decoration: none;
+}
+.content-icons-row {
+  text-align: center;
+}
+.content-icon {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.content-icon:hover > i,
+.content-icon:hover > button {
+  color: #9575cd;
+}
+.content-icon:hover > i {
+  transform: scale(1.2) rotateZ(-10deg);
 }
 .content-dates {
   font-style: italic;
-  text-align: right;
   color: #a7a7a7;
 }
 </style>

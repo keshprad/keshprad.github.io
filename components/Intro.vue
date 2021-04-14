@@ -18,9 +18,8 @@ export default {
     return {
       name: 'Rishi Keshav Pradeep',
       description:
-        "I'm a 12th-grade high-school student at Lynbrook High School. " +
-        "I'm a quick learner, and I'm very interested in ML. " +
-        'I am always happy to connect with new people and collaborate on projects. ' +
+        "I'm a 12th-grade high-school student at Lynbrook High School with a strong interest in ML. " +
+        "I'm a quick learner, and I'm always happy to connect with new people and collaborate on projects. " +
         'In my free time, I enjoy listening to music, learning online, and competing in hackathons.',
     }
   },

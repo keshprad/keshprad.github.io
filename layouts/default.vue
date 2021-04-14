@@ -20,5 +20,6 @@ export default {
 <style scoped>
 .portfolio {
   max-width: 100vw;
+  padding: 0;
 }
 </style>
