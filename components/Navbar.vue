@@ -1,7 +1,7 @@
 <template>
   <v-card tile>
     <v-toolbar dense>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
 
       <v-toolbar-title>Portfolio - keshprad</v-toolbar-title>
 
