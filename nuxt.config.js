@@ -1,13 +1,16 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  ssr: false,
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - my-portfolio',
-    title: 'my-portfolio',
+    titleTemplate: '%s Rishi Keshav Pradeep',
+    title: '',
     htmlAttrs: {
       lang: 'en',
     },
