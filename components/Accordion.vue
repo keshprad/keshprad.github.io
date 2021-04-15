@@ -13,6 +13,23 @@
               <span v-if="item.header.subtitle" class="header-subtitle">
                 - {{ item.header.subtitle }}
               </span>
+              <v-spacer></v-spacer>
+              <span v-if="item.header.links">
+                <a
+                  v-for="(link, j) in item.header.links"
+                  :key="j"
+                  :href="link.href"
+                  class="icon"
+                >
+                  <v-icon v-if="link.icon" dense v-text="link.icon"></v-icon>
+                  <v-btn
+                    v-else-if="link.iconText"
+                    text
+                    small
+                    v-text="link.iconText"
+                  ></v-btn>
+                </a>
+              </span>
             </v-row>
           </v-expansion-panel-header>
 
@@ -26,17 +43,9 @@
               v-html="p"
             ></v-card-text>
             <!--eslint-enable-->
-            <span v-if="item.content.dates" class="content-dates">
+            <p v-if="item.content.dates" class="content-dates">
               ({{ item.content.dates }})
-            </span>
-            <v-card-text
-              v-if="item.content.links && item.content.links.length > 0"
-              class="content-body"
-            >
-              <span v-for="(link, j) in item.content.links" :key="j">
-                | <a :href="link.href">{{ link.text }}</a> |
-              </span>
-            </v-card-text>
+            </p>
             <v-card-text
               v-if="item.content.icons && item.content.icons.length > 0"
               class="content-icons-row"
@@ -44,13 +53,14 @@
               <a
                 v-for="(icon, j) in item.content.icons"
                 :key="j"
-                class="content-icon"
+                class="icon"
                 :href="icon.link"
               >
-                <v-icon v-if="icon.icon" v-text="icon.icon"></v-icon>
+                <v-icon v-if="icon.icon" dense v-text="icon.icon"></v-icon>
                 <v-btn
                   v-else-if="icon.iconText"
                   text
+                  small
                   v-text="icon.iconText"
                 ></v-btn>
               </a>
@@ -81,6 +91,17 @@ export default {
 .title {
   margin: 20px 0;
 }
+a.icon {
+  text-decoration: none;
+  margin: 0 5px;
+}
+.icon:hover > i,
+.icon:hover > button {
+  color: #b1858d;
+}
+.icon:hover > i {
+  transform: scale(1.2) rotateZ(-10deg);
+}
 .header {
   font-size: 1.1rem;
 }
@@ -89,6 +110,9 @@ export default {
 }
 .header-subtitle {
   font-style: italic;
+}
+.header-icon {
+  text-decoration: none;
 }
 .content-body,
 .content-dates {
@@ -107,15 +131,10 @@ export default {
   text-decoration: none;
   color: #fff;
 }
-.content-icon:hover > i,
-.content-icon:hover > button {
-  color: #b1858d;
-}
-.content-icon:hover > i {
-  transform: scale(1.2) rotateZ(-10deg);
-}
 .content-dates {
   font-style: italic;
+  text-align: right;
   color: #a7a7a7;
+  margin-bottom: 0px;
 }
 </style>

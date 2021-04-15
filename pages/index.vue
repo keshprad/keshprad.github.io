@@ -31,72 +31,72 @@ export default {
           header: {
             title: 'YouTube Mentions',
             subtitle: '2nd Place Media Track @ PickHacks 2021',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/youtube-mentions',
+              },
+              {
+                iconText: 'Devpost',
+                href: 'https://devpost.com/software/youtube-mentions',
+              },
+              {
+                icon: 'mdi-youtube',
+                href: 'https://www.youtube.com/watch?v=O9BwcoK1fEM',
+              },
+            ],
           },
           content: {
             body: [
               `This application analyzes the given YouTube video, retrieves quick snippets of relevant information about people, songs, games, etc. mentioned in the video, and displays them side-by-side.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/youtube-mentions',
-              },
-              {
-                text: 'Devpost',
-                href: 'https://devpost.com/software/youtube-mentions',
-              },
-              {
-                text: 'YouTube',
-                href: 'https://www.youtube.com/watch?v=O9BwcoK1fEM',
-              },
             ],
           },
         },
         {
           header: {
             title: 'Algorithms',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/Algorithms',
+              },
+            ],
           },
           content: {
             body: [
               `A repository full of various algorithms and data structures that I find interesting.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/Algorithms',
-              },
             ],
           },
         },
         {
           header: {
             title: 'best-comeback',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/best-comeback',
+              },
+            ],
           },
           content: {
             body: [
               `Want to end an argument with a win? This repo creates an automatic "Deal With It" gif.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/best-comeback',
-              },
             ],
           },
         },
         {
           header: {
             title: 'autoscriber-app',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/autoscriber-app',
+              },
+            ],
           },
           content: {
             body: [
               `Automatic online meeting notes with voice recognition and NLP.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/autoscriber-app',
-              },
             ],
           },
         },
@@ -104,71 +104,71 @@ export default {
           header: {
             title: 'CloseCans',
             subtitle: 'Built for LA Hacks',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/CloseCans',
+              },
+            ],
           },
           content: {
             body: [
               `A react-native application that finds trash, recycling, and compost bins near to the user.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/CloseCans',
-              },
             ],
           },
         },
         {
           header: {
             title: 'gitCode-bot',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/gitCode-bot',
+              },
+              {
+                icon: 'mdi-discord',
+                href:
+                  'https://discord.com/api/oauth2/authorize?client_id=759050188382797875&permissions=522304&scope=bot',
+              },
+            ],
           },
           content: {
             body: [
               `A discord bot that gets the code file from any public repo on GitHub.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/gitCode-bot',
-              },
-              {
-                text: 'Discord',
-                href:
-                  'https://discord.com/api/oauth2/authorize?client_id=759050188382797875&permissions=522304&scope=bot',
-              },
             ],
           },
         },
         {
           header: {
             title: 'my-portfolio',
-          },
-          content: {
-            body: [`Repo for my personal portfolio site`],
             links: [
               {
-                text: 'GitHub',
+                icon: 'mdi-github',
                 href: 'https://github.com/keshprad/my-portfolio',
               },
               {
-                text: 'Website',
+                icon: 'mdi-link-variant',
                 href: 'https://keshprad.ml/',
               },
             ],
+          },
+          content: {
+            body: [`Repo for my personal portfolio site`],
           },
         },
         {
           header: {
             title: 'RAD_GAME',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/RAD_GAME',
+              },
+            ],
           },
           content: {
             body: [
               `This project is a pacman-style, 2D, pixel game built with Java.`,
-            ],
-            links: [
-              {
-                text: 'GitHub',
-                href: 'https://github.com/keshprad/RAD_GAME',
-              },
             ],
           },
         },

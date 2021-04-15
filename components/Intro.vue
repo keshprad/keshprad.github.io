@@ -2,7 +2,7 @@
   <v-parallax
     id="intro-component"
     dark
-    :src="require('@/assets/img/intro-bg.jpg')"
+    :src="require('@/assets/img/intro-bg.png')"
     height="300"
   >
     <v-container class="content">
