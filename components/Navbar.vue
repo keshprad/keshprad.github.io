@@ -33,6 +33,6 @@ a.title {
   text-decoration: none;
 }
 a:hover {
-  color: #7e57c2;
+  color: #b1858d;
 }
 </style>

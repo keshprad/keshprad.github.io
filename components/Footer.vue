@@ -1,6 +1,6 @@
 <template>
   <v-footer padless>
-    <v-card flat tile width="100%" class="deep-purple lighten-1 text-center">
+    <v-card flat tile width="100%" class="footer text-center">
       <v-card-text>
         <div>
           <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
@@ -27,4 +27,9 @@
 export default {}
 </script>
 
-<style></style>
+<style scoped>
+.footer {
+  background-color: #462f39;
+  border-color: #462f39;
+}
+</style>
