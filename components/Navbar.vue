@@ -19,6 +19,8 @@
         <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
         <v-btn text href="https://keshprad.ml/resume.pdf">Resume</v-btn>
       </div>
+
+      <v-spacer class="right-spacer"></v-spacer>
     </v-toolbar>
   </v-card>
 </template>
@@ -34,5 +36,17 @@ a.title {
 }
 a:hover {
   color: #b1858d;
+}
+.right-spacer {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .title {
+    display: none;
+  }
+  .right-spacer {
+    display: block;
+  }
 }
 </style>
