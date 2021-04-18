@@ -10,31 +10,47 @@
               <span class="header-title">
                 <strong>{{ item.header.title }}&nbsp;</strong>
               </span>
-              <span v-if="item.header.subtitle" class="header-subtitle">
-                - {{ item.header.subtitle }}
-              </span>
+
+              <show-at v-if="item.header.subtitle" breakpoint="mediumAndAbove">
+                <span class="header-subtitle">
+                  - {{ item.header.subtitle }}
+                </span>
+              </show-at>
+
               <v-spacer></v-spacer>
-              <span v-if="item.header.links">
-                <a
-                  v-for="(link, j) in item.header.links"
-                  :key="j"
-                  :href="link.href"
-                  class="icon"
-                >
-                  <v-icon v-if="link.icon" dense v-text="link.icon"></v-icon>
-                  <v-btn
-                    v-else-if="link.iconText"
-                    text
-                    small
-                    v-text="link.iconText"
-                  ></v-btn>
-                </a>
-              </span>
+
+              <show-at
+                v-if="item.header.links && item.header.links.length > 0"
+                breakpoint="mediumAndAbove"
+              >
+                <span>
+                  <a
+                    v-for="(link, j) in item.header.links"
+                    :key="j"
+                    class="icon"
+                    :href="link.href"
+                  >
+                    <v-icon v-if="link.icon" dense v-text="link.icon"></v-icon>
+                    <v-btn
+                      v-else-if="link.iconText"
+                      text
+                      small
+                      v-text="link.iconText"
+                    ></v-btn>
+                  </a>
+                </span>
+              </show-at>
             </v-row>
           </v-expansion-panel-header>
 
           <v-expansion-panel-content class="content">
             <v-divider></v-divider>
+            <hide-at v-if="item.header.subtitle" breakpoint="mediumAndAbove">
+              <v-card-text class="content-body">
+                <strong>{{ item.header.subtitle }}</strong>
+              </v-card-text>
+            </hide-at>
+
             <!-- eslint-disable vue/no-v-html -->
             <v-card-text
               v-for="(p, j) in item.content.body"
@@ -43,9 +59,11 @@
               v-html="p"
             ></v-card-text>
             <!--eslint-enable-->
+
             <p v-if="item.content.dates" class="content-dates">
               ({{ item.content.dates }})
             </p>
+
             <v-card-text
               v-if="item.content.icons && item.content.icons.length > 0"
               class="content-icons-row"
@@ -56,15 +74,35 @@
                 class="icon"
                 :href="icon.link"
               >
-                <v-icon v-if="icon.icon" dense v-text="icon.icon"></v-icon>
+                <v-icon v-if="icon.icon" v-text="icon.icon"></v-icon>
                 <v-btn
                   v-else-if="icon.iconText"
                   text
-                  small
                   v-text="icon.iconText"
                 ></v-btn>
               </a>
             </v-card-text>
+
+            <hide-at
+              v-if="item.header.links && item.header.links.length > 0"
+              breakpoint="mediumAndAbove"
+            >
+              <v-card-text class="content-icons-row">
+                <a
+                  v-for="(link, j) in item.header.links"
+                  :key="j"
+                  class="icon"
+                  :href="link.href"
+                >
+                  <v-icon v-if="link.icon" v-text="link.icon"></v-icon>
+                  <v-btn
+                    v-else-if="link.iconText"
+                    text
+                    v-text="link.iconText"
+                  ></v-btn>
+                </a>
+              </v-card-text>
+            </hide-at>
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -73,7 +111,9 @@
 </template>
 
 <script>
+import { showAt, hideAt } from 'vue-breakpoints'
 export default {
+  components: { showAt, hideAt },
   props: {
     title: {
       type: String,
