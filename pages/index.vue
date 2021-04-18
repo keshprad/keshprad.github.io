@@ -8,19 +8,16 @@
       <Accordion :title="awards.title" :data="awards.data" />
       <Accordion :title="education.title" :data="education.data" />
     </v-container>
-    <Footer id="footer" />
   </div>
 </template>
 
 <script>
 import Accordion from '../components/Accordion'
-import Footer from '../components/Footer'
 import Intro from '../components/Intro'
 
 export default {
   components: {
     Accordion,
-    Footer,
     Intro,
   },
   data: () => ({

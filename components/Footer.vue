@@ -3,14 +3,14 @@
     <v-card flat tile width="100%" class="footer text-center">
       <v-card-text>
         <div>
-          <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
-          <v-btn icon href="https://www.linkedin.com/in/keshprad/">
+          <v-btn :href="socials.devpost" text>Devpost</v-btn>
+          <v-btn :href="socials.linkedin" icon>
             <v-icon>mdi-linkedin</v-icon>
           </v-btn>
-          <v-btn icon href="https://github.com/keshprad">
+          <v-btn :href="socials.github" icon>
             <v-icon>mdi-github</v-icon>
           </v-btn>
-          <v-btn text href="https://keshprad.ml/resume.pdf"> Resume </v-btn>
+          <v-btn :href="socials.resume" text>Resume</v-btn>
         </div>
       </v-card-text>
 
@@ -24,7 +24,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    socials: {
+      type: Object,
+      default: () => {},
+    },
+  },
+}
 </script>
 
 <style scoped>

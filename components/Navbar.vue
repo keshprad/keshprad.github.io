@@ -3,7 +3,7 @@
     <v-toolbar dense>
       <show-at breakpoint="mediumAndAbove">
         <v-toolbar-title
-          ><a href="#" class="title">Portfolio - keshprad</a></v-toolbar-title
+          ><a href="/" class="title">Portfolio - keshprad</a></v-toolbar-title
         >
       </show-at>
 
@@ -11,18 +11,18 @@
 
       <div>
         <hide-at breakpoint="mediumAndAbove">
-          <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
+          <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </hide-at>
-        <v-btn icon href="https://www.linkedin.com/in/keshprad/">
+        <v-btn :href="socials.linkedin" icon>
           <v-icon>mdi-linkedin</v-icon>
         </v-btn>
-        <v-btn icon href="https://github.com/keshprad">
+        <v-btn :href="socials.github" icon>
           <v-icon>mdi-github</v-icon>
         </v-btn>
         <show-at breakpoint="mediumAndAbove">
-          <v-btn text href="https://devpost.com/keshprad">Devpost</v-btn>
+          <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </show-at>
-        <v-btn text href="https://keshprad.ml/resume.pdf">Resume</v-btn>
+        <v-btn :href="socials.resume" text>Resume</v-btn>
       </div>
 
       <hide-at breakpoint="mediumAndAbove">
@@ -36,6 +36,12 @@
 import { showAt, hideAt } from 'vue-breakpoints'
 export default {
   components: { showAt, hideAt },
+  props: {
+    socials: {
+      type: Object,
+      default: () => {},
+    },
+  },
 }
 </script>
 
