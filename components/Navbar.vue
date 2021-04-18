@@ -1,11 +1,11 @@
 <template>
   <v-card tile>
     <v-toolbar dense>
-      <!-- <v-app-bar-nav-icon></v-app-bar-nav-icon> -->
-
-      <v-toolbar-title
-        ><a href="#" class="title">Portfolio - keshprad</a></v-toolbar-title
-      >
+      <show-at breakpoint="mediumAndAbove">
+        <v-toolbar-title
+          ><a href="#" class="title">Portfolio - keshprad</a></v-toolbar-title
+        >
+      </show-at>
 
       <v-spacer></v-spacer>
 
@@ -20,13 +20,18 @@
         <v-btn text href="https://keshprad.ml/resume.pdf">Resume</v-btn>
       </div>
 
-      <v-spacer class="right-spacer"></v-spacer>
+      <hide-at breakpoint="mediumAndAbove">
+        <v-spacer class="right-spacer"></v-spacer>
+      </hide-at>
     </v-toolbar>
   </v-card>
 </template>
 
 <script>
-export default {}
+import { showAt, hideAt } from 'vue-breakpoints'
+export default {
+  components: { showAt, hideAt },
+}
 </script>
 
 <style scoped>
@@ -37,16 +42,13 @@ a.title {
 a:hover {
   color: #b1858d;
 }
-.right-spacer {
-  display: none;
-}
 
-@media (max-width: 750px) {
+/* @media (max-width: 750px) {
   .title {
     display: none;
   }
   .right-spacer {
     display: block;
   }
-}
+} */
 </style>

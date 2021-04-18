@@ -3,7 +3,7 @@
     id="intro-component"
     dark
     :src="require('@/assets/img/intro-bg.png')"
-    height="300"
+    height="350"
   >
     <v-container class="content">
       <h1>Hi, I'm {{ name }} 👋</h1>
