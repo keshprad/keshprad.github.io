@@ -73,6 +73,11 @@ export default {
                 icon: 'mdi-github',
                 href: 'https://github.com/keshprad/best-comeback',
               },
+              {
+                icon: 'mdi-link-variant',
+                href:
+                  'https://github.com/keshprad/best-comeback/blob/main/README.md#examples',
+              },
             ],
           },
           content: {
@@ -196,7 +201,7 @@ export default {
           content: {
             body: [
               `I founded and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. I lead our officer team and managed a team of 30+ volunteers. I managed communications with clients and other businesses making sure everything went smoothly on both sides. I also helped build multiple websites for our clients. Besides this, I also created the course curriculum in use.`,
-              `Additionally, as part of the <a href="https://www.elevatethefuture.org">ETF</a>'s founding team, I advised on executive decisions and worked to expand our influence to over 40+ chapters around the world. Also, we are constantly working on implementing new events. Besides this, I help update/design our website.`,
+              `Additionally, as part of the <a href="https://www.elevatethefuture.org" target="_blank">ETF</a>'s founding team, I advised on executive decisions and worked to expand our influence to over 40+ chapters around the world. Also, we are constantly working on implementing new events. Besides this, I help update/design our website.`,
             ],
             dates: 'Jul 2019 - Present',
           },

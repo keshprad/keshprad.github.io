@@ -17,7 +17,8 @@
       <v-divider></v-divider>
 
       <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>keshprad</strong>
+        <strong>keshprad</strong> — {{ new Date().getFullYear() }}<br />
+        Built with <a href="https://nuxtjs.org/" target="_blank">Nuxt.js</a>
       </v-card-text>
     </v-card>
   </v-footer>
