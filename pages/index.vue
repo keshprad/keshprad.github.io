@@ -51,6 +51,26 @@ export default {
         },
         {
           header: {
+            title: 'Autoscriber App',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/autoscriber-app',
+              },
+              {
+                icon: 'mdi-link-variant',
+                href: 'https://autoscriber-app.github.io/',
+              },
+            ],
+          },
+          content: {
+            body: [
+              `Automatic online meeting notes with voice recognition and NLP.`,
+            ],
+          },
+        },
+        {
+          header: {
             title: 'Algorithms',
             links: [
               {
@@ -63,6 +83,20 @@ export default {
             body: [
               `A repository full of various algorithms and data structures that I find interesting.`,
             ],
+          },
+        },
+        {
+          header: {
+            title: 'competitive programming',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/competitive-programming',
+              },
+            ],
+          },
+          content: {
+            body: [`competitive programming practice solutions`],
           },
         },
         {
@@ -88,60 +122,6 @@ export default {
         },
         {
           header: {
-            title: 'autoscriber-app',
-            links: [
-              {
-                icon: 'mdi-github',
-                href: 'https://github.com/autoscriber-app',
-              },
-            ],
-          },
-          content: {
-            body: [
-              `Automatic online meeting notes with voice recognition and NLP.`,
-            ],
-          },
-        },
-        {
-          header: {
-            title: 'CloseCans',
-            subtitle: 'Built for LA Hacks',
-            links: [
-              {
-                icon: 'mdi-github',
-                href: 'https://github.com/keshprad/CloseCans',
-              },
-            ],
-          },
-          content: {
-            body: [
-              `A react-native application that finds trash, recycling, and compost bins near to the user.`,
-            ],
-          },
-        },
-        {
-          header: {
-            title: 'gitCode-bot',
-            links: [
-              {
-                icon: 'mdi-github',
-                href: 'https://github.com/keshprad/gitCode-bot',
-              },
-              {
-                icon: 'mdi-discord',
-                href:
-                  'https://discord.com/api/oauth2/authorize?client_id=759050188382797875&permissions=522304&scope=bot',
-              },
-            ],
-          },
-          content: {
-            body: [
-              `A discord bot that gets the code file from any public repo on GitHub.`,
-            ],
-          },
-        },
-        {
-          header: {
             title: 'my-portfolio',
             links: [
               {
@@ -160,17 +140,33 @@ export default {
         },
         {
           header: {
-            title: 'RAD_GAME',
+            title: 'leftovers',
             links: [
               {
                 icon: 'mdi-github',
-                href: 'https://github.com/keshprad/RAD_GAME',
+                href: 'https://github.com/ddanj/leftovers',
               },
             ],
           },
           content: {
             body: [
-              `This project is a pacman-style, 2D, pixel game built with Java.`,
+              `The application detects the foods in pictures the user takes and finds recipes for dishes that can be made from those foods. [Built for Los Altos Hacks]`,
+            ],
+          },
+        },
+        {
+          header: {
+            title: 'CloseCans',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/CloseCans',
+              },
+            ],
+          },
+          content: {
+            body: [
+              `A react-native application that finds trash, recycling, and compost bins near to the user. [Built for LA Hacks]`,
             ],
           },
         },
