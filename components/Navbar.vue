@@ -13,12 +13,24 @@
         <hide-at breakpoint="mediumAndAbove">
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </hide-at>
-        <v-btn :href="socials.linkedin" icon>
-          <v-icon>mdi-linkedin</v-icon>
-        </v-btn>
-        <v-btn :href="socials.github" icon>
-          <v-icon>mdi-github</v-icon>
-        </v-btn>
+        <v-hover v-slot="{ hover }">
+          <v-btn
+            :href="socials.linkedin"
+            icon
+            :color="hover ? '#f50057' : '#fff'"
+          >
+            <v-icon>mdi-linkedin</v-icon>
+          </v-btn>
+        </v-hover>
+        <v-hover v-slot="{ hover }">
+          <v-btn
+            :href="socials.github"
+            icon
+            :color="hover ? '#f50057' : '#fff'"
+          >
+            <v-icon>mdi-github</v-icon>
+          </v-btn>
+        </v-hover>
         <show-at breakpoint="mediumAndAbove">
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </show-at>
@@ -51,6 +63,6 @@ a.title {
   text-decoration: none;
 }
 a:hover {
-  color: #b1858d;
+  color: #f50057;
 }
 </style>

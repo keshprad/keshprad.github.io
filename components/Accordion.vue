@@ -137,7 +137,7 @@ a.icon {
 }
 .icon:hover > i,
 .icon:hover > button {
-  color: #b1858d;
+  color: #f50057;
 }
 .icon:hover > i {
   transform: scale(1.2) rotateZ(-10deg);
@@ -160,7 +160,7 @@ a.icon {
   padding: 4px;
 }
 .content-body >>> a {
-  color: #b1858d;
+  color: #f50057;
   text-decoration: none;
 }
 .content-icons-row {

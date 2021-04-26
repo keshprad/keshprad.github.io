@@ -4,12 +4,24 @@
       <v-card-text>
         <div>
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
-          <v-btn :href="socials.linkedin" icon>
-            <v-icon>mdi-linkedin</v-icon>
-          </v-btn>
-          <v-btn :href="socials.github" icon>
-            <v-icon>mdi-github</v-icon>
-          </v-btn>
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.linkedin"
+              icon
+              :color="hover ? '#f50057' : '#fff'"
+            >
+              <v-icon>mdi-linkedin</v-icon>
+            </v-btn>
+          </v-hover>
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.github"
+              icon
+              :color="hover ? '#f50057' : '#fff'"
+            >
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+          </v-hover>
           <v-btn :href="socials.resume" text>Resume</v-btn>
         </div>
       </v-card-text>
@@ -37,7 +49,10 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #462f39;
-  border-color: #462f39;
+  background-color: #1e1e1e;
+  border-color: #1e1e1e;
+}
+a:hover {
+  color: #f50057;
 }
 </style>
