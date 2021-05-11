@@ -204,18 +204,6 @@ export default {
         },
         {
           header: {
-            title: 'Letter to Physics',
-            subtitle: 'Founder & Content Creator',
-          },
-          content: {
-            body: [
-              `<a href="https://www.lettertophysics.com/" target="_blank">Letter to Physics</a> is a website I created to post hundreds of physics solutions including solutions to the PhysicsBowl competition.`,
-            ],
-            dates: 'Sept 2018 - Present',
-          },
-        },
-        {
-          header: {
             title: 'Zamono',
             subtitle: 'Data Research Intern',
           },
