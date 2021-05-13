@@ -1,6 +1,6 @@
 <template>
   <v-card tile>
-    <v-toolbar dense>
+    <v-toolbar dense color="#1e1e1e">
       <show-at breakpoint="mediumAndAbove">
         <v-toolbar-title
           ><a href="/" class="title">Portfolio - keshprad</a></v-toolbar-title

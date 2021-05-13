@@ -51,7 +51,7 @@ export default {
         },
         {
           header: {
-            title: 'Autoscriber App',
+            title: 'Autoscriber',
             links: [
               {
                 icon: 'mdi-github',
@@ -65,7 +65,8 @@ export default {
           },
           content: {
             body: [
-              `Automatic online meeting notes with voice recognition and NLP.`,
+              `Autoscriber is a progressive web app (PWA) that listens to your microphone audio, transcribes your speech, and summarizes your meeting in bullet point format. During the meeting, participants simply open a session link and turn on their microphone. Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
+              `<strong>tldr:</strong> PWA for automatic online meeting notes using speech recognition and NLP.`,
             ],
           },
         },

@@ -28,6 +28,13 @@ export default {
 }
 </script>
 
+<style>
+html,
+body {
+  background: #1e1e1e;
+}
+</style>
+
 <style scoped>
 .portfolio {
   max-width: 100vw;
