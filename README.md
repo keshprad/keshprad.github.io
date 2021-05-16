@@ -2,6 +2,5 @@
 
 🌹 &nbsp; My personal portfolio site
 
-Check it [here](https://www.keshprad.ml/).
-
-My contact page is [here](https://www.keshprad.ml/contact/)
+v1: [v1.keshprad.ml](https://v1.keshprad.ml/)  
+contact: [v1.keshprad.ml/contact](https://v1.keshprad.ml/contact/)
