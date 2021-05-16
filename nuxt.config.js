@@ -9,7 +9,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s Rishi Keshav Pradeep',
+    titleTemplate: '%s | keshprad',
     title: '',
     htmlAttrs: {
       lang: 'en',
@@ -17,7 +17,13 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'description', content: 'Portfolio site' },
+      { name: 'author', content: 'Keshav Pradeep' },
+      {
+        name: 'keywords',
+        content:
+          'Portfolio, Resume, Keshav Pradeep, Rishi Keshav Pradeep, keshprad, keshprad.ml',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

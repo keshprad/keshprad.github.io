@@ -309,10 +309,15 @@ export default {
       ],
     },
   }),
+  head() {
+    return {
+      title: 'Portfolio',
+    }
+  },
 }
 </script>
 
-<style>
+<style scoped>
 .content {
   max-width: 1000px;
 }
