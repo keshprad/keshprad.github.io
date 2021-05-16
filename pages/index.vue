@@ -320,6 +320,7 @@ export default {
 <style scoped>
 .content {
   max-width: 1000px;
+  margin-bottom: 50px;
 }
 #footer {
   margin-top: 50px;

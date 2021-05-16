@@ -22,7 +22,9 @@
               <v-icon>mdi-github</v-icon>
             </v-btn>
           </v-hover>
-          <v-btn :href="socials.resume" text>Resume</v-btn>
+          <NuxtLink :to="socials.resume" style="text-decoration: none">
+            <v-btn text>Resume</v-btn>
+          </NuxtLink>
         </div>
       </v-card-text>
 

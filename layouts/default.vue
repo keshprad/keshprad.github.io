@@ -1,9 +1,7 @@
 <template>
   <v-app dark>
-    <Navbar :socials="socials" />
-    <v-container class="portfolio">
-      <nuxt />
-    </v-container>
+    <Navbar id="navbar" :socials="socials" />
+    <Nuxt id="portfolio" />
     <Footer id="footer" :socials="socials" />
   </v-app>
 </template>
@@ -22,9 +20,18 @@ export default {
       devpost: 'https://devpost.com/keshprad',
       linkedin: 'https://www.linkedin.com/in/keshprad/',
       github: 'https://github.com/keshprad',
-      resume: '/resume.pdf',
+      resume: '/resume',
     },
   }),
+  mounted() {
+    const portfolioHeight =
+      window.innerHeight -
+      (document.getElementById('navbar').clientHeight +
+        document.getElementById('footer').clientHeight)
+    document.getElementById(
+      'portfolio'
+    ).style.minHeight = `${portfolioHeight}px`
+  },
 }
 </script>
 
@@ -36,7 +43,7 @@ body {
 </style>
 
 <style scoped>
-.portfolio {
+#portfolio {
   max-width: 100vw;
   padding: 0;
 }

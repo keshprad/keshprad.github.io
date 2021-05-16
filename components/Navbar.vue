@@ -34,7 +34,9 @@
         <show-at breakpoint="mediumAndAbove">
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </show-at>
-        <v-btn :href="socials.resume" text>Resume</v-btn>
+        <NuxtLink :to="socials.resume" style="text-decoration: none">
+          <v-btn text>Resume</v-btn>
+        </NuxtLink>
       </div>
 
       <hide-at breakpoint="mediumAndAbove">
