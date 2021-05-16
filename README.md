@@ -1,7 +1,7 @@
 # my-portfolio
 My personal portfolio site
 
-Live site: [keshprad.ml](https://keshprad.ml)  
+v2/current: [keshprad.ml](https://keshprad.ml)  
 v1: [v1.keshprad.ml](https://v1.keshprad.ml/)  
 
 ## Build Setup
