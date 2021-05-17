@@ -35,7 +35,7 @@
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </show-at>
         <NuxtLink :to="socials.resume" style="text-decoration: none">
-          <v-btn text>Resume</v-btn>
+          <v-btn href="#" text>Resume</v-btn>
         </NuxtLink>
       </div>
 
@@ -64,7 +64,8 @@ a.title {
   color: #fff;
   text-decoration: none;
 }
-a:hover {
+a:hover,
+v-btn:hover {
   color: #f50057;
 }
 </style>

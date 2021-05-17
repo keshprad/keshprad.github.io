@@ -23,7 +23,7 @@
             </v-btn>
           </v-hover>
           <NuxtLink :to="socials.resume" style="text-decoration: none">
-            <v-btn text>Resume</v-btn>
+            <v-btn href="#" text>Resume</v-btn>
           </NuxtLink>
         </div>
       </v-card-text>

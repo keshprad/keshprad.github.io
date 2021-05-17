@@ -2,11 +2,18 @@
   <div id="portfolio">
     <Intro />
     <v-container class="content">
-      <Accordion :title="projects.title" :data="projects.data" />
-      <Accordion :title="workExperience.title" :data="workExperience.data" />
-      <v-spacer></v-spacer>
-      <Accordion :title="awards.title" :data="awards.data" />
-      <Accordion :title="education.title" :data="education.data" />
+      <Accordion id="projects" :title="projects.title" :data="projects.data" />
+      <Accordion
+        id="work-experience"
+        :title="workExperience.title"
+        :data="workExperience.data"
+      />
+      <Accordion id="awards" :title="awards.title" :data="awards.data" />
+      <Accordion
+        id="education"
+        :title="education.title"
+        :data="education.data"
+      />
     </v-container>
   </div>
 </template>
@@ -66,7 +73,7 @@ export default {
           content: {
             body: [
               `Autoscriber is a progressive web app (PWA) that listens to your microphone audio, transcribes your speech, and summarizes your meeting in bullet point format. During the meeting, participants simply open a session link and turn on their microphone. Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
-              `<strong>tldr:</strong> PWA for automatic online meeting notes using speech recognition and NLP.`,
+              `<strong>tldr: PWA for automatic online meeting notes using speech recognition and NLP.</strong>`,
             ],
           },
         },
@@ -109,7 +116,7 @@ export default {
                 href: 'https://github.com/keshprad/best-comeback',
               },
               {
-                icon: 'mdi-link-variant',
+                icon: 'mdi-image',
                 href:
                   'https://github.com/keshprad/best-comeback/blob/main/README.md#examples',
               },

@@ -1,7 +1,8 @@
 # my-portfolio
 
-My personal portfolio site
+[![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/cd.yaml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/cd.yaml)
 
+My personal portfolio site  
 v2/current: [keshprad.ml](https://keshprad.ml)  
 v1: [v1.keshprad.ml](https://v1.keshprad.ml/)
 

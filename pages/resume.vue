@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  layout: 'resume',
+  layout: 'navOnly',
   head() {
     return {
       title: 'Resume',
