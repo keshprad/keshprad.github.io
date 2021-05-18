@@ -217,7 +217,7 @@ export default {
           },
           content: {
             body: [
-              `I researched different diseases, their symptoms, and their treatments and inputted into tables for future use at a healthcare startup.`,
+              `Designed DB tables to store different disease information which formed part of Zamono’s diagnostic systems.`,
             ],
             dates: 'Jun 2016 - Aug 2016',
           },
