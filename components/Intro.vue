@@ -1,10 +1,5 @@
 <template>
-  <v-parallax
-    id="intro-component"
-    dark
-    :src="require('@/assets/img/intro-bg.png')"
-    height="350"
-  >
+  <v-parallax id="intro-component" dark src="/img/intro-bg.png" height="350">
     <v-container class="content">
       <h1>Hi, I'm {{ name }} 👋</h1>
       <p>{{ description }}</p>
