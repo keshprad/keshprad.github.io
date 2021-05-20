@@ -1,6 +1,6 @@
 # my-portfolio
 
-[![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/cd.yml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/cd.yml)
+[![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml)
 
 My personal portfolio site  
 v2/current: [keshprad.ml](https://keshprad.ml)  
