@@ -95,6 +95,26 @@ export default {
         },
         {
           header: {
+            title: 'path-visualizer',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/path-visualizer',
+              },
+              {
+                icon: 'mdi-link-variant',
+                href: 'https://path-visualizer.keshprad.ml',
+              },
+            ],
+          },
+          content: {
+            body: [
+              `A Svelte app for visualizing pathfinding algorithms. View <a href="https://path-visualizer.keshprad.ml">here</a>!`,
+            ],
+          },
+        },
+        {
+          header: {
             title: 'competitive programming',
             links: [
               {
@@ -307,8 +327,8 @@ export default {
           },
           content: {
             body: [
-              `Head of Front End @ <a href="https://lhswebdev.github.io/">Lynbrook WebDev</a>: WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
-              `Vice-President @ Lynbrook Me to We: Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
+              `<strong>Head of Front-End/Back-End @ <a href="https://lhswebdev.github.io/">Lynbrook WebDev</a>:</strong> WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
+              `<strong>Vice-President @ Lynbrook Me to We:</strong> Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
             ],
             dates: '2017 - 2021',
           },
