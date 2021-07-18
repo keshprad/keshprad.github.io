@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <Navbar id="navbar" :socials="socials" />
-    <Nuxt id="resume" />
+    <Nuxt />
   </v-app>
 </template>
 

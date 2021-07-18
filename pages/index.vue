@@ -73,7 +73,7 @@ export default {
           content: {
             body: [
               `Autoscriber is a progressive web app (PWA) that listens to your microphone audio, transcribes your speech, and summarizes your meeting in bullet point format. During the meeting, participants simply open a session link and turn on their microphone. Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
-              `<strong>tldr: PWA for automatic online meeting notes using speech recognition and NLP.</strong>`,
+              `**tldr: PWA for automatic online meeting notes using speech recognition and NLP.**`,
             ],
           },
         },
@@ -95,6 +95,26 @@ export default {
         },
         {
           header: {
+            title: 'best-comeback',
+            links: [
+              {
+                icon: 'mdi-github',
+                href: 'https://github.com/keshprad/best-comeback',
+              },
+              {
+                icon: 'mdi-image',
+                href: 'https://keshprad.github.io/best-comeback/#examples',
+              },
+            ],
+          },
+          content: {
+            body: [
+              `Want to end an argument with a win? This repo uses facial landmarks to automatically generate a "Deal With It" gif from an input image.`,
+            ],
+          },
+        },
+        {
+          header: {
             title: 'path-visualizer',
             links: [
               {
@@ -109,7 +129,7 @@ export default {
           },
           content: {
             body: [
-              `A Svelte app for visualizing pathfinding algorithms. View <a href="https://path-visualizer.keshprad.ml">here</a>!`,
+              `A Svelte app for visualizing pathfinding algorithms. View [here](https://path-visualizer.keshprad.ml)!`,
             ],
           },
         },
@@ -129,27 +149,6 @@ export default {
         },
         {
           header: {
-            title: 'best-comeback',
-            links: [
-              {
-                icon: 'mdi-github',
-                href: 'https://github.com/keshprad/best-comeback',
-              },
-              {
-                icon: 'mdi-image',
-                href:
-                  'https://github.com/keshprad/best-comeback/blob/main/README.md#examples',
-              },
-            ],
-          },
-          content: {
-            body: [
-              `Want to end an argument with a win? This repo creates an automatic "Deal With It" gif.`,
-            ],
-          },
-        },
-        {
-          header: {
             title: 'my-portfolio',
             links: [
               {
@@ -163,7 +162,7 @@ export default {
             ],
           },
           content: {
-            body: [`Repo for my personal portfolio site`],
+            body: [`Repo for my personal portfolio site built with Nuxt.`],
           },
         },
         {
@@ -224,10 +223,10 @@ export default {
           },
           content: {
             body: [
-              `I founded and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. I lead our officer team and managed a team of 30+ volunteers. I managed communications with clients and other businesses making sure everything went smoothly on both sides. I also helped build multiple websites for our clients. Besides this, I also created the course curriculum in use.`,
-              `Additionally, as part of the <a href="https://www.elevatethefuture.org" target="_blank">ETF</a>'s founding team, I advised on executive decisions and worked to expand our influence to over 40+ chapters around the world. Also, we are constantly working on implementing new events. Besides this, I help update/design our website.`,
+              `I founded and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. Lead a team of officers and volunteers to build numerous websites for local businesses while simultaneously teaching WebDev skills to youth.`,
+              `As part of the <a href="https://www.elevatethefuture.org" target="_blank">ETF</a>'s founding team, I advised on executive decisions and worked to expand our influence to over 40+ chapters around the world.`,
             ],
-            dates: 'Jul 2019 - Present',
+            dates: 'Jul 2019 - May 2021',
           },
         },
         {
@@ -280,16 +279,17 @@ export default {
           },
           content: {
             body: [
-              `&bull; Divide and Conquer, Sorting and Searching, and Randomized Algorithms`,
-              `&bull; Graph Search, Shortest Paths, and Data Structures`,
-              `&bull; Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming`,
-              `&bull; Shortest Paths Revisited, NP-Complete Problems and What To Do About Them`,
+              `- Divide and Conquer, Sorting and Searching, and Randomized Algorithms`,
+              `- Graph Search, Shortest Paths, and Data Structures`,
+              `- Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming`,
+              `- Shortest Paths Revisited, NP-Complete Problems and What To Do About Them`,
             ],
             icons: [
               {
                 iconText: 'Coursera',
                 link:
                   'https://www.coursera.org/account/accomplishments/specialization/JGJD68YT52NQ',
+                target: '_blank',
               },
             ],
           },
@@ -300,17 +300,18 @@ export default {
           },
           content: {
             body: [
-              `&bull; The Bits and Bytes of Computer Networking`,
-              `&bull; IT Security: Defense against the digital dark arts`,
-              `&bull; System Administration and IT Infrastructure Services`,
-              `&bull; Technical Support Fundamentals`,
-              `&bull; Operating Systems and You: Becoming a Power User`,
+              `- The Bits and Bytes of Computer Networking`,
+              `- IT Security: Defense against the digital dark arts`,
+              `- System Administration and IT Infrastructure Services`,
+              `- Technical Support Fundamentals`,
+              `- Operating Systems and You: Becoming a Power User`,
             ],
             icons: [
               {
                 iconText: 'Coursera',
                 link:
                   'https://www.coursera.org/account/accomplishments/specialization/KF6RGBL6NLTW/',
+                target: '_blank',
               },
             ],
           },
@@ -327,8 +328,8 @@ export default {
           },
           content: {
             body: [
-              `<strong>Head of Front-End/Back-End @ <a href="https://lhswebdev.github.io/">Lynbrook WebDev</a>:</strong> WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
-              `<strong>Vice-President @ Lynbrook Me to We:</strong> Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
+              `**Head of Front-End/Back-End @ [Lynbrook WebDev](https://lhswebdev.github.io/):** WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
+              `**Vice-President @ Lynbrook Me to We:** Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
             ],
             dates: '2017 - 2021',
           },

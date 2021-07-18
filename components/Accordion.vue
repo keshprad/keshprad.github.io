@@ -1,7 +1,17 @@
 <template>
   <v-container fluid>
     <v-row justify="center">
-      <h1 class="title">{{ title }}</h1>
+      <h1
+        :id="
+          title
+            .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, '')
+            .replace(/\s+/g, '-')
+            .toLowerCase()
+        "
+        class="title"
+      >
+        {{ title }}
+      </h1>
 
       <v-expansion-panels popout>
         <v-expansion-panel v-for="(item, i) in data" :key="i" hide-actions>
@@ -29,6 +39,7 @@
                     :key="j"
                     class="icon"
                     :href="link.href"
+                    :target="link.target ? link.target : ''"
                   >
                     <v-icon v-if="link.icon" dense v-text="link.icon"></v-icon>
                     <v-btn
@@ -53,11 +64,12 @@
 
             <!-- eslint-disable vue/no-v-html -->
             <v-card-text
-              v-for="(p, j) in item.content.body"
+              v-for="(content, j) in item.content.body"
               :key="j"
               class="content-body"
-              v-html="p"
-            ></v-card-text>
+            >
+              <vue-markdown class="md">{{ content }}</vue-markdown>
+            </v-card-text>
             <!--eslint-enable-->
 
             <p v-if="item.content.dates" class="content-dates">
@@ -73,6 +85,7 @@
                 :key="j"
                 class="icon"
                 :href="icon.link"
+                :target="icon.target ? icon.target : ''"
               >
                 <v-icon v-if="icon.icon" v-text="icon.icon"></v-icon>
                 <v-btn
@@ -93,6 +106,7 @@
                   :key="j"
                   class="icon"
                   :href="link.href"
+                  :target="link.target ? link.target : ''"
                 >
                   <v-icon v-if="link.icon" v-text="link.icon"></v-icon>
                   <v-btn
@@ -112,8 +126,10 @@
 
 <script>
 import { showAt, hideAt } from 'vue-breakpoints'
+import VueMarkdown from '@adapttive/vue-markdown'
+
 export default {
-  components: { showAt, hideAt },
+  components: { showAt, hideAt, VueMarkdown },
   props: {
     title: {
       type: String,
@@ -130,6 +146,9 @@ export default {
 <style scoped>
 .title {
   margin: 20px 0;
+}
+div.md >>> p {
+  margin: 0;
 }
 a.icon {
   text-decoration: none;
