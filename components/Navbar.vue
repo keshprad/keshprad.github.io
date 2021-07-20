@@ -11,7 +11,7 @@
 
       <div>
         <hide-at breakpoint="mediumAndAbove">
-          <v-btn :href="socials.devpost" text>Devpost</v-btn>
+          <v-btn small :href="socials.devpost" text>Devpost</v-btn>
         </hide-at>
         <v-hover v-slot="{ hover }">
           <v-btn
@@ -43,13 +43,20 @@
         <show-at breakpoint="mediumAndAbove">
           <v-btn :href="socials.devpost" text>Devpost</v-btn>
         </show-at>
-        <NuxtLink :to="socials.resume" style="text-decoration: none">
-          <v-btn href="#" text>Resume</v-btn>
-        </NuxtLink>
+        <show-at breakpoint="mediumAndAbove">
+          <NuxtLink :to="socials.resume" style="text-decoration: none">
+            <v-btn href="#" text>Resume</v-btn>
+          </NuxtLink>
+        </show-at>
+        <hide-at breakpoint="mediumAndAbove">
+          <NuxtLink :to="socials.resume" style="text-decoration: none">
+            <v-btn href="#" text small>Resume</v-btn>
+          </NuxtLink>
+        </hide-at>
       </div>
 
       <hide-at breakpoint="mediumAndAbove">
-        <v-spacer class="right-spacer"></v-spacer>
+        <v-spacer></v-spacer>
       </hide-at>
     </v-toolbar>
   </v-card>
