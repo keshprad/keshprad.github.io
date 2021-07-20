@@ -22,6 +22,15 @@
             <v-icon>mdi-linkedin</v-icon>
           </v-btn>
         </v-hover>
+        <hide-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <NuxtLink to="/" style="text-decoration: none">
+              <v-btn icon :color="hover ? '#f50057' : '#fff'">
+                <v-icon>mdi-home</v-icon>
+              </v-btn>
+            </NuxtLink>
+          </v-hover>
+        </hide-at>
         <v-hover v-slot="{ hover }">
           <v-btn
             :href="socials.github"
