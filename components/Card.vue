@@ -26,26 +26,39 @@
           class="md px-2 pb-2 font-weight-bold text1--text"
           >tldr: {{ card.tldr }}</vue-markdown
         >
-        <!-- <v-expand-transition>
-          <div v-show="show"> -->
         <v-divider v-if="card.tldr" />
+
+        <!-- There are columns if card.body is a 2d-array -->
+        <div
+          v-if="card.body.length > 0 && Array.isArray(card.body[0])"
+          class="d-flex"
+        >
+          <div
+            v-for="(col, j) in card.body"
+            :key="j"
+            :style="`width: ${100 / card.body.length}%`"
+          >
+            <v-card-text
+              v-for="(content, k) in col"
+              :key="k"
+              class="body-2 pa-2"
+            >
+              <vue-markdown class="md">{{ content }}</vue-markdown>
+            </v-card-text>
+          </div>
+        </div>
+
+        <!-- Content -->
         <v-card-text
           v-for="(content, j) in card.body"
+          v-else
           :key="j"
           class="body-2 pa-2"
         >
           <vue-markdown class="md">{{ content }}</vue-markdown>
         </v-card-text>
-        <!-- </div>
-        </v-expand-transition> -->
-        <!-- <div class="d-flex justify-end">
-          <v-btn
-            class="primary"
-            small
-            @click="show = !show"
-            >{{ show ? 'Show Less' : 'Show More' }}</v-btn
-          >
-        </div> -->
+
+        <!-- Links/Icons -->
         <v-card-text v-if="card.links" class="pa-2">
           <v-hover v-for="(link, j) in card.links" :key="j" v-slot="{ hover }">
             <a
