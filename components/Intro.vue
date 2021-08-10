@@ -1,8 +1,9 @@
 <template>
-  <v-parallax id="intro-component" dark src="/img/intro-bg.png" height="350">
+  <v-parallax id="intro-component" dark src="/img/intro-bg.png" height="375">
     <v-container class="content">
       <h1>Hi, I'm {{ name }} 👋</h1>
-      <p>{{ description }}</p>
+      <br />
+      <h3>{{ description }}</h3>
     </v-container>
   </v-parallax>
 </template>
@@ -13,9 +14,9 @@ export default {
     return {
       name: 'Rishi Keshav Pradeep',
       description:
-        "I'm a 12th-grade high-school student at Lynbrook High School with a strong interest in ML. " +
-        "I'm a quick learner, and I'm always happy to connect with new people and collaborate on projects. " +
-        'In my free time, I enjoy listening to music, learning online, and competing in hackathons.',
+        "I'm a freshman at UMD with a strong interest in Algorithms and ML. " +
+        "I'm a quick learner and always happy to meet new people and collaborate on projects. " +
+        'In my free time, I enjoy creating projects on GitHub, listening to music, and playing/watching basketball.',
     }
   },
 }

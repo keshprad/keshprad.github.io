@@ -2,9 +2,17 @@
 
 [![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml)
 
-My personal portfolio site  
-v2/current: [keshprad.ml](https://keshprad.ml)  
+Repo for my personal portfolio site
+
+---
+
+v2/current: [keshprad.ml](https://keshprad.ml)
+
+Older versions of my site are saved in corresponding branches for legacy purposes and **will not be updated**.
+
 v1: [v1.keshprad.ml](https://v1.keshprad.ml/)
+
+---
 
 ## Build Setup
 
