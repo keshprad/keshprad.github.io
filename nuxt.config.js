@@ -35,7 +35,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '~/plugins/expandable-image', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -46,6 +46,8 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    // ngrok
+    '@nuxtjs/ngrok',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -57,21 +59,34 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  // ngrok module congiguration
+  ngrok: {
+    // module options
+    auth: process.env.NGROK_AUTH,
+    region: 'us',
+  },
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
+      options: {
+        customProperties: true,
+      },
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.lightBlue.darken1, // #039BE5
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          anchor: '#f50057',
+          anchor: colors.lightBlue.darken1, // #039BE5
+          background1: '#121212',
+          background2: '#1e1e1e',
+          text1: '#fff',
         },
       },
     },
