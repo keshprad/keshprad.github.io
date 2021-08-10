@@ -18,24 +18,21 @@
           <v-expansion-panel-header>
             <v-row align="center" class="spacer" no-gutters>
               <span class="header-title">
-                <strong>{{ item.header.title }}&nbsp;</strong>
+                <strong>{{ item.title }}&nbsp;</strong>
               </span>
-
-              <show-at v-if="item.header.subtitle" breakpoint="mediumAndAbove">
-                <span class="header-subtitle">
-                  - {{ item.header.subtitle }}
-                </span>
-              </show-at>
+              <span v-if="item.subtitle" class="header-subtitle">
+                - {{ item.subtitle }}
+              </span>
 
               <v-spacer></v-spacer>
 
               <show-at
-                v-if="item.header.links && item.header.links.length > 0"
+                v-if="item.links && item.links.length > 0"
                 breakpoint="mediumAndAbove"
               >
                 <span>
                   <a
-                    v-for="(link, j) in item.header.links"
+                    v-for="(link, j) in item.links"
                     :key="j"
                     class="icon"
                     :href="link.href"
@@ -56,15 +53,10 @@
 
           <v-expansion-panel-content class="content">
             <v-divider></v-divider>
-            <hide-at v-if="item.header.subtitle" breakpoint="mediumAndAbove">
-              <v-card-text class="content-body">
-                <strong>{{ item.header.subtitle }}</strong>
-              </v-card-text>
-            </hide-at>
 
             <!-- eslint-disable vue/no-v-html -->
             <v-card-text
-              v-for="(content, j) in item.content.body"
+              v-for="(content, j) in item.body"
               :key="j"
               class="content-body"
             >
@@ -72,37 +64,35 @@
             </v-card-text>
             <!--eslint-enable-->
 
-            <p v-if="item.content.dates" class="content-dates">
-              ({{ item.content.dates }})
-            </p>
+            <p v-if="item.dates" class="content-dates">({{ item.dates }})</p>
 
             <v-card-text
-              v-if="item.content.icons && item.content.icons.length > 0"
+              v-if="item.bodyLinks && item.bodyLinks.length > 0"
               class="content-icons-row"
             >
               <a
-                v-for="(icon, j) in item.content.icons"
+                v-for="(link, j) in item.bodyLinks"
                 :key="j"
                 class="icon"
-                :href="icon.link"
-                :target="icon.target ? icon.target : ''"
+                :href="link.href"
+                :target="link.target ? link.target : ''"
               >
-                <v-icon v-if="icon.icon" v-text="icon.icon"></v-icon>
+                <v-icon v-if="link.icon" v-text="link.icon"></v-icon>
                 <v-btn
-                  v-else-if="icon.iconText"
+                  v-else-if="link.iconText"
                   text
-                  v-text="icon.iconText"
+                  v-text="link.iconText"
                 ></v-btn>
               </a>
             </v-card-text>
 
             <hide-at
-              v-if="item.header.links && item.header.links.length > 0"
+              v-if="item.links && item.links.length > 0"
               breakpoint="mediumAndAbove"
             >
               <v-card-text class="content-icons-row">
                 <a
-                  v-for="(link, j) in item.header.links"
+                  v-for="(link, j) in item.links"
                   :key="j"
                   class="icon"
                   :href="link.href"
