@@ -19,7 +19,9 @@
 import Card from './Card'
 
 export default {
-  components: { Card },
+  components: {
+    Card,
+  },
   props: {
     title: {
       type: String,

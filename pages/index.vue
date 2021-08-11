@@ -14,9 +14,8 @@
 </template>
 
 <script>
-// import Accordion from '../components/Accordion'
-import CardList from '../components/CardList'
-import Intro from '../components/Intro'
+import CardList from '~/components/CardList'
+import Intro from '~/components/Intro'
 
 export default {
   components: {
@@ -298,30 +297,5 @@ export default {
 }
 #footer {
   margin-top: 50px;
-}
-</style>
-
-// Global Styles
-<style>
-a.fill-animation,
-div.md a {
-  color: var(--v-anchor-base);
-  text-decoration: none;
-  border: none;
-  border-bottom: 2px solid var(--v-anchor-base);
-  background-image: linear-gradient(
-    120deg,
-    var(--v-anchor-base),
-    var(--v-anchor-base)
-  );
-  background-size: 100% 0;
-  background-position: 0 100%;
-  transition: background-size 0.125s ease-in, color 0.125s ease-in;
-}
-a.fill-animation:hover,
-div.md a:hover {
-  color: var(--v-text1-base);
-  border-color: var(--v-anchor-base);
-  background-size: 100% 100%;
 }
 </style>

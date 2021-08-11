@@ -17,9 +17,10 @@
     <v-list-item class="align-start pa-2">
       <div v-if="card.imgSrc && card.imgSrc.length > 0">
         <v-lazy v-for="(imgSrc, j) in card.imgSrc" :key="j" class="mr-5">
-          <ExpandableImage :src="imgSrc" />
+          <EnlargeableImage :src="imgSrc" :src-large="imgSrc" />
         </v-lazy>
       </div>
+
       <div class="description px-2">
         <vue-markdown
           v-if="card.tldr"
@@ -28,7 +29,6 @@
         >
         <v-divider v-if="card.tldr" />
 
-        <!-- There are columns if card.body is a 2d-array -->
         <div
           v-if="card.body.length > 0 && Array.isArray(card.body[0])"
           class="d-flex"
@@ -87,19 +87,19 @@
 
 <script>
 import VueMarkdown from '@adapttive/vue-markdown'
-import ExpandableImage from '../components/ExpandableImage'
+import EnlargeableImage from '~/components/EnlargeableImage.vue'
 
 export default {
-  components: { ExpandableImage, VueMarkdown },
+  components: {
+    EnlargeableImage,
+    VueMarkdown,
+  },
   props: {
     card: {
       type: Object,
       default: () => {},
     },
   },
-  data: () => ({
-    // show: false,
-  }),
 }
 </script>
 
