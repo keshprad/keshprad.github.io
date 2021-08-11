@@ -56,7 +56,7 @@ export default {
       data: [
         {
           title: 'Chaos Genius',
-          subtitle: 'Software Engineering Intern',
+          subtitle: 'Software Engineer Intern',
           imgSrc: ['/img/work-experience/chaos-genius-dashboard.gif'],
           tldr:
             'Worked on algos for automated Root Cause Analysis and Anomaly Detection for time series data.',
@@ -74,7 +74,7 @@ export default {
           ],
           body: [
             `Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data. ` +
-              `Engineered a KPI validation feature, developed an anomaly severity scoring algorithm, created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes. ` +
+              `Developend and integrated a KPI validation feature, developed an anomaly severity scoring algorithm, created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes. ` +
               `Also wrote a blog post, "A Brief History of Anomaly Detection" and wrote documentation using docusaurus for RCA and Anomaly Detection.`,
             // `Also wrote a blog post, <a href="#" target="_blank">"A Brief History of Anomaly Detection"</a> and wrote <a href="https://docs-staging.chaosgenius.io" target="_blank">documentation</a> using docusaurus for RCA and Anomaly Detection.`,
           ],
@@ -82,7 +82,7 @@ export default {
         },
         {
           title: 'dsapps',
-          subtitle: 'Software Engineering Intern',
+          subtitle: 'Software Engineer Intern',
           body: [
             `Worked on a project in forecasting resource requirements for tasks captured in Salesforce based on historical data and patterns from other tasks. Performed text processing/cleaning, handled mixed data, experimented with k-means clustering for data analysis.`,
           ],
@@ -95,8 +95,7 @@ export default {
           tldr:
             'Directed project to build websites for local businesses amongst the COVID pandemic',
           body: [
-            `I founded and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. I lead a team of officers and volunteers to build numerous websites for local businesses amidst the COVID pandemic while simultaneously teaching WebDev skills to youth.`,
-            `As part of the <a href="https://www.elevatethefuture.org" target="_blank">ETF</a>'s founding team, I advised on executive decisions and worked to expand our influence.`,
+            `I created and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. I lead a team of officers and volunteers to build numerous websites for local businesses amidst the COVID pandemic while simultaneously teaching WebDev skills to youth.`,
           ],
           dates: 'Jul 2019 - May 2021',
         },
@@ -151,7 +150,7 @@ export default {
           ],
         },
         {
-          title: 'best-comeback',
+          title: 'Best Comeback',
           imgSrc: ['/img/projects/best-comeback.gif'],
           links: [
             {
@@ -169,7 +168,7 @@ export default {
           ],
         },
         {
-          title: 'path-visualizer',
+          title: 'Path Visualizer',
           imgSrc: ['/img/projects/path-visualizer.gif'],
           links: [
             {
