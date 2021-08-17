@@ -74,8 +74,8 @@ export default {
           ],
           body: [
             `Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data. ` +
-              `Developend and integrated a KPI validation feature, developed an anomaly severity scoring algorithm, created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes. ` +
-              `Also wrote a blog post, "A Brief History of Anomaly Detection" and wrote documentation using docusaurus for RCA and Anomaly Detection.`,
+              `Developed and integrated a KPI validation feature, developed an anomaly severity scoring algorithm, created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes. ` +
+              `Also wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a> and wrote documentation using docusaurus for RCA and Anomaly Detection.`,
             // `Also wrote a blog post, <a href="#" target="_blank">"A Brief History of Anomaly Detection"</a> and wrote <a href="https://docs-staging.chaosgenius.io" target="_blank">documentation</a> using docusaurus for RCA and Anomaly Detection.`,
           ],
           dates: 'Jun 2021 - Aug 2021',
