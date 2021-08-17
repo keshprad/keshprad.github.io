@@ -10,7 +10,7 @@
       <h1 class="text-center text-decoration-underline">Pages:</h1>
       <h2 class="text-center my-1">
         <v-hover v-slot="{ hover }">
-          <NuxtLink to="/resume" class="text-decoration-none fill-animation">
+          <NuxtLink to="/" class="text-decoration-none fill-animation">
             <v-icon :color="hover ? 'text1' : 'primary'" class="mb-1">
               mdi-home
             </v-icon>
