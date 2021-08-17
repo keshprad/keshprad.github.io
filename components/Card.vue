@@ -1,5 +1,13 @@
 <template>
-  <v-card class="mx-auto my-5">
+  <v-card
+    :id="
+      (card.id ? card.id : card.title)
+        .replace(/[.,\/#!$%\^&\*;:{}=\_`~()]/g, '')
+        .replace(/\s+/g, '-')
+        .toLowerCase()
+    "
+    class="mx-auto my-5"
+  >
     <v-list-item>
       <span class="font-weight-bold">
         {{ card.title }}

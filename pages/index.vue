@@ -28,6 +28,7 @@ export default {
       data: [
         {
           title: 'University of Maryland, College-Park',
+          id: 'umd-bs',
           body: [
             [
               '- Presidential Scholarship\n' +
@@ -43,6 +44,7 @@ export default {
         },
         {
           title: 'Lynbrook High School',
+          id: 'lhs',
           body: [
             `Head of Front-End/Back-End @ <a href="https://lhswebdev.github.io/" target="_blank">Lynbrook WebDev</a>: WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
             `Vice-President @ Lynbrook Me to We: Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
@@ -189,6 +191,7 @@ export default {
         },
         {
           title: 'Algorithms',
+          id: 'algorithms-repo',
           links: [
             {
               icon: 'mdi-github',
@@ -216,6 +219,7 @@ export default {
       data: [
         {
           title: '2nd Place Media Track',
+          id: 'pickhacks-2021',
           subtitle: 'PickHacks 2021',
           imgSrc: ['/img/projects/youtube-mentions.gif'],
           links: [
@@ -241,6 +245,7 @@ export default {
         },
         {
           title: 'Stanford Algorithms Specialization',
+          id: 'stanford-algos',
           imgSrc: ['/img/awards-and-certifications/stanford-algorithms.png'],
           links: [
             {
@@ -260,6 +265,7 @@ export default {
         },
         {
           title: 'Google IT Support Specialization',
+          id: 'google-it',
           imgSrc: ['/img/awards-and-certifications/google-it.png'],
           links: [
             {
@@ -301,7 +307,7 @@ export default {
 
 // Global Styles
 <style>
-a.fill-animation,
+.fill-animation,
 div.md a {
   color: var(--v-anchor-base);
   text-decoration: none;
@@ -316,7 +322,7 @@ div.md a {
   background-position: 0 100%;
   transition: background-size 0.125s ease-in, color 0.125s ease-in;
 }
-a.fill-animation:hover,
+.fill-animation:hover,
 div.md a:hover {
   color: var(--v-text1-base);
   border-color: var(--v-anchor-base);
