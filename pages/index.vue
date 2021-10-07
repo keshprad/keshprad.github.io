@@ -29,7 +29,8 @@ export default {
         {
           title: 'University of Maryland, College-Park',
           subtitle: 'BS in Computer Science and Math(Stats)',
-          id: 'umd-bs',
+          imgSrc: ['/img/education/umd-logo.png'],
+          id: 'umd',
           body: [
             [
               '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140 (Calc 1)\n' +
