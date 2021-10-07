@@ -47,7 +47,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     // ngrok
-    '@nuxtjs/ngrok',
+    // '@nuxtjs/ngrok',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

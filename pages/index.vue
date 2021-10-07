@@ -28,26 +28,31 @@ export default {
       data: [
         {
           title: 'University of Maryland, College-Park',
+          subtitle: 'BS in Computer Science and Math(Stats)',
           id: 'umd-bs',
           body: [
             [
-              '- Presidential Scholarship\n' +
-                '- <a href="https://www.fire.umd.edu/" target="_blank">FIRE Research</a> program',
+              '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140 (Calc 1)\n' +
+                '- <a href="https://www.fire.umd.edu/" target="_blank">FIRE Research</a> program\n' +
+                '- Presidential Scholarship',
             ],
             [
-              'Courses:\n' +
-                '- Object-oriented Programming II\n' +
-                '- Applied Probability and Statistics I',
+              'Select Coursework:\n' +
+                '- CMSC 132: Object-oriented Programming II\n' +
+                '- STAT 400: Applied Probability and Statistics I',
             ],
           ],
-          dates: '2021 - Present',
+          dates: '2021 - 2025',
         },
         {
           title: 'Lynbrook High School',
           id: 'lhs',
           body: [
-            `Head of Front-End/Back-End @ <a href="https://lhswebdev.github.io/" target="_blank">Lynbrook WebDev</a>: WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.`,
-            `Vice-President @ Lynbrook Me to We: Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
+            `- GPA: 3.88\n` +
+              `- Head of Front-End/Back-End @ <a href="https://lhswebdev.github.io/" target="_blank">Lynbrook WebDev</a>:\n` +
+              `\t- WebDev is a student interest club where we present about hundreds of topics including Networking, HTML/CSS/JS, frameworks, etc.\n` +
+              `- Vice-President @ Lynbrook Me to We:\n` +
+              `\t- Me to We is a club at Lynbrook affiliated with the WE Charity. Our club conducts campaigns to raise funding for a school in Totoras, Ecuador. I lead member meetings, guide our officer team, organize events, and maintain communications with affiliated organizations.`,
           ],
           dates: '2017 - 2021',
         },
@@ -75,10 +80,10 @@ export default {
             },
           ],
           body: [
-            `Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data. ` +
-              `Developed and integrated a KPI validation feature, developed an anomaly severity scoring algorithm, created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes. ` +
-              `Also wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a> and wrote documentation using docusaurus for RCA and Anomaly Detection.`,
-            // `Also wrote a blog post, <a href="#" target="_blank">"A Brief History of Anomaly Detection"</a> and wrote <a href="https://docs-staging.chaosgenius.io" target="_blank">documentation</a> using docusaurus for RCA and Anomaly Detection.`,
+            `- Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data.\n` +
+              `- Engineered a KPI validation feature, and developed an anomaly severity scoring algorithm.\n` +
+              `- Created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes.\n` +
+              `- Wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a> and generated documentation for RCA and Anomaly Detection.`,
           ],
           dates: 'Jun 2021 - Aug 2021',
         },
@@ -86,7 +91,8 @@ export default {
           title: 'dsapps',
           subtitle: 'Software Engineer Intern',
           body: [
-            `Worked on a project in forecasting resource requirements for tasks captured in Salesforce based on historical data and patterns from other tasks. Performed text processing/cleaning, handled mixed data, experimented with k-means clustering for data analysis.`,
+            `- Worked on a project in forecasting resource requirements for tasks captured in Salesforce based on historical patterns.\n` +
+              `- Performed text processing/cleaning, handled mixed data, experimented with k-means clustering for data analysis.`,
           ],
           dates: 'Jun 2020 - Sept 2020',
         },
@@ -97,7 +103,8 @@ export default {
           tldr:
             'Directed project to build websites for local businesses amongst the COVID pandemic',
           body: [
-            `I created and directed <a href="https://www.elevatethefuture.org/projectfalcon/" target="_blank">Project Falcon</a> — one of our most effective programs. I lead a team of officers and volunteers to build numerous websites for local businesses amidst the COVID pandemic while simultaneously teaching WebDev skills to youth.`,
+            `- Created and directed Project Falcon, which developed websites for local businesses amidst the COVID pandemic.\n` +
+              `- Trained youth in WebDev skills and led the team in website development and communication with businesses.`,
           ],
           dates: 'Jul 2019 - May 2021',
         },
@@ -127,7 +134,9 @@ export default {
           tldr:
             'Uses Named Entity Recognition to generate cards with relevant context for a given YouTube video',
           body: [
-            `This application analyzes the given YouTube video, retrieves quick snippets of relevant information about people, songs, games, etc. mentioned in the video, and displays them side-by-side.`,
+            `- This application analyzes the given YouTube video, retrieves quick snippets of relevant information about people, songs, games, etc. mentioned in the video, and displays them side-by-side.\n` +
+              `- Awards:\n` +
+              `\t- 2nd Place Media Track @ PickHacks 2021`,
           ],
         },
         {
@@ -148,7 +157,9 @@ export default {
           tldr:
             'PWA for automatic online meeting notes using speech recognition and NLP.',
           body: [
-            `Autoscriber is a progressive web app (PWA) that listens to your microphone audio, transcribes your speech, and summarizes your meeting in bullet point format. During the meeting, participants simply open a session link and turn on their microphone. Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
+            `- Autoscriber is a progressive web app (PWA) that listens to your microphone audio, transcribes your speech, and summarizes your meeting in bullet point format.\n` +
+              `- During the meeting, participants simply open a session link and turn on their microphone.\n` +
+              `- Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
           ],
         },
         {
