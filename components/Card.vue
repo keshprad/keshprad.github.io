@@ -6,7 +6,7 @@
         .replace(/\s+/g, '-')
         .toLowerCase()
     "
-    class="mx-auto my-5"
+    class="mx-auto my-5 grey darken-4"
   >
     <v-list-item>
       <span class="font-weight-bold">
