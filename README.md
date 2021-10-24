@@ -1,10 +1,8 @@
 # my-portfolio
-
-[![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9e2b6ce8-0d29-42fc-b9d2-58058f3a4012/deploy-status)](https://app.netlify.com/sites/v2-keshprad/deploys)  
 
 My personal portfolio site  
-v2/current: [keshprad.ml](https://keshprad.ml)  
-v1: [v1.keshprad.ml](https://v1.keshprad.ml/)
+v2: [v2.keshprad.ml](https://v2.keshprad.ml/)  
 
 ## Build Setup
 
