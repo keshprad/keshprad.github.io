@@ -24,7 +24,7 @@
 
     <v-list-item class="align-start pa-2">
       <div v-if="card.imgSrc && card.imgSrc.length > 0">
-        <v-lazy v-for="(imgSrc, j) in card.imgSrc" :key="j" class="mr-5">
+        <v-lazy v-for="(imgSrc, j) in card.imgSrc" :key="j" class="">
           <EnlargeableImage :src="imgSrc" :src-large="imgSrc" />
         </v-lazy>
       </div>

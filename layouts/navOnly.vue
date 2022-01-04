@@ -1,7 +1,9 @@
 <template>
   <v-app dark>
     <Navbar id="navbar" :socials="socials" />
-    <Nuxt />
+    <div id="content">
+      <Nuxt />
+    </div>
   </v-app>
 </template>
 
@@ -21,9 +23,9 @@ export default {
     },
   }),
   mounted() {
-    const portfolioHeight =
+    const midHeight =
       window.innerHeight - document.getElementById('navbar').clientHeight
-    document.getElementById('resume').style.minHeight = `${portfolioHeight}px`
+    document.getElementById('content').style.minHeight = `${midHeight}px`
   },
 }
 </script>

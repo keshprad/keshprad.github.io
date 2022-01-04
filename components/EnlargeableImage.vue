@@ -32,7 +32,7 @@ export default {
   margin: 0;
   padding: 10px;
   max-height: 200px;
-  max-width: 300px;
+  max-width: 275px;
   border-radius: 20px;
 }
 .img >>> img.default {

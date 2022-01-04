@@ -34,13 +34,15 @@ export default {
           body: [
             [
               '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140 (Calc 1)\n' +
-                '- <a href="https://www.fire.umd.edu/" target="_blank">FIRE Research</a> program\n' +
+                '- FIRE Research program - <a href="https://www.fire.umd.edu/coml" target="_blank">Capital One Machine Learning Group</a>\n' +
                 '- Presidential Scholarship',
             ],
             [
-              'Select Coursework:\n' +
-                '- CMSC 132: Object-oriented Programming II\n' +
-                '- STAT 400: Applied Probability and Statistics I',
+              '- GPA: 4.00\n' +
+                '- Select Coursework:\n' +
+                '\t- CMSC 132: Object-oriented Programming II\n' +
+                '\t- STAT 400: Applied Probability and Statistics I\n\n' +
+                "- Dean's List",
             ],
           ],
           dates: '2021 - 2025',
