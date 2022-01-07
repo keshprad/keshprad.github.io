@@ -143,6 +143,44 @@ export default {
           ],
         },
         {
+          title: 'Path Visualizer',
+          imgSrc: ['/img/projects/path-visualizer.gif'],
+          links: [
+            {
+              icon: 'mdi-github',
+              href: 'https://github.com/keshprad/path-visualizer',
+            },
+            {
+              icon: 'mdi-link-variant',
+              href: 'https://path-visualizer.keshprad.ml',
+            },
+          ],
+          tldr: 'A Pathfinding Visualizer',
+          body: [
+            `A web app for visualizing pathfinding algorithms built in Svelte. View [here](https://path-visualizer.keshprad.ml)!\n` +
+              `- Algorithms: A* search, Dijkstra's\n` +
+              `- Grid Types: Recursive Division Maze, Simple Random Grid, Blank Grid`,
+          ],
+        },
+        {
+          title: 'Best Comeback',
+          imgSrc: ['/img/projects/best-comeback.gif'],
+          links: [
+            {
+              icon: 'mdi-github',
+              href: 'https://github.com/keshprad/best-comeback',
+            },
+            {
+              icon: 'mdi-image',
+              href: 'https://keshprad.github.io/best-comeback/#examples',
+            },
+          ],
+          tldr: 'Automatically generates "Deal With It" gifs',
+          body: [
+            `Want to end an argument with a win? This repo uses facial landmarks to automatically generate a "Deal With It" gif from an input image.`,
+          ],
+        },
+        {
           title: 'Autoscriber',
           imgSrc: ['/img/projects/autoscriber-app.gif'],
           links: [
@@ -165,44 +203,7 @@ export default {
               `- Once the meeting is over, Autoscriber will use AI language models to analyze the conversation and jot down important sentences automatically.`,
           ],
         },
-        {
-          title: 'Best Comeback',
-          imgSrc: ['/img/projects/best-comeback.gif'],
-          links: [
-            {
-              icon: 'mdi-github',
-              href: 'https://github.com/keshprad/best-comeback',
-            },
-            {
-              icon: 'mdi-image',
-              href: 'https://keshprad.github.io/best-comeback/#examples',
-            },
-          ],
-          tldr: 'Automatically generates "Deal With It" gifs',
-          body: [
-            `Want to end an argument with a win? This repo uses facial landmarks to automatically generate a "Deal With It" gif from an input image.`,
-          ],
-        },
-        {
-          title: 'Path Visualizer',
-          imgSrc: ['/img/projects/path-visualizer.gif'],
-          links: [
-            {
-              icon: 'mdi-github',
-              href: 'https://github.com/keshprad/path-visualizer',
-            },
-            {
-              icon: 'mdi-link-variant',
-              href: 'https://path-visualizer.keshprad.ml',
-            },
-          ],
-          tldr: 'A Pathfinding Visualizer',
-          body: [
-            `A web app for visualizing pathfinding algorithms built in Svelte. View [here](https://path-visualizer.keshprad.ml)!\n` +
-              `- Algorithms: A* search, Dijkstra's\n` +
-              `- Grid Types: Recursive Division Maze, Simple Random Grid, Blank Grid`,
-          ],
-        },
+
         {
           title: 'Algorithms',
           id: 'algorithms-repo',
