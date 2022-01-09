@@ -28,7 +28,7 @@ export default {
       data: [
         {
           title: 'University of Maryland, College-Park',
-          subtitle: 'BS in Computer Science and Math(Stats)',
+          subtitle: 'BS in Computer Science and Statistics',
           imgSrc: ['/img/education/umd-logo.png'],
           id: 'umd',
           body: [
@@ -40,9 +40,9 @@ export default {
             [
               '- GPA: 4.00\n' +
                 '- Select Coursework:\n' +
-                '\t- CMSC 132: Object-oriented Programming II\n' +
-                '\t- STAT 400: Applied Probability and Statistics I\n\n' +
-                "- Dean's List",
+                '\t- CMSC 216: Intro to Computer Systems\n' +
+                '\t- CMSC 132: Object-oriented Programming II\n\n' +
+                "- Dean's List: Fall 2021",
             ],
           ],
           dates: '2021 - 2025',
@@ -155,7 +155,7 @@ export default {
               href: 'https://path-visualizer.keshprad.ml',
             },
           ],
-          tldr: 'A Pathfinding Visualizer',
+          // tldr: 'A Pathfinding Visualizer',
           body: [
             `A web app for visualizing pathfinding algorithms built in Svelte. View [here](https://path-visualizer.keshprad.ml)!\n` +
               `- Algorithms: A* search, Dijkstra's\n` +
@@ -175,7 +175,7 @@ export default {
               href: 'https://keshprad.github.io/best-comeback/#examples',
             },
           ],
-          tldr: 'Automatically generates "Deal With It" gifs',
+          // tldr: 'Automatically generates "Deal With It" gifs',
           body: [
             `Want to end an argument with a win? This repo uses facial landmarks to automatically generate a "Deal With It" gif from an input image.`,
           ],
