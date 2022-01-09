@@ -86,7 +86,7 @@ export default {
             `- Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data.\n` +
               `- Engineered a KPI validation feature, and developed an anomaly severity scoring algorithm.\n` +
               `- Created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes.\n` +
-              `- Wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a> and generated documentation for RCA and Anomaly Detection.`,
+              `- Wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a>.`,
           ],
           dates: 'Jun 2021 - Aug 2021',
         },
@@ -94,7 +94,7 @@ export default {
           title: 'dsapps',
           subtitle: 'Software Engineer Intern',
           body: [
-            `- Worked on a project in forecasting resource requirements for tasks captured in Salesforce based on historical patterns.\n` +
+            `- Worked on a project in forecasting resource requirements for tasks based on historical patterns.\n` +
               `- Performed text processing/cleaning, handled mixed data, experimented with k-means clustering for data analysis.`,
           ],
           dates: 'Jun 2020 - Sept 2020',
@@ -106,8 +106,8 @@ export default {
           tldr:
             'Directed project to build websites for local businesses amongst the COVID pandemic',
           body: [
-            `- Created and directed Project Falcon, which developed websites for local businesses amidst the COVID pandemic.\n` +
-              `- Trained youth in WebDev skills and led the team in website development and communication with businesses.`,
+            `- Founded and directed Project Falcon, which developed websites for local businesses amidst the COVID pandemic.\n` +
+              `- Conducted technical workshops for youth led team of 20+ in website development for businesses.`,
           ],
           dates: 'Jul 2019 - May 2021',
         },
