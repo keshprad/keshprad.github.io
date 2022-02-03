@@ -2,7 +2,7 @@
 
 [![Deploy to GH Pages](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/keshprad/my-portfolio/actions/workflows/deploy.yml)
 
-Repo for my personal portfolio site
+My personal website.
 
 ---
 
