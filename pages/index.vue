@@ -33,7 +33,7 @@ export default {
           id: 'umd',
           body: [
             [
-              '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140 (Calc 1)\n' +
+              '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140/141 (Calc)\n' +
                 '- FIRE Research program - <a href="https://www.fire.umd.edu/coml" target="_blank">Capital One Machine Learning Group</a>\n' +
                 '- Presidential Scholarship',
             ],
@@ -45,7 +45,7 @@ export default {
                 "- Dean's List: Fall 2021",
             ],
           ],
-          dates: '2021 - 2025',
+          dates: 'Aug 2021 - Dec 2024',
         },
         {
           title: 'Lynbrook High School',
