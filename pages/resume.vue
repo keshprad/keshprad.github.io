@@ -1,5 +1,5 @@
 <template>
-  <iframe id="resume" src="/resume.pdf" height="100%" frameborder="0" />
+  <iframe id="resume" src="https://keshprad.ml/resume.pdf" height="100%" frameborder="0" />
 </template>
 
 <script>
