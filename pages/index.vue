@@ -35,7 +35,8 @@ export default {
             [
               '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140/141 (Calc)\n' +
                 '- FIRE Research program - <a href="https://www.fire.umd.edu/coml" target="_blank">Capital One Machine Learning Group</a>\n' +
-                '- Presidential Scholarship',
+                '- Presidential Scholarship\n' +
+                '- Intramural Basketball',
             ],
             [
               '- GPA: 4.00\n' +
@@ -107,7 +108,7 @@ export default {
             'Directed project to build websites for local businesses amongst the COVID pandemic',
           body: [
             `- Founded and directed Project Falcon, which developed websites for local businesses amidst the COVID pandemic.\n` +
-              `- Conducted technical workshops for youth led team of 20+ in website development for businesses.`,
+              `- Conducted technical workshops for youth and led team of 20+ in website development for businesses.`,
           ],
           dates: 'Jul 2019 - May 2021',
         },
@@ -152,7 +153,7 @@ export default {
             },
             {
               icon: 'mdi-link-variant',
-              href: 'https://path-visualizer.keshprad.ml',
+              href: 'https://keshprad.github.io/path-visualizer',
             },
           ],
           // tldr: 'A Pathfinding Visualizer',
