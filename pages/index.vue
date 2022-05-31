@@ -40,8 +40,8 @@ export default {
                 '- Intramural Basketball',
             ],
             [
-              "- Dean's List: Fall 2021\n" +
-                '- GPA: 4.00\n' +
+              "- Dean's List: Fall 2021, Spring 2022\n" +
+                '- GPA: 3.963\n' +
                 '- Select Coursework:\n' +
                 '\t- CMSC 216: Intro to Computer Systems\n' +
                 '\t- CMSC 132: Object-oriented Programming II',

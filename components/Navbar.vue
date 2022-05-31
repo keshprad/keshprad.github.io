@@ -29,33 +29,84 @@
             >
           </v-hover>
         </hide-at>
-        <v-hover v-slot="{ hover }">
-          <v-btn
-            :href="socials.linkedin"
-            icon
-            :color="hover ? 'primary' : 'text1'"
-          >
-            <v-icon>mdi-linkedin</v-icon>
-          </v-btn>
-        </v-hover>
+        <hide-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.linkedin"
+              icon
+              small
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-linkedin</v-icon>
+            </v-btn>
+          </v-hover>
+        </hide-at>
+        <show-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.linkedin"
+              icon
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-linkedin</v-icon>
+            </v-btn>
+          </v-hover>
+        </show-at>
         <hide-at breakpoint="mediumAndAbove">
           <v-hover v-slot="{ hover }">
             <NuxtLink to="/" class="text-decoration-none">
-              <v-btn icon :color="hover ? 'primary' : 'text1'">
+              <v-btn icon small :color="hover ? 'primary' : 'text1'">
                 <v-icon>mdi-home</v-icon>
               </v-btn>
             </NuxtLink>
           </v-hover>
         </hide-at>
-        <v-hover v-slot="{ hover }">
-          <v-btn
-            :href="socials.github"
-            icon
-            :color="hover ? 'primary' : 'text1'"
-          >
-            <v-icon>mdi-github</v-icon>
-          </v-btn>
-        </v-hover>
+        <hide-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.github"
+              icon
+              small
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+          </v-hover>
+        </hide-at>
+        <show-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.github"
+              icon
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-github</v-icon>
+            </v-btn>
+          </v-hover>
+        </show-at>
+        <hide-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.redirects"
+              icon
+              small
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-link-variant</v-icon>
+            </v-btn>
+          </v-hover>
+        </hide-at>
+        <show-at breakpoint="mediumAndAbove">
+          <v-hover v-slot="{ hover }">
+            <v-btn
+              :href="socials.redirects"
+              icon
+              :color="hover ? 'primary' : 'text1'"
+            >
+              <v-icon>mdi-link-variant</v-icon>
+            </v-btn>
+          </v-hover>
+        </show-at>
         <show-at breakpoint="mediumAndAbove">
           <v-hover v-slot="{ hover }">
             <v-btn

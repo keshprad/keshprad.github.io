@@ -20,6 +20,7 @@ export default {
       linkedin: 'https://www.linkedin.com/in/keshprad/',
       github: 'https://github.com/keshprad',
       resume: '/resume',
+      redirects: 'https://keshprad.github.io/redirects/',
     },
   }),
   mounted() {
