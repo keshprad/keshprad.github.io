@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import BlogChipGroup from '../components/BlogChipGroup'
+import BlogChipGroup from '../../components/BlogChipGroup.vue'
 
 export default {
   components: {

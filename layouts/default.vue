@@ -53,6 +53,7 @@ div.md a {
   transition: background-size 0.125s ease-in, color 0.125s ease-in;
 }
 .fill-animation:hover,
+.fill-animation:hover i,
 div.md a:hover {
   color: white !important;
   border-color: var(--v-anchor-base);
