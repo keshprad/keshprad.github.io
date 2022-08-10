@@ -11,16 +11,16 @@
     >
       {{ title }}
     </h2>
-    <Card v-for="(card, i) in data" :key="i" :card="card" />
+    <PortfolioCard v-for="(card, i) in data" :key="i" :card="card" />
   </div>
 </template>
 
 <script>
-import Card from './Card'
+import PortfolioCard from './PortfolioCard'
 
 export default {
   components: {
-    Card,
+    PortfolioCard,
   },
   props: {
     title: {

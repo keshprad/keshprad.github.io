@@ -58,4 +58,29 @@ export default {
 }
 </script>
 
+// Global Styles
+<style>
+.fill-animation,
+div.md a {
+  color: var(--v-anchor-base);
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid var(--v-anchor-base);
+  background-image: linear-gradient(
+    120deg,
+    var(--v-anchor-base),
+    var(--v-anchor-base)
+  );
+  background-size: 100% 0;
+  background-position: 0 100%;
+  transition: background-size 0.125s ease-in, color 0.125s ease-in;
+}
+.fill-animation:hover,
+div.md a:hover {
+  color: white !important;
+  border-color: var(--v-anchor-base);
+  background-size: 100% 100%;
+}
+</style>
+
 <style scoped></style>

@@ -2,10 +2,13 @@
   <div id="portfolio">
     <Intro />
     <v-container class="content">
-      <CardList :title="education.title" :data="education.data" />
-      <CardList :title="workExperience.title" :data="workExperience.data" />
-      <CardList :title="projects.title" :data="projects.data" />
-      <CardList
+      <PortfolioCardList :title="education.title" :data="education.data" />
+      <PortfolioCardList
+        :title="workExperience.title"
+        :data="workExperience.data"
+      />
+      <PortfolioCardList :title="projects.title" :data="projects.data" />
+      <PortfolioCardList
         :title="awardsAndCertifications.title"
         :data="awardsAndCertifications.data"
       />
@@ -14,12 +17,12 @@
 </template>
 
 <script>
-import CardList from '~/components/CardList'
+import PortfolioCardList from '~/components/PortfolioCardList'
 import Intro from '~/components/Intro'
 
 export default {
   components: {
-    CardList,
+    PortfolioCardList,
     Intro,
   },
   data: () => ({

@@ -54,7 +54,7 @@ div.md a {
 }
 .fill-animation:hover,
 div.md a:hover {
-  color: white;
+  color: white !important;
   border-color: var(--v-anchor-base);
   background-size: 100% 100%;
 }

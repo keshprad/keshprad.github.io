@@ -18,17 +18,15 @@
       <v-spacer></v-spacer>
 
       <div>
-        <hide-at breakpoint="mediumAndAbove">
-          <v-hover v-slot="{ hover }">
-            <v-btn
-              small
-              :href="socials.blog"
-              text
-              :color="hover ? 'primary' : 'text1'"
-              >Blog</v-btn
-            >
-          </v-hover>
-        </hide-at>
+        <NuxtLink :to="socials.blog" class="text-decoration-none">
+          <hide-at breakpoint="mediumAndAbove">
+            <v-hover v-slot="{ hover }">
+              <v-btn href="#" text small :color="hover ? 'primary' : 'text1'"
+                >Blog</v-btn
+              >
+            </v-hover>
+          </hide-at>
+        </NuxtLink>
         <hide-at breakpoint="mediumAndAbove">
           <v-hover v-slot="{ hover }">
             <v-btn
@@ -107,16 +105,15 @@
             </v-btn>
           </v-hover>
         </show-at>
-        <show-at breakpoint="mediumAndAbove">
-          <v-hover v-slot="{ hover }">
-            <v-btn
-              :href="socials.blog"
-              text
-              :color="hover ? 'primary' : 'text1'"
-              >Blog</v-btn
-            >
-          </v-hover>
-        </show-at>
+        <NuxtLink :to="socials.blog" class="text-decoration-none">
+          <show-at breakpoint="mediumAndAbove">
+            <v-hover v-slot="{ hover }">
+              <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
+                >Blog</v-btn
+              >
+            </v-hover>
+          </show-at>
+        </NuxtLink>
         <NuxtLink :to="socials.resume" class="text-decoration-none">
           <show-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">

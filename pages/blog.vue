@@ -1,14 +1,38 @@
 <template>
   <div id="portfolio">
     <Intro />
-    <v-container class="content"> </v-container>
+    <v-container class="content">
+      <v-card-text>
+        <h2 class="text-h6 mb-2">Filter By Categories</h2>
+        <BlogChipGroup :tags="tags" />
+      </v-card-text>
+    </v-container>
   </div>
 </template>
 
 <script>
+import BlogChipGroup from '../components/BlogChipGroup'
+
 export default {
-  components: {},
-  data: () => ({}),
+  components: {
+    BlogChipGroup,
+  },
+  data: () => ({
+    tags: [
+      {
+        active: false,
+        label: 'Professional',
+      },
+      {
+        active: false,
+        label: 'Travel',
+      },
+      {
+        active: false,
+        label: 'Tutorials',
+      },
+    ],
+  }),
   head() {
     return {
       title: 'Blog',
