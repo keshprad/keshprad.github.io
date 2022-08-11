@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import PortfolioCard from './PortfolioCard'
+import PortfolioCard from '~/components/PortfolioCard'
 
 export default {
   components: {

@@ -16,7 +16,7 @@ export default {
   },
   data: () => ({
     socials: {
-      blog: '/blog',
+      writing: '/writing',
       devpost: 'https://devpost.com/keshprad',
       github: 'https://github.com/keshprad',
       linkedin: 'https://www.linkedin.com/in/keshprad/',

@@ -10,9 +10,9 @@
       <v-card-text>
         <div>
           <v-hover v-slot="{ hover }">
-            <NuxtLink :to="socials.blog" class="text-decoration-none">
+            <NuxtLink :to="socials.writing" class="text-decoration-none">
               <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
-                >Blog</v-btn
+                >Writing</v-btn
               >
             </NuxtLink>
           </v-hover>

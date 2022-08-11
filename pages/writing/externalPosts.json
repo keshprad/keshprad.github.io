@@ -1,0 +1,14 @@
+[
+  {
+    "title": "A Brief History of Anomaly Detection",
+    "description": "",
+    "link": {
+      "type": "external",
+      "externalLink": "https://www.chaosgenius.io/blog/a-brief-history-of-anomaly-detection/",
+      "target": "_blank"
+    },
+    "img": "/writing/a-brief-history-of-anomaly-detection/banner.png",
+    "createdAt": "08-16-2021",
+    "tags": ["professional"]
+  }
+]

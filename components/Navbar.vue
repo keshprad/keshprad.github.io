@@ -18,11 +18,11 @@
       <v-spacer></v-spacer>
 
       <div>
-        <NuxtLink :to="socials.blog" class="text-decoration-none">
+        <NuxtLink :to="socials.writing" class="text-decoration-none">
           <hide-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
               <v-btn href="#" text small :color="hover ? 'primary' : 'text1'"
-                >Blog</v-btn
+                >Writing</v-btn
               >
             </v-hover>
           </hide-at>
@@ -105,11 +105,11 @@
             </v-btn>
           </v-hover>
         </show-at>
-        <NuxtLink :to="socials.blog" class="text-decoration-none">
+        <NuxtLink :to="socials.writing" class="text-decoration-none">
           <show-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
               <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
-                >Blog</v-btn
+                >Writing</v-btn
               >
             </v-hover>
           </show-at>

@@ -6,8 +6,10 @@
       v-model="tag.active"
       :value="tag.label"
       filter
+      outlined
+      @input="update"
     >
-      {{ tag.label }}
+      #{{ tag.label }}
     </v-chip>
   </v-chip-group>
 </template>
@@ -18,6 +20,10 @@ export default {
     tags: {
       type: Array,
       default: () => [],
+    },
+    update: {
+      type: Function,
+      default: () => {},
     },
   },
   data() {

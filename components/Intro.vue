@@ -1,22 +1,26 @@
 <template>
-  <v-parallax id="intro-component" dark src="/img/intro-bg.png" height="375">
-    <v-container class="content">
-      <h1>Hi, I'm {{ name }} 👋</h1>
-      <br />
-      <h3>{{ description }}</h3>
-    </v-container>
-  </v-parallax>
+  <ParallaxImageHeader
+    :title="title"
+    :description="description"
+    :img-src="imgSrc"
+  />
 </template>
 
 <script>
+import ParallaxImageHeader from '~/components/ParallaxImageHeader'
+
 export default {
+  components: {
+    ParallaxImageHeader,
+  },
   data() {
     return {
-      name: 'Rishi Keshav Pradeep',
+      title: "Hi, I'm Rishi Keshav Pradeep 👋",
       description:
         "I'm a sophomore at UMD with a strong interest in Algorithms, ML, Backend Engineering. " +
         "I'm a quick learner and always happy to meet new people and collaborate on projects. " +
         'In my free time, I enjoy creating projects on GitHub, listening to music, and playing/watching basketball.',
+      imgSrc: '/img/intro-bg.png',
     }
   },
 }
