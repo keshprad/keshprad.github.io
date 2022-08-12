@@ -20,7 +20,7 @@ export default {
         "I'm a sophomore at UMD with a strong interest in Algorithms, ML, Backend Engineering. " +
         "I'm a quick learner and always happy to meet new people and collaborate on projects. " +
         'In my free time, I enjoy creating projects on GitHub, listening to music, and playing/watching basketball.',
-      imgSrc: '/img/intro-bg.png',
+      imgSrc: '/img/portfolio-banner.png',
     }
   },
 }

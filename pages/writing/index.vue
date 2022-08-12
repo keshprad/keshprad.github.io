@@ -1,7 +1,11 @@
 <template>
   <div id="portfolio">
-    <Intro />
-    <v-container class="content">
+    <ParallaxImageHeader
+      :title="headerTitle"
+      :description="headerDescription"
+      :img-src="bannerSrc"
+    />
+    <v-container class="content my-0">
       <v-card-text>
         <h2 class="text-h6 mb-2">Filter By Categories</h2>
         <WritingTagsGroup :tags="tags" :update="filterPosts" />
@@ -19,13 +23,13 @@
 import externalPosts from './externalPosts.json'
 import PostCard from '~/components/PostCard'
 import WritingTagsGroup from '~/components/WritingTagsGroup'
-import Intro from '~/components/Intro'
+import ParallaxImageHeader from '~/components/ParallaxImageHeader'
 
 export default {
   components: {
     PostCard,
     WritingTagsGroup,
-    Intro,
+    ParallaxImageHeader,
   },
   async asyncData({ $content }) {
     const internalPosts = await $content('posts')
@@ -75,7 +79,6 @@ export default {
     return {
       posts,
       displayedPosts,
-      activeTags: [],
     }
   },
   data: () => ({
@@ -93,6 +96,9 @@ export default {
         label: 'tutorial',
       },
     ],
+    headerTitle: 'Writing',
+    headerDescription: 'A collection of my writing. :)',
+    bannerSrc: '/img/writing-banner.jpeg',
   }),
   head() {
     return {
@@ -128,7 +134,6 @@ export default {
 <style scoped>
 .content {
   max-width: 1024px;
-  margin-bottom: 50px;
 }
 #footer {
   margin-top: 50px;

@@ -1,5 +1,5 @@
 <template>
-  <v-parallax dark :src="src" height="375">
+  <v-parallax dark :src="src" :height="height">
     <v-container class="content">
       <h1>{{ title }}</h1>
       <br v-if="description" />
@@ -20,6 +20,10 @@ export default {
     description: {
       type: String,
       default: '',
+    },
+    height: {
+      type: Number,
+      default: 375,
     },
     imgSrc: {
       type: String,
