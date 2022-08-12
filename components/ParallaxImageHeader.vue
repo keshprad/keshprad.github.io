@@ -1,5 +1,5 @@
 <template>
-  <v-parallax dark :src="imgSrc" height="375">
+  <v-parallax dark :src="src" height="375">
     <v-container class="content">
       <h1>{{ title }}</h1>
       <br v-if="description" />
@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
   props: {
     title: {
@@ -22,6 +24,19 @@ export default {
     imgSrc: {
       type: String,
       default: '',
+    },
+    randImgSrcArr: {
+      type: Array,
+      default: () => [],
+    },
+  },
+  computed: {
+    src() {
+      if (this.imgSrc) {
+        return this.imgSrc
+      } else {
+        return _.sample(this.randImgSrcArr)
+      }
     },
   },
 }
