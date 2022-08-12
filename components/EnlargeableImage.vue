@@ -1,5 +1,5 @@
 <template>
-  <div class="img">
+  <div class="img" :style="containerStyle">
     <EnlargeableImage :src="src" :src_large="srcLarge" />
   </div>
 </template>
@@ -20,6 +20,10 @@ export default {
     srcLarge: {
       type: String,
       default: () => '',
+    },
+    containerStyle: {
+      type: String,
+      default: '',
     },
   },
 }

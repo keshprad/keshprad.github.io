@@ -22,7 +22,9 @@
     </v-list-item>
     <v-divider />
 
-    <v-list-item class="align-start pa-2">
+    <v-list-item
+      class="align-start pa-2 d-flex flex-wrap flex-md-nowrap flex-lg-nowrap flex-xl-nowrap"
+    >
       <div v-if="card.imgSrc && card.imgSrc.length > 0">
         <v-lazy v-for="(imgSrc, j) in card.imgSrc" :key="j">
           <EnlargeableImage :src="imgSrc" :src-large="imgSrc" />
@@ -39,12 +41,27 @@
 
         <div
           v-if="card.body.length > 0 && Array.isArray(card.body[0])"
-          class="d-flex"
+          class="d-flex flex-wrap flex-sm-nowrap"
         >
           <div
             v-for="(col, j) in card.body"
             :key="j"
-            :style="`width: ${100 / card.body.length}%`"
+            class="d-none d-sm-inline"
+            :style="`width: ${100 / card.body.length}%;`"
+          >
+            <v-card-text
+              v-for="(content, k) in col"
+              :key="k"
+              class="body-2 pa-2"
+            >
+              <vue-markdown class="md">{{ content }}</vue-markdown>
+            </v-card-text>
+          </div>
+          <div
+            v-for="(col, j) in card.body"
+            :key="j"
+            class="d-sm-none"
+            :style="`width: 100%;`"
           >
             <v-card-text
               v-for="(content, k) in col"

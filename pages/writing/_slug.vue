@@ -6,7 +6,7 @@
     <hide-at breakpoint="mediumAndAbove">
       <PostSidebar
         :current-post="page"
-        container-class="d-flex flex-column align-center mt-4"
+        container-class="d-flex flex-column align-center mt-4 text-center"
       />
     </hide-at>
     <v-container class="content d-flex justify-space-between my-5">

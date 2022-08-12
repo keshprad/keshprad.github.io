@@ -2,6 +2,8 @@
   <v-parallax dark :src="src" :height="height">
     <v-container class="content">
       <h1>{{ title }}</h1>
+      <br v-if="subtitle" />
+      <h2 v-if="subtitle">{{ subtitle }}</h2>
       <br v-if="description" />
       <h3 v-if="description">{{ description }}</h3>
     </v-container>
@@ -14,6 +16,10 @@ import _ from 'lodash'
 export default {
   props: {
     title: {
+      type: String,
+      default: '',
+    },
+    subtitle: {
       type: String,
       default: '',
     },

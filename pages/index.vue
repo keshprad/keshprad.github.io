@@ -37,17 +37,16 @@ export default {
           body: [
             [
               '- Fellow at <a href="https://startupshell.org">StartupShell</a>\n' +
-                '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140/141 (Calc)\n' +
                 '- FIRE Research program - <a href="https://www.fire.umd.edu/coml" target="_blank">Capital One Machine Learning Group</a>\n' +
                 '- Presidential Scholarship\n' +
-                '- Intramural Basketball',
+                '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140/141 (Calc)\n',
             ],
             [
               "- Dean's List: Fall 2021, Spring 2022\n" +
                 '- GPA: 3.963\n' +
                 '- Select Coursework:\n' +
-                '\t- CMSC 216: Intro to Computer Systems\n' +
-                '\t- CMSC 132: Object-oriented Programming II',
+                '\t- CMSC 351: Algorithms\n' +
+                '\t- CMSC 216: Intro to Computer Systems\n',
             ],
           ],
           dates: 'Aug 2021 - Dec 2024',

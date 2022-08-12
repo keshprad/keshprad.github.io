@@ -87,14 +87,6 @@ export default {
         active: false,
         label: 'professional',
       },
-      {
-        active: false,
-        label: 'travel',
-      },
-      {
-        active: false,
-        label: 'tutorial',
-      },
     ],
     headerTitle: 'Writing',
     headerDescription: 'A collection of my writing. :)',

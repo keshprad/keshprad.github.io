@@ -6,11 +6,11 @@
     <v-card class="mb-4" max-width="300">
       <v-img height="200" :src="currentPost.img"></v-img>
     </v-card>
-    <h6 class="post-title mb-2">{{ currentPost.title }}</h6>
+    <h6 class="post-title mb-1">{{ currentPost.title }}</h6>
     <div v-if="currentPost.description" class="text-body-1 text2--text">
       {{ currentPost.description }}
     </div>
-    <div class="text-subtitle-2 text2--text">
+    <div class="text-subtitle-2 text2--text mt-2">
       {{ currentPostDtStr }} in {{ currentPostTagsStr }}
     </div>
   </div>
