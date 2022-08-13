@@ -8,18 +8,41 @@
     "
     class="mx-auto my-5 background2"
   >
-    <v-list-item>
-      <span class="font-weight-bold">
-        {{ card.title }}
-      </span>
-      <span v-if="card.subtitle" class="font-italic font-weight-regular">
-        &nbsp;- {{ card.subtitle }}
-      </span>
-      <v-spacer></v-spacer>
-      <span v-if="card.dates" class="subtitle-2 text2--text">
-        ({{ card.dates }})
-      </span>
-    </v-list-item>
+    <show-at breakpoint="mediumAndAbove">
+      <v-list-item>
+        <span class="font-weight-bold">
+          {{ card.title }}
+        </span>
+        <span v-if="card.subtitle" class="font-italic font-weight-regular">
+          &nbsp;- {{ card.subtitle }}
+        </span>
+        <v-spacer></v-spacer>
+        <span v-if="card.dates" class="subtitle-2 text2--text">
+          ({{ card.dates }})
+        </span>
+      </v-list-item>
+    </show-at>
+    <hide-at breakpoint="mediumAndAbove">
+      <v-container>
+        <div class="d-flex flex-wrap justify-space-between">
+          <span class="font-weight-bold">
+            {{ card.title }}
+          </span>
+          <span
+            v-if="card.dates"
+            class="subtitle-2 text2--text d-none d-sm-block"
+          >
+            ({{ card.dates }})
+          </span>
+        </div>
+        <div v-if="card.subtitle" class="font-italic font-weight-regular">
+          {{ card.subtitle }}
+        </div>
+        <div v-if="card.dates" class="subtitle-2 text2--text d-sm-none">
+          ({{ card.dates }})
+        </div>
+      </v-container>
+    </hide-at>
     <v-divider />
 
     <v-list-item
@@ -112,12 +135,15 @@
 
 <script>
 import VueMarkdown from '@adapttive/vue-markdown'
+import { showAt, hideAt } from 'vue-breakpoints'
 import EnlargeableImage from '~/components/EnlargeableImage.vue'
 
 export default {
   components: {
     EnlargeableImage,
     VueMarkdown,
+    showAt,
+    hideAt,
   },
   props: {
     card: {
