@@ -60,6 +60,8 @@ export default {
 }
 .nuxt-content p {
   letter-spacing: 0.03125em;
+  line-height: 30px;
+  margin-bottom: 30px;
 }
 .nuxt-content hr {
   margin-bottom: 10px;

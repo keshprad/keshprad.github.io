@@ -69,6 +69,24 @@ export default {
       title: 'Work Experience',
       data: [
         {
+          title: 'Curie AI',
+          subtitle: 'Software Engineer Intern',
+          imgSrc: [],
+          links: [
+            {
+              icon: 'mdi-link-variant',
+              href: 'https://curieai.com',
+              target: '_blank',
+            },
+          ],
+          body: [
+            `- Developed backend microservices for integrating EHR systems with Curie services and deployed with Kubernetes.\n` +
+              `- Created a wrapper API and a data transformer, enabling Curie to retrieve data on patients' medical records.\n` +
+              `- Read my reflection on my experience at Curie [here](/writing/curie-ai-internship-summer-22).`,
+          ],
+          dates: 'Jun 2021 - Aug 2021',
+        },
+        {
           title: "Chaos Genius (YC '20)",
           subtitle: 'Software Engineer Intern',
           imgSrc: ['/img/work-experience/chaos-genius-dashboard.gif'],
@@ -87,10 +105,10 @@ export default {
             },
           ],
           body: [
-            `- Worked on algorithms for automated Root Cause Analysis and Anomaly Detection for time series data.\n` +
+            `- Worked on algorithms for Root Cause Analysis and Anomaly Detection for time series data.\n` +
               `- Engineered a KPI validation feature, and developed an anomaly severity scoring algorithm.\n` +
               `- Created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes.\n` +
-              `- Wrote a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a>.`,
+              `- Authored a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a>.`,
           ],
           dates: 'Jun 2021 - Aug 2021',
         },
@@ -108,9 +126,9 @@ export default {
           subtitle: 'Director of Project Falcon',
           imgSrc: ['/img/work-experience/elevate-the-future.png'],
           tldr:
-            'Directed project to build websites for local businesses amongst the COVID pandemic',
+            'Directed project to build websites for 30+ local businesses amongst the COVID pandemic',
           body: [
-            `- Founded and directed Project Falcon, which developed websites for local businesses amidst the COVID pandemic.\n` +
+            `- Founded and directed Project Falcon to develop websites for 30+ local businesses amidst the pandemic.\n` +
               `- Conducted technical workshops for youth and led team of 20+ in website development for businesses.`,
           ],
           dates: 'Jul 2019 - May 2021',

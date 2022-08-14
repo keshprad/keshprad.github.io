@@ -2,7 +2,7 @@
   <div id="portfolio">
     <ParallaxImageHeader
       :title="headerTitle"
-      :description="headerDescription"
+      :subtitle="headerSubtitle"
       :img-src="bannerSrc"
     />
     <v-container class="content my-0">
@@ -89,7 +89,7 @@ export default {
       },
     ],
     headerTitle: 'Writing',
-    headerDescription: 'A collection of my writing. :)',
+    headerSubtitle: 'A collection of my writing. :)',
     bannerSrc: '/img/writing-banner.jpeg',
   }),
   head() {
