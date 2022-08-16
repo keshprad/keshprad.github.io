@@ -1,7 +1,7 @@
 <template>
   <div>
     <show-at breakpoint="mediumAndAbove">
-      <ParallaxImageHeader :img-src="bannerSrc" height="250" />
+      <ParallaxImageHeader :img-src="bannerSrc" :height="250" />
     </show-at>
     <hide-at breakpoint="mediumAndAbove">
       <PostSidebar
@@ -42,6 +42,11 @@ export default {
   data() {
     return {
       bannerSrc: '/img/writing-banner.jpeg',
+    }
+  },
+  head() {
+    return {
+      title: this.page.title,
     }
   },
 }
