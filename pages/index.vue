@@ -30,7 +30,7 @@ export default {
       title: 'Education',
       data: [
         {
-          title: 'University of Maryland, College-Park',
+          title: 'University of Maryland, College Park',
           subtitle: 'BS in Computer Science and Statistics',
           imgSrc: ['/img/education/umd-logo.png'],
           id: 'umd',
@@ -49,7 +49,7 @@ export default {
                 '\t- CMSC 216: Intro to Computer Systems\n',
             ],
           ],
-          dates: 'Aug 2021 - Dec 2024',
+          dates: '2021 - 2024',
         },
         {
           title: 'Lynbrook High School',
@@ -69,6 +69,16 @@ export default {
       title: 'Work Experience',
       data: [
         {
+          title: 'University of Maryland, College Park',
+          subtitle: 'Teaching Assistant - Intro to Computer Systems',
+          imgSrc: [],
+          links: [],
+          body: [
+            `**Teaching Assistant - Intro to Computer Systems (CMSC 216)**`,
+          ],
+          dates: 'Aug 2022 - Present',
+        },
+        {
           title: 'Curie AI',
           subtitle: 'Software Engineer Intern',
           imgSrc: [],
@@ -84,7 +94,7 @@ export default {
               `- Created a wrapper API and a data transformer, enabling Curie to retrieve data on patients' medical records.\n` +
               `- Read my reflection on my experience at Curie [here](/writing/curie-ai-internship-summer-22).`,
           ],
-          dates: 'Jun 2021 - Aug 2021',
+          dates: 'Jun 2022 - Aug 2022',
         },
         {
           title: "Chaos Genius (YC '20)",

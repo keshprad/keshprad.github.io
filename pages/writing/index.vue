@@ -32,9 +32,14 @@ export default {
     ParallaxImageHeader,
   },
   async asyncData({ $content }) {
-    const internalPosts = await $content('posts')
-      .only(['title', 'description', 'slug', 'img', 'createdAt', 'tags'])
-      .fetch()
+    let internalPosts
+    try {
+      internalPosts = await $content('post')
+        .only(['title', 'description', 'slug', 'img', 'createdAt', 'tags'])
+        .fetch()
+    } catch {
+      internalPosts = []
+    }
 
     const posts = [...externalPosts, ...internalPosts]
     const months = [
