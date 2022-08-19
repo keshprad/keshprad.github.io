@@ -36,14 +36,13 @@ export default {
           id: 'umd',
           body: [
             [
-              '- Fellow at <a href="https://startupshell.org">StartupShell</a>\n' +
+              "- Dean's List: Fall 2021, Spring 2022\n" +
+                '- Fellow at <a href="https://startupshell.org" target="_blank">StartupShell</a>\n' +
                 '- FIRE Research program - <a href="https://www.fire.umd.edu/coml" target="_blank">Capital One Machine Learning Group</a>\n' +
-                '- Presidential Scholarship\n' +
-                '- Tutor for STAT 100 (Elem. Stats and Prob.) & MATH 140/141 (Calc)\n',
+                '- Presidential Scholarship',
             ],
             [
-              "- Dean's List: Fall 2021, Spring 2022\n" +
-                '- GPA: 3.963\n' +
+              '- GPA: 3.963\n' +
                 '- Select Coursework:\n' +
                 '\t- CMSC 351: Algorithms\n' +
                 '\t- CMSC 216: Intro to Computer Systems\n',
@@ -70,11 +69,11 @@ export default {
       data: [
         {
           title: 'University of Maryland, College Park',
-          subtitle: 'Teaching Assistant - Intro to Computer Systems',
+          subtitle: 'Teaching Assistant - CMSC 216 (Intro to Computer Systems)',
           imgSrc: [],
           links: [],
           body: [
-            `**Teaching Assistant - Intro to Computer Systems (CMSC 216)**`,
+            `**Teaching Assistant - CMSC 216 (Intro to Computer Systems)**`,
           ],
           dates: 'Aug 2022 - Present',
         },
