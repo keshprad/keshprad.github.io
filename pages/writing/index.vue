@@ -34,7 +34,7 @@ export default {
   async asyncData({ $content }) {
     let internalPosts
     try {
-      internalPosts = await $content('post')
+      internalPosts = await $content('posts')
         .only(['title', 'description', 'slug', 'img', 'createdAt', 'tags'])
         .fetch()
     } catch {
