@@ -70,10 +70,11 @@ export default {
         {
           title: 'University of Maryland, College Park',
           subtitle: 'Teaching Assistant - CMSC 216 (Intro to Computer Systems)',
-          imgSrc: [],
+          imgSrc: ['/img/education/umd-logo.png'],
           links: [],
           body: [
-            `**Teaching Assistant - CMSC 216 (Intro to Computer Systems)**`,
+            `- Teach introductory systems concepts such as C, pointers, dynamic memory, memory management, Assembly.\n` +
+              `- Engage directly with students by leading office hours, grading projects and exams in a class of 800+ students.`,
           ],
           dates: 'Aug 2022 - Present',
         },
@@ -89,9 +90,9 @@ export default {
             },
           ],
           body: [
-            `- Developed backend microservices for integrating EHR systems with Curie services and deployed with Kubernetes.\n` +
-              `- Created a wrapper API and a data transformer, enabling Curie to retrieve data on patients' medical records.\n` +
-              `- Read my reflection on my experience at Curie [here](/writing/curie-ai-internship-summer-22).`,
+            '- Implemented backend microservices for integrating EHR systems with Curie services and deployed with Kubernetes.\n' +
+              "- Delivered a wrapper API and a data transformer, enabling Curie to retrieve data on patients' medical records.\n" +
+              '- Read my reflection on my experience at Curie [here](/writing/curie-ai-internship-summer-22).',
           ],
           dates: 'Jun 2022 - Aug 2022',
         },
@@ -99,8 +100,6 @@ export default {
           title: "Chaos Genius (YC '20)",
           subtitle: 'Software Engineer Intern',
           imgSrc: ['/img/work-experience/chaos-genius-dashboard.gif'],
-          tldr:
-            'Worked on algos for automated Root Cause Analysis and Anomaly Detection for time series data.',
           links: [
             {
               icon: 'mdi-github',
@@ -116,31 +115,29 @@ export default {
           body: [
             `- Worked on algorithms for Root Cause Analysis and Anomaly Detection for time series data.\n` +
               `- Engineered a KPI validation feature, and developed an anomaly severity scoring algorithm.\n` +
-              `- Created the anomaly detection visualization, and performed extensive algorithm and product testing and bug fixes.\n` +
               `- Authored a blog post, <a href="https://chaosgenius.io/blog/a-brief-history-of-anomaly-detection/" target="_blank">"A Brief History of Anomaly Detection"</a>.`,
           ],
           dates: 'Jun 2021 - Aug 2021',
         },
         {
-          title: 'dsapps',
-          subtitle: 'Software Engineer Intern',
-          body: [
-            `- Worked on a project in forecasting resource requirements for tasks based on historical patterns.\n` +
-              `- Performed text processing/cleaning, handled mixed data, experimented with k-means clustering for data analysis.`,
-          ],
-          dates: 'Jun 2020 - Sept 2020',
-        },
-        {
           title: 'Elevate the Future',
           subtitle: 'Director of Project Falcon',
           imgSrc: ['/img/work-experience/elevate-the-future.png'],
-          tldr:
-            'Directed project to build websites for 30+ local businesses amongst the COVID pandemic',
           body: [
-            `- Founded and directed Project Falcon to develop websites for 30+ local businesses amidst the pandemic.\n` +
+            `- Founded and spearheaded Project Falcon to develop websites for 30+ local businesses amidst the pandemic.\n` +
+              `- Collaborated directly with business owners to design and curate websites for their needs.\n` +
               `- Conducted technical workshops for youth and led team of 20+ in website development for businesses.`,
           ],
           dates: 'Jul 2019 - May 2021',
+        },
+        {
+          title: 'dsapps',
+          subtitle: 'Software Engineer Intern',
+          body: [
+            `- Forecasted resource requirements for tasks based on historical patterns.\n` +
+              `- Experimented with k-means clustering for data analysis.`,
+          ],
+          dates: 'Jun 2020 - Sept 2020',
         },
       ],
     },
