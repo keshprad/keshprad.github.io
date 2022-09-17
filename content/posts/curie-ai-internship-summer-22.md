@@ -11,7 +11,7 @@ tags: ['professional']
 
 ---
 
-Curie provides remote patient monitoring for respiratory symptoms, including detecting signs of asthma and COPD. Curie monitors a patient’s breathing as they sleep, uses artificial intelligence to produce insights on the patient’s respiratory health, then provides these insights to the patient’s clinicians.
+Curie AI is a tech-enabled respiratory care company providing virtual personalized disease management through proprietary AI that passively detects symptoms. This approach results in high adherence, reduction in adverse events, cost savings, and improving the overall quality of life for people with chronic respiratory conditions.
 
 During my SWE internship with Curie, I worked remotely from San Jose. Since many people on the team are located nearby in the Bay Area, I got to meet and bond with a lot of the team over a team lunch: something I’ve come to appreciate after being in complete lockdown last summer. On a daily basis, I worked on backend engineering tasks. This is my first professional experience with backend engineering; previously, I only worked on backend development through personal projects. This internship helped me understand how it would be to do backend development full-time.
 
