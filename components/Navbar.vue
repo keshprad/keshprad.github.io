@@ -21,7 +21,11 @@
         <NuxtLink :to="socials.writing" class="text-decoration-none">
           <hide-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
-              <v-btn href="#" text small :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.writing"
+                text
+                small
+                :color="hover ? 'primary' : 'text1'"
                 >Writing</v-btn
               >
             </v-hover>
@@ -53,7 +57,7 @@
         <hide-at breakpoint="mediumAndAbove">
           <v-hover v-slot="{ hover }">
             <NuxtLink to="/" class="text-decoration-none">
-              <v-btn icon small :color="hover ? 'primary' : 'text1'">
+              <v-btn icon small href="/" :color="hover ? 'primary' : 'text1'">
                 <v-icon>mdi-home</v-icon>
               </v-btn>
             </NuxtLink>
@@ -108,7 +112,10 @@
         <NuxtLink :to="socials.writing" class="text-decoration-none">
           <show-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
-              <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.writing"
+                text
+                :color="hover ? 'primary' : 'text1'"
                 >Writing</v-btn
               >
             </v-hover>
@@ -117,14 +124,21 @@
         <NuxtLink :to="socials.resume" class="text-decoration-none">
           <show-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
-              <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.resume"
+                text
+                :color="hover ? 'primary' : 'text1'"
                 >Resume</v-btn
               >
             </v-hover>
           </show-at>
           <hide-at breakpoint="mediumAndAbove">
             <v-hover v-slot="{ hover }">
-              <v-btn href="#" text small :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.resume"
+                text
+                small
+                :color="hover ? 'primary' : 'text1'"
                 >Resume</v-btn
               >
             </v-hover>

@@ -2,8 +2,8 @@
 title: Curie AI Internship (Summer ‘22)
 description: My experience as a Backend intern at Curie AI.
 img: '/writing/curie-ai-internship-summer-22/monitoring.png'
-createdAt: '09-17-2022'
-updatedAt: '09-17-2022'
+createdAt: '2022-09-17'
+updatedAt: '2022-09-17'
 tags: ['professional']
 ---
 

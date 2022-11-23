@@ -11,7 +11,10 @@
         <div>
           <v-hover v-slot="{ hover }">
             <NuxtLink :to="socials.writing" class="text-decoration-none">
-              <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.writing"
+                text
+                :color="hover ? 'primary' : 'text1'"
                 >Writing</v-btn
               >
             </NuxtLink>
@@ -36,7 +39,10 @@
           </v-hover>
           <v-hover v-slot="{ hover }">
             <NuxtLink :to="socials.resume" class="text-decoration-none">
-              <v-btn href="#" text :color="hover ? 'primary' : 'text1'"
+              <v-btn
+                :href="socials.resume"
+                text
+                :color="hover ? 'primary' : 'text1'"
                 >Resume</v-btn
               >
             </NuxtLink>
