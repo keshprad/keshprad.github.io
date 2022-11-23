@@ -31,6 +31,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  serverMiddleware: ['~/middleware/redirects.js'],
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
