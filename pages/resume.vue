@@ -1,5 +1,5 @@
 <template>
-  <iframe id="resume" src="/resume.pdf" frameborder="0" />
+  <iframe id="resume" src="/Rishi_Pradeep_resume.pdf" frameborder="0" />
 </template>
 
 <script>
