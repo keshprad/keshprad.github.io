@@ -45,10 +45,12 @@ export default {
               '- GPA: 3.963\n' +
                 '- Select Coursework:\n' +
                 '\t- CMSC 351: Algorithms\n' +
-                '\t- CMSC 216: Intro to Computer Systems\n',
+                '\t- CMSC 216: Intro to Computer Systems\n' +
+                '\t- CMSC 430: Intro to Compilers\n' +
+                '\t- CMSC 420: Advanced Data Structures\n',
             ],
           ],
-          dates: '2021 - 2024',
+          dates: 'Aug 2021 - May 2024',
         },
         {
           title: 'Lynbrook High School',
@@ -73,8 +75,9 @@ export default {
           imgSrc: ['/img/education/umd-logo.png'],
           links: [],
           body: [
-            `- Teach introductory systems concepts such as C, pointers, dynamic memory, memory management, Assembly.\n` +
-              `- Engage directly with students by leading office hours, grading projects and exams in a class of 800+ students.`,
+            `- Taught introductory systems concepts such as C, pointers, dynamic memory, memory management, Assembly.\n` +
+              `- Engaged directly with students by hosting recitation sessions and leading office hours in a class of 800+ students.\n` +
+              `- Provided feedback and areas of improvement for students through grading coding projects, quizzes, and exams.`,
           ],
           dates: 'Aug 2022 - Present',
         },
@@ -90,8 +93,9 @@ export default {
             },
           ],
           body: [
-            '- Implemented backend microservices for integrating EHR systems with Curie services and deployed with Kubernetes.\n' +
-              "- Delivered a wrapper API and a data transformer, enabling Curie to retrieve data on patients' medical records.\n" +
+            '- Implemented backend microservices for integrating Electronic Health Record systems with Curie services.\n' +
+              '- Delivered data transformer and wrapper APIs, enabling seamless retrieval of patient records across Curie services.\n' +
+              '- Dockerized microservices and deployed with AWS Elastic Kubernetes Service.\n' +
               '- Read my reflection on my experience at Curie [here](/writing/curie-ai-internship-summer-22).',
           ],
           dates: 'Jun 2022 - Aug 2022',
@@ -130,15 +134,6 @@ export default {
           ],
           dates: 'Jul 2019 - May 2021',
         },
-        {
-          title: 'dsapps',
-          subtitle: 'Software Engineer Intern',
-          body: [
-            `- Forecasted resource requirements for tasks based on historical patterns.\n` +
-              `- Experimented with k-means clustering for data analysis.`,
-          ],
-          dates: 'Jun 2020 - Sept 2020',
-        },
       ],
     },
     projects: {
@@ -168,6 +163,13 @@ export default {
             `- This application analyzes the given YouTube video, retrieves quick snippets of relevant information about people, songs, games, etc. mentioned in the video, and displays them side-by-side.\n` +
               `- Awards:\n` +
               `\t- 2nd Place Media Track @ PickHacks 2021`,
+          ],
+        },
+        {
+          title: 'MicroCaml',
+          body: [
+            `- Built a lexer, parser, and evaluator for the MicroCaml language.\n` +
+              `- A dynamically-typed version of OCaml with a subset of its features.`,
           ],
         },
         {
