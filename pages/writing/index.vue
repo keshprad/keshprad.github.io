@@ -40,6 +40,7 @@ export default {
     } catch {
       internalPosts = []
     }
+    let tags = new Set()
 
     const posts = [...externalPosts, ...internalPosts]
     const months = [
@@ -65,6 +66,8 @@ export default {
 
       // conv tags list to set
       post.tags = new Set(post.tags)
+      // union to find all unique tags
+      tags = new Set([...tags, ...post.tags])
 
       if (!post.link) {
         // manipulate link for internal posts
@@ -81,18 +84,23 @@ export default {
     })
     const displayedPosts = [...posts]
 
+    tags = Array.from(
+      tags.map((t) => {
+        return {
+          active: false,
+          label: t,
+        }
+      })
+    )
+    tags.sort((a, b) => a.label.localeCompare(b.label))
+
     return {
+      tags,
       posts,
       displayedPosts,
     }
   },
   data: () => ({
-    tags: [
-      {
-        active: false,
-        label: 'professional',
-      },
-    ],
     headerTitle: 'Writing',
     headerSubtitle: 'A collection of my writing. :)',
     bannerSrc: '/img/writing-banner.jpeg',
@@ -112,10 +120,10 @@ export default {
       }
       this.displayedPosts = this.posts.filter((p) => {
         if (activeTags.length > 0) {
-          let res = true
-          for (let i = 0; res && i < activeTags.length; i++) {
-            if (!p.tags.has(activeTags[i])) {
-              res = false
+          let res = false
+          for (let i = 0; !res && i < activeTags.length; i++) {
+            if (p.tags.has(activeTags[i])) {
+              res = true
             }
           }
           return res
