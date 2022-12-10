@@ -1,5 +1,5 @@
 <template>
-  <v-chip-group>
+  <v-chip-group multiple>
     <v-chip
       v-for="(tag, i) in tags"
       :key="i"

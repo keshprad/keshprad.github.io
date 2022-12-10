@@ -16,7 +16,18 @@
           container-style="min-width: 350px; max-width: 350px;"
         />
       </show-at>
-      <nuxt-content :document="page" class="px-5" />
+      <div class="px-5">
+        <show-at breakpoint="mediumAndAbove">
+          <div>
+            <h1 class="text2--text">{{ page.title }}</h1>
+            <div v-if="page.description" class="text-body-1 text2--text">
+              {{ page.description }}
+            </div>
+          </div>
+        </show-at>
+        <hr class="mt-2 mb-5" />
+        <nuxt-content :document="page" />
+      </div>
     </v-container>
   </div>
 </template>
@@ -48,6 +59,29 @@ export default {
     return {
       title: this.page.title,
     }
+  },
+  computed: {
+    currentPostTagsStr() {
+      return this.page.tags.map((tag) => `#${tag}`).join(', ')
+    },
+    currentPostDtStr() {
+      const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sept',
+        'Oct',
+        'Nov',
+        'Dec',
+      ]
+      const dt = new Date(this.page.createdAt)
+      return `${months[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()}`
+    },
   },
 }
 </script>

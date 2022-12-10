@@ -2,13 +2,9 @@
 title: Curie AI Internship (Summer ‘22)
 description: My experience as a Backend intern at Curie AI.
 img: '/writing/curie-ai-internship-summer-22/monitoring.png'
-createdAt: '2022-09-17'
-updatedAt: '2022-09-17'
+createdAt: '09-17-2022'
+updatedAt: '09-17-2022'
 tags: ['professional']
----
-
-# Curie AI Internship (Summer ‘22)
-
 ---
 
 Curie AI is a tech-enabled respiratory care company providing virtual personalized disease management through proprietary AI that passively detects symptoms. This approach results in high adherence, reduction in adverse events, cost savings, and improving the overall quality of life for people with chronic respiratory conditions.
