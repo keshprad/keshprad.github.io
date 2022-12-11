@@ -70,6 +70,14 @@ export default {
       title: 'Work Experience',
       data: [
         {
+          title: 'Capital One',
+          subtitle: 'Software Engineer Intern - Technology Incubator',
+          imgSrc: ['/img/work-experience/capital-one.jpeg'],
+          links: [],
+          body: [`- Starting Jan 2023`],
+          dates: 'Jan 2023 - Present',
+        },
+        {
           title: 'University of Maryland, College Park',
           subtitle: 'Teaching Assistant - CMSC 216 (Intro to Computer Systems)',
           imgSrc: ['/img/education/umd-logo.png'],
