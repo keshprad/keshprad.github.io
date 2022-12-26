@@ -35,8 +35,8 @@ export default {
       title: "Hi, I'm Rishi Keshav Pradeep 👋",
       subtitle: 'I love software and learning!',
       description:
-        "I'm a CS student at UMD with a strong interest in Algorithms, ML, Backend Engineering. " +
-        'I love learning new things, and meeting new people. ',
+        "I'm a CS + Math student at UMD with a strong interest in Systems, Algorithms, and Full-Stack Development. " +
+        'I love learning new things, and meeting new people!',
       imgSrc: '/img/portfolio-banner.png',
     }
   },

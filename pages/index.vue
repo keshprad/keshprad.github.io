@@ -31,7 +31,7 @@ export default {
       data: [
         {
           title: 'University of Maryland, College Park',
-          subtitle: 'BS in Computer Science and Statistics',
+          subtitle: 'BS in Computer Science + Mathematics',
           imgSrc: ['/img/education/umd-logo.png'],
           id: 'umd',
           body: [
