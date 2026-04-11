@@ -7,13 +7,15 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 <pre>
 .
 └── files
-    ├── papers
-    │   ├── <a href="./files/papers/pccl-ipdps26.pdf">pccl-ipdps26.pdf</a>
-    │   └── <a href="./files/papers/performance-variability-ipdps26.pdf">performance-variability-ipdps26.pdf</a>
-    └── posters
-        ├── <a href="./files/posters/pccl-sc25-abstract.pdf">pccl-sc25-abstract.pdf</a>
-        ├── <a href="./files/posters/pccl-sc25.pdf">pccl-sc25.pdf</a>
-        ├── <a href="./files/posters/performance-variability-mug25.pdf">performance-variability-mug25.pdf</a>
-        ├── <a href="./files/posters/performance-variability-sc25-abstract.pdf">performance-variability-sc25-abstract.pdf</a>
-        └── <a href="./files/posters/performance-variability-sc25.pdf">performance-variability-sc25.pdf</a>
+    ├── pccl
+    │   ├── <a href="./papers/pccl-ipdps26/">website</a>
+    │   ├── <a href="./files/pccl/pccl-ipdps26.pdf">pccl-ipdps26.pdf</a>
+    │   ├── <a href="./files/pccl/pccl-sc25-abstract.pdf">pccl-sc25-abstract.pdf</a>
+    │   └── <a href="./files/pccl/pccl-sc25.pdf">pccl-sc25.pdf</a>
+    └── performance-variability
+        ├── <a href="./papers/perf-variability-ipdps26/">website</a>
+        ├── <a href="./files/performance-variability/performance-variability-ipdps26.pdf">performance-variability-ipdps26.pdf</a>
+        ├── <a href="./files/performance-variability/performance-variability-mug25.pdf">performance-variability-mug25.pdf</a>
+        ├── <a href="./files/performance-variability/performance-variability-sc25-abstract.pdf">performance-variability-sc25-abstract.pdf</a>
+        └── <a href="./files/performance-variability/performance-variability-sc25.pdf">performance-variability-sc25.pdf</a>
 </pre>

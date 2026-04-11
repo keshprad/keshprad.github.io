@@ -6,84 +6,77 @@ Usage (run from repo root):
 """
 
 import os
-import re
-import subprocess
+
+# Maps a files/ project directory name to the corresponding website directory
+# (relative to repo root). Add a new entry whenever a project gets a website.
+WEBSITE_MAP = {
+    "pccl": "papers/pccl-ipdps26",
+    "performance-variability": "papers/perf-variability-ipdps26",
+}
+
+
+def get_logical_entries(abs_path, dir_name, repo_root):
+    """Return ordered list of (kind, name, full_path_or_href) for a directory.
+
+    Injects a virtual 'website' entry first when a matching website exists in
+    WEBSITE_MAP and its index.html is present on disk.
+    """
+    entries = []
+
+    if dir_name in WEBSITE_MAP:
+        website_dir = WEBSITE_MAP[dir_name]
+        if os.path.isfile(os.path.join(repo_root, website_dir, "index.html")):
+            entries.append(("website", "website", f"./{website_dir}/"))
+
+    for name in sorted(os.listdir(abs_path)):
+        full = os.path.join(abs_path, name)
+        kind = "dir" if os.path.isdir(full) else "file"
+        entries.append((kind, name, full))
+
+    return entries
+
+
+def build_tree_lines(abs_path, repo_root, rel_to_root, prefix=""):
+    """Recursively render tree lines for abs_path.
+
+    abs_path    – absolute path to the directory being rendered
+    repo_root   – absolute path to the repo root
+    rel_to_root – path of abs_path relative to repo_root (used to build hrefs)
+    prefix      – indentation prefix string for the current level
+    """
+    dir_name = os.path.basename(abs_path)
+    entries = get_logical_entries(abs_path, dir_name, repo_root)
+    lines = []
+
+    for i, (kind, name, path_or_href) in enumerate(entries):
+        is_last = i == len(entries) - 1
+        connector = "└── " if is_last else "├── "
+        child_prefix = prefix + ("    " if is_last else "│   ")
+
+        if kind == "website":
+            link = f'<a href="{path_or_href}">website</a>'
+            lines.append(f"{prefix}{connector}{link}")
+        elif kind == "dir":
+            lines.append(f"{prefix}{connector}{name}")
+            lines.extend(
+                build_tree_lines(path_or_href, repo_root, f"{rel_to_root}/{name}", child_prefix)
+            )
+        else:
+            href = f"./{rel_to_root}/{name}"
+            link = f'<a href="{href}">{name}</a>'
+            lines.append(f"{prefix}{connector}{link}")
+
+    return lines
 
 
 def main():
     repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    files_dir = os.path.join(repo_root, "files")
 
-    # Build the ignore pattern from .gitignore (skip comments and blank lines)
-    gitignore_path = os.path.join(repo_root, ".gitignore")
-    ignore_patterns = []
-    if os.path.isfile(gitignore_path):
-        with open(gitignore_path) as f:
-            for line in f:
-                line = line.strip()
-                if line and not line.startswith("#"):
-                    ignore_patterns.append(line)
+    tree_lines = [".", "└── files"]
+    tree_lines.extend(build_tree_lines(files_dir, repo_root, "files", "    "))
 
-    # Run tree, ignoring everything listed in .gitignore
-    tree_cmd = ["tree", "--noreport", "files"]
-    if ignore_patterns:
-        tree_cmd += ["-I", "|".join(ignore_patterns)]
-    result = subprocess.run(
-        tree_cmd,
-        capture_output=True,
-        text=True,
-        cwd=repo_root,
-    )
-
-    # Normalize non-breaking spaces (\xa0) that macOS `tree` uses in indent
-    # groups (e.g. "│\xa0\xa0 ") to regular spaces so the regex works uniformly.
-    tree_lines = result.stdout.replace("\xa0", " ").splitlines()
-
-    # Regex to parse tree connector lines:
-    #   Group 1: indentation  — repeating 4-char groups of "│   " or "    "
-    #   Group 2: connector    — "├── " or "└── "
-    #   Group 3: name         — the file or directory name
-    CONNECTOR_RE = re.compile(r"^((?:[│ ]{4})*)((?:├|└)── )(.+)$")
-
-    output_lines = ["."]
-    dir_stack = ["files"]  # path components under repo root, used to build hrefs
-
-    for i, line in enumerate(tree_lines):
-        if i == 0:
-            # First line is the root directory name ("files")
-            output_lines.append("└── files")
-            continue
-
-        m = CONNECTOR_RE.match(line)
-        if not m:
-            continue
-
-        indent = m.group(1)     # original indentation prefix from tree
-        connector = m.group(2)  # "├── " or "└── "
-        name = m.group(3)
-
-        # Depth within "files/": each 4-char indent group = one level
-        depth = len(indent) // 4 + 1
-
-        # Pop the directory stack back to the current depth
-        while len(dir_stack) > depth:
-            dir_stack.pop()
-
-        # Relative href path for this entry
-        href = "./" + "/".join(dir_stack) + "/" + name
-
-        # Shift output 4 spaces to the right so everything sits under "files"
-        out_indent = "    " + indent
-
-        full_path = os.path.join(repo_root, *dir_stack, name)
-
-        if os.path.isdir(full_path):
-            dir_stack.append(name)
-            output_lines.append(f"{out_indent}{connector}{name}")
-        else:
-            link = f'<a href="{href}">{name}</a>'
-            output_lines.append(f"{out_indent}{connector}{link}")
-
-    tree_content = "\n".join(output_lines)
+    tree_content = "\n".join(tree_lines)
     tree_block = f"<pre>\n{tree_content}\n</pre>\n"
 
     prefix_path = os.path.join(repo_root, "README_prefix.md")
@@ -92,18 +85,13 @@ def main():
         with open(prefix_path) as f:
             prefix_content = f.read().rstrip()
 
-    if prefix_content:
-        readme_content = f"{prefix_content}\n\n{tree_block}"
-    else:
-        readme_content = tree_block
+    readme_content = f"{prefix_content}\n\n{tree_block}" if prefix_content else tree_block
 
     readme_path = os.path.join(repo_root, "README.md")
     with open(readme_path, "w") as f:
         f.write(readme_content)
 
     print("README.md updated successfully!")
-    print()
-    # print(readme_content)
 
 
 if __name__ == "__main__":

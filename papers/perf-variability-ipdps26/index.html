@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elusive Performance on GPU Supercomputers | IPDPS 2026</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Auto-generated badge -->
+<div class="autogen-badge">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+  </svg>
+  Auto-generated from paper PDF by <a href="https://claude.ai/code" target="_blank">Claude Code</a>
+</div>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<header class="hero">
+  <div class="container hero-inner">
+    <p class="venue-badge">IPDPS 2026</p>
+    <h1 class="title">The Case of the Elusive Application Performance<br>on Production GPU Supercomputers</h1>
+
+    <div class="authors">
+      <div class="author-card">
+        <div class="author-name">Cunyang Wei</div>
+        <div class="author-info">University of Maryland</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Keshav Pradeep</div>
+        <div class="author-info">University of Maryland</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Abhinav Bhatele</div>
+        <div class="author-info">University of Maryland</div>
+      </div>
+    </div>
+
+    <div class="hero-links">
+      <a href="../../files/papers/performance-variability-ipdps26.pdf" class="btn btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        Paper PDF
+      </a>
+      <a href="#bibtex" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        BibTeX
+      </a>
+    </div>
+
+    <div class="keyword-row">
+      <span class="kw">Performance Variability</span>
+      <span class="kw">GPU Supercomputers</span>
+      <span class="kw">Dragonfly Networks</span>
+      <span class="kw">AI Workloads</span>
+      <span class="kw">Network Congestion</span>
+      <span class="kw">Machine Learning</span>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ NAV ════════════════════════════════ -->
+<nav class="sticky-nav" id="stickyNav">
+  <div class="container nav-inner">
+    <a href="#abstract">Abstract</a>
+    <a href="#contributions">Contributions</a>
+    <a href="#setup">Study Design</a>
+    <a href="#variability">Variability</a>
+    <a href="#breakdowns">App Analysis</a>
+    <a href="#concurrent">Concurrent Jobs</a>
+    <a href="#placement">Placement</a>
+    <a href="#gemm">GPU Variability</a>
+    <a href="#ml">ML Prediction</a>
+    <a href="#insights">Implications</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════ ABSTRACT ══════════════════════════ -->
+<section id="abstract" class="section">
+  <div class="container">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      Modern HPC facilities increasingly rely on GPU-accelerated clusters to drive both scientific
+      computing and AI workloads. <strong>Performance variability</strong> is a critical issue in these systems,
+      undermining efficiency and performance reproducibility. While prior studies have extensively
+      analyzed variability in CPU-centric supercomputers, similar large-scale investigations on GPU
+      clusters are lacking.
+    </p>
+    <p class="abstract-text">
+      To address this gap, we set up a <strong>longitudinal experiment</strong> on two state-of-the-art
+      GPU-based supercomputers: NERSC's Perlmutter and ORNL's Frontier. We benchmark several
+      representative HPC and AI applications and collect detailed performance data including network
+      counters, profiling output, and job scheduler logs. We analyze this data to identify the impact
+      of compute performance variations, allocated node topology, and network conditions on the overall
+      runtime variability. We also use a <strong>machine learning based approach</strong> to identify
+      potential correlations between these factors, and to forecast performance variability. We provide
+      actionable insights for both system administrators and users to mitigate or predict performance
+      variations in GPU-accelerated HPC environments.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTRIBUTIONS ═════════════════════ -->
+<section id="contributions" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Contributions</h2>
+    <div class="contrib-grid">
+      <div class="contrib-card">
+        <div class="contrib-icon">&#x1F4CA;</div>
+        <h3>First GPU-Scale Longitudinal Study</h3>
+        <p>Longitudinal study on two major GPU-based supercomputers (Perlmutter and Frontier), yielding the first comprehensive dataset of performance measurements across diverse applications and system states over an extended period at large scale.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">&#x1F50D;</div>
+        <h3>In-Depth Variability Analysis</h3>
+        <p>Key observations providing in-depth analysis of inherent hardware differences and the impacts of concurrent jobs, job placement, and network conditions on performance across both HPC and AI workloads.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">&#x1F916;</div>
+        <h3>ML-Based Performance Prediction</h3>
+        <p>Machine learning methods to both identify critical metrics that influence performance variability and predict performance variations based on system status across traditional HPC workloads and deep learning applications.</p>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-icon">&#x1F4A1;</div>
+        <h3>Actionable Insights</h3>
+        <p>Practical guidance for system administrators and users to predict and mitigate performance variations, including strategies for network-aware scheduling and early job cancellation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ STUDY DESIGN ══════════════════════ -->
+<section id="setup" class="section">
+  <div class="container">
+    <h2 class="section-title">Study Design</h2>
+    <p class="section-subtitle">Longitudinal experiments on two flagship GPU supercomputers over ~4 months in 2024–2025</p>
+
+    <div class="systems-grid">
+      <div class="system-card perlmutter">
+        <div class="system-logo-row">
+          <div class="system-name">Perlmutter</div>
+          <div class="system-lab">NERSC</div>
+        </div>
+        <div class="system-spec-grid">
+          <div class="spec-item"><span class="spec-label">Nodes</span><span class="spec-val">1,792 GPU nodes</span></div>
+          <div class="spec-item"><span class="spec-label">GPUs</span><span class="spec-val">4× NVIDIA A100 (40/80 GB) per node</span></div>
+          <div class="spec-item"><span class="spec-label">CPU</span><span class="spec-val">AMD EPYC 7763 Milan (64-core)</span></div>
+          <div class="spec-item"><span class="spec-label">Network</span><span class="spec-val">HPE Slingshot-11, 3-hop Dragonfly</span></div>
+          <div class="spec-item"><span class="spec-label">NIC</span><span class="spec-val">4× Cassini NICs (100 GB/s per node)</span></div>
+        </div>
+      </div>
+      <div class="system-card frontier">
+        <div class="system-logo-row">
+          <div class="system-name">Frontier</div>
+          <div class="system-lab">OLCF &mdash; First Exascale</div>
+        </div>
+        <div class="system-spec-grid">
+          <div class="spec-item"><span class="spec-label">Nodes</span><span class="spec-val">9,408 compute nodes</span></div>
+          <div class="spec-item"><span class="spec-label">GPUs</span><span class="spec-val">4× AMD MI250X (8 GCDs, 64 GB/GCD) per node</span></div>
+          <div class="spec-item"><span class="spec-label">CPU</span><span class="spec-val">AMD EPYC Trento (64-core)</span></div>
+          <div class="spec-item"><span class="spec-label">Network</span><span class="spec-val">HPE Slingshot-11, Dragonfly</span></div>
+          <div class="spec-item"><span class="spec-label">NIC</span><span class="spec-val">4× Slingshot NICs (100 GB/s per node)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">Applications Studied</h3>
+    <div class="app-grid">
+      <div class="app-card hpc-app">
+        <div class="app-badge">HPC</div>
+        <div class="app-name">AMG2023</div>
+        <p>Parallel algebraic multigrid solver from the Hypre library for 3D linear systems. High MPI communication density (~74–84% of runtime in MPI).</p>
+        <div class="app-comm">MPI (Waitall, Isend, Irecv, Allreduce)</div>
+      </div>
+      <div class="app-card hpc-app">
+        <div class="app-badge">HPC</div>
+        <div class="app-name">MILC</div>
+        <p>MIMD Lattice Computation code for quantum chromodynamics (QCD) gauge generation. Uniform stencil computation and communication patterns.</p>
+        <div class="app-comm">MPI (Allreduce, Test)</div>
+      </div>
+      <div class="app-card ai-app">
+        <div class="app-badge ai-badge">AI</div>
+        <div class="app-name">DeepCAM</div>
+        <p>Exascale deep learning for climate analytics using CNNs to segment extreme weather patterns. Gordon Bell Prize-recognized workload, MLPerf benchmark.</p>
+        <div class="app-comm">NCCL/RCCL (Allreduce)</div>
+      </div>
+      <div class="app-card ai-app">
+        <div class="app-badge ai-badge">AI</div>
+        <div class="app-name">nanoGPT</div>
+        <p>Optimized GPT implementation using AxoNN 4D tensor parallelism framework with sub-communicator collectives for reduced variability.</p>
+        <div class="app-comm">NCCL/RCCL (Allgather, Allreduce)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ VARIABILITY OVERVIEW ══════════════════ -->
+<section id="variability" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Runtime Variability Over Time</h2>
+    <p class="section-subtitle">
+      Performance of four HPC and AI applications relative to their best observed runtime,
+      measured over four months on 64 nodes of each system.
+    </p>
+
+    <div class="full-fig">
+      <img src="assets/relative_by_datetime_perlmutter.png"
+           alt="Variability over time on Perlmutter" />
+      <p class="fig-caption">
+        <strong>Perlmutter (NERSC):</strong> Run-to-run variability of AMG2023, MILC, DeepCAM, and nanoGPT
+        relative to each application's best observed runtime. nanoGPT reaches up to 1.4&times; and
+        AMG2023 up to 1.3&times; variability.
+      </p>
+    </div>
+
+    <div class="full-fig" style="margin-top:1.5rem">
+      <img src="assets/relative_by_datetime_frontier.png"
+           alt="Variability over time on Frontier" />
+      <p class="fig-caption">
+        <strong>Frontier (OLCF):</strong> DeepCAM shows up to 2.6&times; variability (with outliers reaching 3.2&times;)
+        and MILC up to 1.8&times;. AMG2023 variability dropped significantly after a Slingshot Host Software
+        upgrade (v11.0.2) on January 14, 2025, which fixed a libfabric regression.
+      </p>
+    </div>
+
+    <div class="takeaway-box" style="margin-top:1.5rem">
+      <strong>Takeaway:</strong> All four applications show substantial run-to-run variability.
+      Frontier generally exhibits higher and more erratic variability than Perlmutter, especially
+      for AI workloads. Some variability is traceable to specific system events (e.g., software updates).
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ APPLICATION ANALYSIS ══════════════════ -->
+<section id="breakdowns" class="section">
+  <div class="container">
+    <h2 class="section-title">Application Breakdown Analysis</h2>
+    <p class="section-subtitle">
+      Execution time dissected into compute vs. communication components, from fastest to slowest observed runs.
+      Communication time — not compute — drives variability across all applications.
+    </p>
+
+    <!-- HPC Apps -->
+    <h3 class="subsection-title">HPC Applications: AMG2023 &amp; MILC</h3>
+    <div class="fig-row-4">
+      <div class="panel-fig">
+        <img src="assets/AMG2023_mpi_compute_stacked_6_perlmutter.png"
+             alt="AMG2023 MPI breakdown Perlmutter" />
+        <p class="fig-caption">AMG2023 — Perlmutter: ~74% of runtime in MPI; slowest runs have ~40% more communication</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/AMG2023_mpi_compute_stacked_6_frontier.png"
+             alt="AMG2023 MPI breakdown Frontier" />
+        <p class="fig-caption">AMG2023 — Frontier: ~84% of runtime in MPI; improvement visible post Jan 14 patch</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/MILC_mpi_compute_stacked_6_perlmutter.png"
+             alt="MILC MPI breakdown Perlmutter" />
+        <p class="fig-caption">MILC — Perlmutter: ~56% in MPI; Allreduce and Test are the most variable routines</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/MILC_mpi_compute_stacked_6_frontier.png"
+             alt="MILC MPI breakdown Frontier" />
+        <p class="fig-caption">MILC — Frontier: slowest communication up to 122% higher than fastest runs</p>
+      </div>
+    </div>
+
+    <!-- AI Apps -->
+    <h3 class="subsection-title" style="margin-top:2rem">AI Applications: DeepCAM &amp; nanoGPT</h3>
+    <div class="fig-row-4">
+      <div class="panel-fig">
+        <img src="assets/deepCAM_64nodes_six_breakdown_comp_first_braces_perlmutter.png"
+             alt="DeepCAM breakdown Perlmutter" />
+        <p class="fig-caption">DeepCAM — Perlmutter: Allreduce up to 4&times; slower in worst runs vs. best</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/deepCAM_64nodes_six_breakdown_comp_first_braces_frontier.png"
+             alt="DeepCAM breakdown Frontier" />
+        <p class="fig-caption">DeepCAM — Frontier: Allreduce up to 24&times; slower in worst vs. best; compute is stable</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/nanoGPT_64nodes_six_breakdown_comp_first_braces_perlmutter.png"
+             alt="nanoGPT breakdown Perlmutter" />
+        <p class="fig-caption">nanoGPT — Perlmutter: Allreduce 3&times; slower in worst vs. best; Allgather also variable</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/nanoGPT_64nodes_six_breakdown_comp_first_braces_frontier.png"
+             alt="nanoGPT breakdown Frontier" />
+        <p class="fig-caption">nanoGPT — Frontier: 4D sub-communicator design reduces Allreduce variability significantly</p>
+      </div>
+    </div>
+
+    <!-- Allreduce violin -->
+    <h3 class="subsection-title" style="margin-top:2rem">Allreduce Distribution — Long Tails on Perlmutter</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      <code>Allreduce</code> is the single most variable routine across all applications.
+      These violin plots show the full distribution of MPI and NCCL Allreduce times — including
+      the long-tail outlier runs that can be dramatically slower than typical.
+    </p>
+    <div class="fig-row-2">
+      <div class="panel-fig">
+        <img src="assets/violin_mpi_allreduce_perlmutter.png"
+             alt="MPI Allreduce distribution Perlmutter" />
+        <p class="fig-caption">MPI Allreduce distribution across AMG2023 and MILC on Perlmutter — note long upper tails</p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/violin_nccl_allreduce_perlmutter.png"
+             alt="NCCL Allreduce distribution Perlmutter" />
+        <p class="fig-caption">NCCL Allreduce distribution across DeepCAM and nanoGPT on Perlmutter</p>
+      </div>
+    </div>
+
+    <div class="takeaway-box">
+      <strong>Takeaway:</strong> Performance variability arises primarily due to slowdowns in collective
+      communication — in particular <code>Allreduce</code>, <code>Test</code>, and <code>Waitall</code>.
+      Compute time is stable. Some routines exhibit strong long-tail effects.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CONCURRENT JOBS ══════════════════════ -->
+<section id="concurrent" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Impact of Concurrent Jobs</h2>
+    <p class="section-subtitle">
+      Performance degradation correlates with a specific subset of "Top Users" running
+      communication-intensive jobs — not the overall number of concurrent users or jobs.
+    </p>
+
+    <div class="fig-row-2">
+      <div class="panel-fig">
+        <img src="assets/AMG2023_total_concurrent_nodes_vs_apptime_perlmutter.png"
+             alt="Total concurrent nodes vs AMG2023 runtime on Perlmutter" />
+        <p class="fig-caption">
+          AMG2023 on Perlmutter: runtime vs. total concurrent allocated nodes. Weak overall correlation —
+          raw system load is not the driver.
+        </p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/deepCAM_total_concurrent_nodes_vs_apptime_frontier.png"
+             alt="Total concurrent nodes vs DeepCAM runtime on Frontier" />
+        <p class="fig-caption">
+          DeepCAM on Frontier: runtime vs. total concurrent allocated nodes. Similar pattern —
+          total load alone doesn't predict degradation.
+        </p>
+      </div>
+    </div>
+
+    <div class="fig-row-2" style="margin-top:1.5rem">
+      <div class="panel-fig">
+        <img src="assets/AMG2023_concurrent_allocated_nodes_vs_app_time_perlmutter.png"
+             alt="Top-user concurrent nodes vs AMG2023 runtime on Perlmutter" />
+        <p class="fig-caption">
+          AMG2023 on Perlmutter: runtime vs. nodes allocated to communication-heavy "Top Users."
+          Clear positive correlation emerges — these users are the culprits.
+        </p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/AMG2023_concurrent_allocated_nodes_vs_app_time_frontier.png"
+             alt="Top-user concurrent nodes vs AMG2023 runtime on Frontier" />
+        <p class="fig-caption">
+          AMG2023 on Frontier: same pattern holds — concurrent Top-User jobs correlate strongly
+          with runtime degradation.
+        </p>
+      </div>
+    </div>
+
+    <div class="takeaway-box">
+      <strong>Takeaway:</strong> A small subset of "Top Users" running communication-intensive applications
+      creates network congestion that degrades performance for other jobs. Administrators should monitor
+      and throttle such jobs — not rely solely on system-wide utilization metrics.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ JOB PLACEMENT ════════════════════════ -->
+<section id="placement" class="section">
+  <div class="container">
+    <h2 class="section-title">Impact of Job Placement</h2>
+    <p class="section-subtitle">
+      Does allocating nodes across more dragonfly groups (fragmented placement) hurt performance?
+      The answer is mostly no — temporal network conditions matter far more than topology.
+    </p>
+
+    <div class="fig-row-2">
+      <div class="panel-fig">
+        <img src="assets/group_vs_time_nanogpt_pm64.png"
+             alt="Dragonfly groups vs nanoGPT runtime on Perlmutter" />
+        <p class="fig-caption">
+          nanoGPT on Perlmutter: number of dragonfly groups assigned to the job vs. runtime.
+          No strong trend — placement fragmentation does not significantly hurt performance.
+        </p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/group_vs_time_deepcam_frontier64.png"
+             alt="Dragonfly groups vs DeepCAM runtime on Frontier" />
+        <p class="fig-caption">
+          DeepCAM on Frontier: same analysis. High variance exists within any given number of
+          groups, indicating other factors (network congestion) dominate.
+        </p>
+      </div>
+    </div>
+
+    <div class="takeaway-box">
+      <strong>Takeaway:</strong> The number of dragonfly groups allocated to a job does not significantly
+      influence application performance. The dragonfly network's adaptive routing absorbs topology-related
+      variability; temporal network congestion is the dominant factor.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ GEMM GPU VARIABILITY ═══════════════ -->
+<section id="gemm" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">GPU Compute Variability</h2>
+    <p class="section-subtitle">
+      GEMM (FP16 matrix multiply) benchmarks reveal inherent GPU performance differences —
+      but these do NOT explain application-level variability.
+    </p>
+
+    <div class="tab-container">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="showTab('pm-gemm', this)">Perlmutter (A100)</button>
+        <button class="tab-btn" onclick="showTab('frontier-gemm', this)">Frontier (MI250X)</button>
+      </div>
+
+      <div id="pm-gemm" class="tab-content active">
+        <div class="gemm-grid">
+          <div class="gemm-fig">
+            <img src="assets/GEMM_per_gpu_pm.png" alt="GEMM per-GPU variability on Perlmutter" />
+            <p class="fig-caption">Per-GPU: most GPUs within 2.5% of their own best (only 0.066% outliers)</p>
+          </div>
+          <div class="gemm-fig">
+            <img src="assets/GEMM_per_node_pm.png" alt="GEMM per-node variability on Perlmutter" />
+            <p class="fig-caption">Within-node: GPUs on the same node can differ by up to 10–17%</p>
+          </div>
+          <div class="gemm-fig">
+            <img src="assets/GEMM_system_pm.png" alt="System-wide GEMM variability on Perlmutter" />
+            <p class="fig-caption">System-wide: up to 28%; A100 80GB nodes ~7% faster with lower variance</p>
+          </div>
+        </div>
+        <div class="takeaway-box">
+          <strong>Takeaway (Perlmutter):</strong> Individual GPU performance is stable over time, but
+          system-wide variability reaches 28%. Despite this, GPU heterogeneity shows
+          <strong>weak correlation</strong> (Spearman r ≈ 0.07) with application runtime — the network is the culprit.
+        </div>
+      </div>
+
+      <div id="frontier-gemm" class="tab-content">
+        <div class="gemm-grid">
+          <div class="gemm-fig">
+            <img src="assets/GEMM_per_gpu_frontier.png" alt="GEMM per-GPU variability on Frontier" />
+            <p class="fig-caption">Per-GCD: up to 12% fluctuation, higher than Perlmutter's A100s</p>
+          </div>
+          <div class="gemm-fig">
+            <img src="assets/GEMM_per_node_frontier.png" alt="GEMM per-node variability on Frontier" />
+            <p class="fig-caption">Within-node variability across MI250X GCDs</p>
+          </div>
+          <div class="gemm-fig">
+            <img src="assets/GEMM_system_frontier.png" alt="System-wide GEMM variability on Frontier" />
+            <p class="fig-caption">System-wide: up to 15% variability with fewer extreme outliers than Perlmutter</p>
+          </div>
+        </div>
+        <div class="takeaway-box">
+          <strong>Takeaway (Frontier):</strong> MI250X GPUs show greater per-GPU variability than Perlmutter's A100s,
+          but with fewer extreme outliers system-wide. Critically, GPU performance does not correlate with
+          application-level slowdowns — network conditions dominate.
+        </div>
+      </div>
+    </div>
+
+    <!-- Slow GPU analysis -->
+    <h3 class="subsection-title" style="margin-top:2rem">Do Slow GPUs in an Allocation Hurt Performance?</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      We examined whether having more "slow" GPUs (bottom 1% system-wide GEMM performance) in a job's
+      allocation correlates with longer application runtime.
+    </p>
+    <div class="fig-row-2">
+      <div class="panel-fig">
+        <img src="assets/slow_gpu_vs_milc_runtime_1_pm.png"
+             alt="Slow GPU count vs MILC runtime on Perlmutter" />
+        <p class="fig-caption">
+          MILC on Perlmutter: Spearman r ≈ 0.07 — number of slow GPUs in allocation has negligible
+          correlation with application runtime.
+        </p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/slow_gpu_vs_milc_runtime_1_frontier.png"
+             alt="Slow GPU count vs MILC runtime on Frontier" />
+        <p class="fig-caption">
+          MILC on Frontier: same weak correlation (r ≈ 0.08) — hardware heterogeneity is not
+          responsible for application-level slowdowns.
+        </p>
+      </div>
+    </div>
+    <div class="takeaway-box">
+      <strong>Takeaway:</strong> Even with notable system-wide GPU heterogeneity, the number of slow GPUs
+      in an allocation does not predict application slowdowns. Performance variability stems from
+      network congestion, not compute hardware differences.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ML PREDICTION ═════════════════════ -->
+<section id="ml" class="section">
+  <div class="container">
+    <h2 class="section-title">ML-Based Performance Prediction</h2>
+    <p class="section-subtitle">XGBoost regression trained on system metrics accurately predicts runtime variability</p>
+
+    <!-- NIC Counter Correlation -->
+    <h3 class="subsection-title">Step 1 — NIC Counter Correlation with Runtime</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      Spearman's correlation coefficients between application execution times and NIC counter values
+      (mean and max). Positive = higher counter values → slower runtime.
+      Key counters: <code>rh:sct_timeouts</code> (retries from packet loss),
+      <code>hni_rx_paused_0</code> (receive path backpressure).
+    </p>
+    <div class="full-fig" style="max-width:700px">
+      <img src="assets/spearman_heatmap_all_perlmutter.png"
+           alt="NIC counter correlation heatmap Perlmutter" />
+      <p class="fig-caption">
+        Spearman correlation heatmap between application runtime and NIC counter values on Perlmutter.
+        While individual counters show partial signal, multi-counter ML models are needed to capture
+        the full complexity of variability.
+      </p>
+    </div>
+
+    <!-- Feature Importance -->
+    <h3 class="subsection-title" style="margin-top:2rem">Step 2 — XGBoost Feature Importances</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      After training the XGBoost model on placement, GEMM, Allreduce, and NIC counter features,
+      we examine which features matter most for runtime prediction on each system.
+    </p>
+    <div class="full-fig">
+      <img src="assets/machine_pm_frontier_feature_importance.png"
+           alt="Feature importances XGBoost" />
+      <p class="fig-caption">
+        <strong>Perlmutter (left):</strong> <code>hni_rx_paused_0_mean</code> and <code>NCCL Allreduce (2GB)</code>
+        dominate — NIC receive-path stalls and network-wide congestion are the key signals.<br>
+        <strong>Frontier (right):</strong> <code>lpe_net_match_request_0</code>,
+        <code>atu_cache_hit_derivative1</code>, and <code>parbs_tarb_pi_non_posted_blocked_cnt</code>
+        dominate — local data movement bottlenecks drive Frontier variability.
+      </p>
+    </div>
+
+    <!-- MAPE / DA results -->
+    <h3 class="subsection-title" style="margin-top:2rem">Step 3 — Prediction Accuracy (MAPE &amp; Direction Accuracy)</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      We evaluate prediction quality with two metrics: MAPE (lower is better) and Direction Accuracy
+      (DA ≈ 1.0 means the model correctly identifies when performance is improving vs. degrading).
+      Results shown for incremental feature subsets.
+    </p>
+    <div class="full-fig">
+      <img src="assets/machine_pm_frontier_mape_da.png"
+           alt="MAPE and Direction Accuracy across feature sets" />
+      <p class="fig-caption">
+        MAPE and DA for all four applications on both systems, across four feature combinations:
+        Placement only → + GEMM → + Allreduce → + NIC Counters (full).
+        Adding NIC counters yields the largest accuracy gains, especially for high-variability apps like DeepCAM.
+        Without NIC counters, DA can fall near chance level; with them it approaches 1.0.
+      </p>
+    </div>
+
+    <!-- Scatter plots -->
+    <h3 class="subsection-title" style="margin-top:2rem">Step 4 — Predicted vs. Actual Runtime</h3>
+    <p style="color:#475569; font-size:.9rem; margin-bottom:1rem;">
+      Scatter plots of predicted vs. actual runtimes using the full feature set (placement + GEMM +
+      Allreduce + NIC counters). Points close to the diagonal indicate accurate predictions.
+    </p>
+    <div class="fig-row-2">
+      <div class="panel-fig">
+        <img src="assets/Perlmutter_full_prediction_scatter.png"
+             alt="Predicted vs actual runtime Perlmutter" />
+        <p class="fig-caption">
+          Perlmutter: predicted vs. actual runtime for all four applications. The model tracks
+          absolute performance well for most runs; some deviations arise from lack of router (Rosetta) counters.
+        </p>
+      </div>
+      <div class="panel-fig">
+        <img src="assets/frontier_full_prediction_scatter.png"
+             alt="Predicted vs actual runtime Frontier" />
+        <p class="fig-caption">
+          Frontier: predicted vs. actual runtime. Model generalizes well even for MILC with only
+          7 training samples — demonstrating cross-application transferability.
+        </p>
+      </div>
+    </div>
+
+    <div class="takeaway-box" style="margin-top:1.5rem">
+      <strong>Takeaway:</strong> NIC counters are the most critical feature class for accurate prediction.
+      A single cross-application model outperforms per-application models because all workloads share the
+      same underlying network bottlenecks. Traffic saturation stalls Perlmutter NICs; local data movement
+      blockage drives Frontier variability.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ IMPLICATIONS ══════════════════════ -->
+<section id="insights" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Implications &amp; Recommendations</h2>
+
+    <div class="insights-grid">
+      <div class="insight-card admin-card">
+        <div class="insight-icon">&#x2699;&#xFE0F;</div>
+        <h3>For System Administrators</h3>
+        <ul class="insight-list">
+          <li>
+            <strong>Proactive monitoring:</strong> Collect NIC counters (e.g., <code>hni_rx_paused</code>,
+            <code>rh:sct_timeouts</code>) in real time via LDMS. Apply predictive models to warn
+            performance-sensitive users of impending degradation.
+          </li>
+          <li>
+            <strong>Limit concurrent heavy jobs:</strong> Monitor "Top Users" running communication-intensive
+            applications. Throttle or isolate them to dedicated dragonfly groups once concurrent node
+            thresholds are approaching.
+          </li>
+          <li>
+            <strong>Universal prediction model:</strong> Train a cross-application model using system-wide
+            network counter data to predict ongoing degradation for any workload without per-application
+            tuning.
+          </li>
+          <li>
+            <strong>Keep system software updated:</strong> A Slingshot Host Software update on Frontier
+            (v11.0.2) fixed a libfabric regression that was responsible for significant variability in AMG2023.
+          </li>
+        </ul>
+      </div>
+
+      <div class="insight-card user-card">
+        <div class="insight-icon">&#x1F9D1;&#x200D;&#x1F4BB;</div>
+        <h3>For Users</h3>
+        <ul class="insight-list">
+          <li>
+            <strong>Early variability detection:</strong> At the start of each job allocation, run a brief
+            Allreduce benchmark and GEMM probe. Feed these measurements into a pre-trained model to
+            predict whether the current network conditions will cause degraded performance.
+          </li>
+          <li>
+            <strong>Cancel early to save node-hours:</strong> If significant performance degradation is
+            predicted from the initial probe, cancel and requeue rather than waste node-hours on a slow run.
+          </li>
+          <li>
+            <strong>Training data is not required per-application:</strong> Our cross-application model
+            demonstrates that even users with few profiling samples can benefit from a shared system model.
+          </li>
+          <li>
+            <strong>Allreduce is your canary:</strong> The Allreduce micro-benchmark is the best single
+            proxy for expected application variability. Monitoring it at scale is lightweight and informative.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ BIBTEX ════════════════════════════ -->
+<section id="bibtex" class="section">
+  <div class="container">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-wrap">
+      <button class="copy-btn" onclick="copyBibtex()" id="copyBtn">Copy</button>
+      <pre class="bibtex-block" id="bibtexBlock">@inproceedings{wei2026elusiveperformance,
+  title     = {The Case of the Elusive Application Performance on
+               Production {GPU} Supercomputers},
+  author    = {Wei, Cunyang and Pradeep, Keshav and Bhatele, Abhinav},
+  booktitle = {Proceedings of the IEEE International Parallel and
+               Distributed Processing Symposium (IPDPS)},
+  year      = {2026},
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-affil">
+      <div class="umd-badge">
+        <span class="umd-text">University of Maryland, College Park</span>
+        <span class="umd-sub">Department of Computer Science &nbsp;&bull;&nbsp; PSSG Lab</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sticky-nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+
+  // Tab switching
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // BibTeX copy
+  function copyBibtex() {
+    const text = document.getElementById('bibtexBlock').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>

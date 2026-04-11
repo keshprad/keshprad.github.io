@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCCL – The Big Send-off: Scalable and Performant Collectives for Deep Learning</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Auto-generated badge -->
+<div class="autogen-badge">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+  </svg>
+  Auto-generated from paper PDF by <a href="https://claude.ai/code" target="_blank">Claude Code</a>
+</div>
+
+<!-- ─── HERO ──────────────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container hero-inner">
+    <p class="venue-badge">IPDPS 2026</p>
+    <h1 class="hero-title">
+      The Big Send-off: Scalable and Performant<br/>
+      Collectives for Deep Learning
+    </h1>
+
+    <div class="authors">
+      <div class="author-card">
+        <div class="author-name">Siddharth Singh</div>
+        <div class="author-info">University of Maryland</div>
+        <div class="author-email">ssingh37@umd.edu</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Keshav Pradeep</div>
+        <div class="author-info">University of Maryland</div>
+        <div class="author-email">keshprad@umd.edu</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Mahua Singh</div>
+        <div class="author-info">IIT Guwahati</div>
+        <div class="author-email">s.mahua@iitg.ac.in</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Cunyang Wei</div>
+        <div class="author-info">University of Maryland</div>
+        <div class="author-email">cunyang@umd.edu</div>
+      </div>
+      <div class="author-card">
+        <div class="author-name">Abhinav Bhatele</div>
+        <div class="author-info">University of Maryland</div>
+        <div class="author-email">bhatele@cs.umd.edu</div>
+      </div>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="../../files/papers/pccl-ipdps26.pdf" class="btn btn-primary" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        Paper PDF
+      </a>
+      <a href="#bibtex" class="btn btn-secondary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        BibTeX
+      </a>
+    </div>
+
+    <div class="keyword-row">
+      <span class="kw">Collective Communication</span>
+      <span class="kw">Distributed Deep Learning</span>
+      <span class="kw">GPU Supercomputers</span>
+      <span class="kw">Hierarchical Algorithms</span>
+      <span class="kw">Adaptive Dispatching</span>
+      <span class="kw">LLM Training</span>
+    </div>
+  </div>
+</header>
+
+<!-- ─── NAV ───────────────────────────────────────────────────── -->
+<nav class="sticky-nav" id="stickyNav">
+  <div class="nav-inner">
+    <a href="#abstract">Abstract</a>
+    <a href="#motivation">Motivation</a>
+    <a href="#design">Design</a>
+    <a href="#results">Results</a>
+    <a href="#contributions">Contributions</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+</nav>
+
+<!-- ─── ABSTRACT ─────────────────────────────────────────────── -->
+<section id="abstract" class="section">
+  <div class="container">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      Collective communication is becoming increasingly important in supercomputer workloads with
+      an increase in AI-related jobs. However, existing libraries that provide
+      collective support — such as <strong>NCCL</strong>, <strong>RCCL</strong>, and <strong>Cray-MPICH</strong> — exhibit several
+      performance and scalability limitations on modern GPU supercomputers. To
+      address these challenges, we introduce the <strong>Performant Collective Communication
+      Library (PCCL)</strong>, specifically targeted for distributed deep learning (DL)
+      workloads. PCCL provides highly optimized implementations of key collectives
+      used in distributed DL: <em>all-gather</em>, <em>reduce-scatter</em>, and
+      <em>all-reduce</em>. PCCL uses hierarchical algorithms and adaptive dispatching
+      to scale efficiently to thousands of GPUs. It achieves substantial performance
+      speedups over RCCL on 2048 GCDs of Frontier — up to <strong>168×</strong> for
+      reduce-scatter, <strong>33×</strong> for all-gather and <strong>10×</strong> for all-reduce. More
+      modest but still significant gains up to <strong>5.7×</strong> are observed on Perlmutter.
+      These gains translate directly to end-to-end performance
+      improvement for production DL workloads: up to <strong>4.9×</strong> speedup over RCCL in
+      DeepSpeed ZeRO-3 training, and up to <strong>2.4×</strong> speedup over RCCL in DDP
+      training.
+    </p>
+  </div>
+</section>
+
+<!-- ─── STATS STRIP ───────────────────────────────────────────── -->
+<div class="stats-strip">
+  <div class="container stats-inner">
+    <div class="stat-pill">
+      <span class="stat-num">168×</span>
+      <span class="stat-label">speedup over RCCL<br/>reduce-scatter (Frontier)</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-num">33×</span>
+      <span class="stat-label">speedup over RCCL<br/>all-gather (Frontier)</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-num">4.9×</span>
+      <span class="stat-label">end-to-end speedup<br/>DeepSpeed ZeRO-3</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-num">2048</span>
+      <span class="stat-label">GPUs / GCDs<br/>evaluated at scale</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MOTIVATION ────────────────────────────────────────────── -->
+<section id="motivation" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Motivation</h2>
+    <div class="two-col">
+      <div class="col-text">
+        <p>
+          Communication overheads in parallel applications become an increasing
+          fraction of the overall execution time as applications scale to more
+          nodes and GPUs. In deep learning (DL), communication is typically
+          composed of collective operations such as all-gather, all-reduce and
+          reduce-scatter.
+        </p>
+        <p>
+          The message sizes in DL applications are significantly larger than in
+          traditional HPC — from tens to <strong>hundreds of MBs</strong> — and current
+          implementations of collective libraries struggle to maintain high
+          performance in this regime.
+        </p>
+
+        <div class="issue-list">
+          <div class="issue-card">
+            <div class="issue-icon ring">Ring</div>
+            <div>
+              <strong>Ring Algorithm Bottleneck</strong>
+              <p>RCCL and Cray-MPICH rely on ring algorithms whose latency grows linearly with process count, causing degradation at scale.</p>
+            </div>
+          </div>
+          <div class="issue-card">
+            <div class="issue-icon nic">NIC</div>
+            <div>
+              <strong>NIC Underutilization</strong>
+              <p>Existing libraries fail to fully utilize all available Network Interface Cards, leaving inter-node bandwidth on the table.</p>
+            </div>
+          </div>
+          <div class="issue-card">
+            <div class="issue-icon cpu">CPU</div>
+            <div>
+              <strong>CPU-bound Reductions</strong>
+              <p>MPICH performs reductions on the CPU, creating a compute bottleneck that limits effective throughput.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-figure">
+        <figure>
+          <div class="figure-embed">
+            <img src="assets/figures/issue_high_latencies_ag_128_64.png" alt="All-gather scaling comparison" />
+          </div>
+          <figcaption>
+            Performance comparison of all-gather using RCCL (Frontier), Cray-MPICH (Frontier), NCCL (Perlmutter) for 64 and 128&nbsp;MB output buffer sizes. The ideal scaling behavior (flat horizontal line) is not achieved by any library.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DESIGN ────────────────────────────────────────────────── -->
+<section id="design" class="section">
+  <div class="container">
+    <h2 class="section-title">Design of PCCL</h2>
+    <p class="section-intro">
+      PCCL introduces three core innovations to overcome the limitations of
+      existing communication libraries for large-message, large-scale DL workloads.
+    </p>
+
+    <div class="design-grid">
+
+      <div class="design-card">
+        <div class="design-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="12" height="12" rx="2" fill="var(--accent)"/>
+            <rect x="36" y="4" width="12" height="12" rx="2" fill="var(--accent)"/>
+            <rect x="4" y="36" width="12" height="12" rx="2" fill="var(--accent2)"/>
+            <rect x="36" y="36" width="12" height="12" rx="2" fill="var(--accent2)"/>
+            <rect x="20" y="20" width="8" height="8" rx="2" fill="var(--accent3)"/>
+            <line x1="16" y1="10" x2="36" y2="10" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="4"/>
+            <line x1="10" y1="16" x2="10" y2="36" stroke="var(--text-muted)" stroke-width="2" stroke-dasharray="4"/>
+          </svg>
+        </div>
+        <h3>Hierarchical Algorithms</h3>
+        <p>
+          A two-level design separates collective operations into <strong>inter-node</strong>
+          and <strong>intra-node</strong> phases using sub-communicators.
+          GPU-vendor libraries (NCCL/RCCL) handle intra-node communication,
+          while Cray-MPI handles inter-node phases, maximizing NIC utilization
+          by scheduling all inter-node transfers concurrently.
+        </p>
+        <ul class="design-steps">
+          <li><span class="step-badge">1</span> Inter-node all-gather across sub-communicators</li>
+          <li><span class="step-badge">2</span> Intra-node all-gather within each node</li>
+          <li><span class="step-badge">3</span> Device-local transpose / shuffle kernel</li>
+        </ul>
+      </div>
+
+      <div class="design-card">
+        <div class="design-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="18" stroke="var(--accent)" stroke-width="3"/>
+            <path d="M24 6 L30 24 L24 42 L18 24 Z" fill="var(--accent2)" opacity="0.5"/>
+            <circle cx="24" cy="6"  r="3" fill="var(--accent)"/>
+            <circle cx="24" cy="42" r="3" fill="var(--accent)"/>
+            <circle cx="6"  cy="24" r="3" fill="var(--accent)"/>
+            <circle cx="42" cy="24" r="3" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <h3>Custom Ring &amp; Recursive Algorithms</h3>
+        <p>
+          Because Cray-MPICH only provides the ring algorithm, PCCL implements
+          its own inter-node algorithms:
+        </p>
+        <ul class="algo-list">
+          <li>
+            <code>PCCL_ring</code> — optimized ring-based all-gather/reduce-scatter
+            with pipeline overlap and CUDA kernels for GPU-side reduction.
+          </li>
+          <li>
+            <code>PCCL_rec</code> — recursive doubling/halving with
+            O(log P) latency, dramatically improving scalability at
+            large process counts.
+          </li>
+        </ul>
+      </div>
+
+      <div class="design-card">
+        <div class="design-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="14" width="36" height="20" rx="3" stroke="var(--accent)" stroke-width="2.5" fill="none"/>
+            <path d="M14 24 L22 18 L30 28 L36 22" stroke="var(--accent2)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="38" cy="12" r="6" fill="var(--accent3)"/>
+            <text x="35" y="16" font-size="8" fill="white" font-weight="bold">ML</text>
+          </svg>
+        </div>
+        <h3>ML-guided Adaptive Dispatching</h3>
+        <p>
+          An SVM-based classifier selects the best-performing backend
+          (<code>PCCL_ring</code>, <code>PCCL_rec</code>, or the vendor library)
+          at runtime, based on message size, GPU count, and observed system state.
+          This ensures optimal performance across the full parameter space —
+          from bandwidth-bound large messages to latency-sensitive scenarios
+          at high process counts.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Schematic figures -->
+    <div class="figures-row" style="margin-top:48px;">
+      <figure>
+        <div class="figure-embed">
+          <img src="assets/figures/schematic.png" alt="Hierarchical All-gather Design" />
+        </div>
+        <figcaption>
+          Two-level hierarchical all-gather in PCCL for a system with <em>N</em> nodes
+          and <em>M</em> GPUs per node. Step&nbsp;1: concurrent inter-node all-gathers;
+          Step&nbsp;2: intra-node all-gather; Step&nbsp;3: device-local transpose.
+        </figcaption>
+      </figure>
+      <figure>
+        <div class="figure-embed">
+          <img src="assets/figures/pccl.png" alt="ML-guided Adaptive Dispatch" />
+        </div>
+        <figcaption>
+          The ML-guided selection mechanism in PCCL chooses the best-performing backend
+          (PCCL&nbsp;ring, PCCL&nbsp;rec, or vendor library) at runtime based on
+          message size and GPU count.
+        </figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── SYSTEMS ───────────────────────────────────────────────── -->
+<section id="systems" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Experimental Platforms</h2>
+    <div class="systems-grid">
+      <div class="system-card frontier">
+        <div class="system-header">
+          <span class="system-name">Frontier</span>
+          <span class="system-badge frontier-badge">AMD</span>
+        </div>
+        <ul>
+          <li>AMD MI250X GPUs (8 GCDs / node)</li>
+          <li>Dragonfly network topology (Slingshot)</li>
+          <li>Scale: 32 – 2048 GCDs (4 – 256 nodes)</li>
+          <li>Libraries: RCCL, Cray-MPICH vs. PCCL</li>
+        </ul>
+      </div>
+      <div class="system-card perlmutter">
+        <div class="system-header">
+          <span class="system-name">Perlmutter</span>
+          <span class="system-badge perlmutter-badge">NVIDIA</span>
+        </div>
+        <ul>
+          <li>NVIDIA A100 GPUs (4 GPUs / node)</li>
+          <li>Dragonfly network topology (Slingshot)</li>
+          <li>Scale: 32 – 2048 GPUs (8 – 512 nodes)</li>
+          <li>Libraries: NCCL, Cray-MPICH vs. PCCL</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS ───────────────────────────────────────────────── -->
+<section id="results" class="section">
+  <div class="container">
+    <h2 class="section-title">Performance Results</h2>
+
+    <!-- tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="frontier">Frontier (AMD)</button>
+      <button class="tab-btn" data-tab="perlmutter">Perlmutter (NVIDIA)</button>
+      <button class="tab-btn" data-tab="e2e">End-to-End Training</button>
+    </div>
+
+    <!-- Frontier tab -->
+    <div id="tab-frontier" class="tab-content active">
+      <p class="tab-desc">
+        On Frontier, PCCL dramatically outperforms RCCL and Cray-MPICH for large-message
+        all-gather, reduce-scatter, and all-reduce operations. Speedups increase with process
+        count, reaching up to <strong>33× over RCCL</strong> for all-gather and
+        <strong>168× for reduce-scatter</strong> at 2048 GCDs.
+      </p>
+      <div class="figures-row">
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/hybrid_ag_frontier_256_512.png" alt="All-gather on Frontier" />
+          </div>
+          <figcaption>All-gather on Frontier (256 &amp; 512&nbsp;MB buffers)</figcaption>
+        </figure>
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/hybrid_rs_frontier_256_512.png" alt="Reduce-scatter on Frontier" />
+          </div>
+          <figcaption>Reduce-scatter on Frontier (256 &amp; 512&nbsp;MB buffers)</figcaption>
+        </figure>
+      </div>
+      <div class="figures-row" style="margin-top:24px;">
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/heatmap_pccl_rccl_ag.png" alt="PCCL vs RCCL all-gather heatmap (Frontier)" />
+          </div>
+          <figcaption>Speedup heatmap: PCCL vs. RCCL all-gather (Frontier)</figcaption>
+        </figure>
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/heatmap_pccl_rccl_rs_fr.png" alt="PCCL vs RCCL reduce-scatter heatmap (Frontier)" />
+          </div>
+          <figcaption>Speedup heatmap: PCCL vs. RCCL reduce-scatter (Frontier)</figcaption>
+        </figure>
+      </div>
+      <div class="speedup-summary" style="margin-top:24px;">
+        <div class="speedup-item">
+          <span class="speedup-label">All-gather vs RCCL</span>
+          <div class="speedup-bar-container">
+            <div class="speedup-bar" style="width:33%">33×</div>
+          </div>
+        </div>
+        <div class="speedup-item">
+          <span class="speedup-label">Reduce-scatter vs RCCL</span>
+          <div class="speedup-bar-container">
+            <div class="speedup-bar bar-2" style="width:100%">168×</div>
+          </div>
+        </div>
+        <div class="speedup-item">
+          <span class="speedup-label">All-reduce vs RCCL</span>
+          <div class="speedup-bar-container">
+            <div class="speedup-bar bar-3" style="width:10%">10×</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Perlmutter tab -->
+    <div id="tab-perlmutter" class="tab-content">
+      <p class="tab-desc">
+        On Perlmutter with NVIDIA A100 GPUs, PCCL achieves up to <strong>5.7× speedup</strong>
+        over NCCL and <strong>15× over Cray-MPICH</strong> for all-gather and reduce-scatter.
+        All-reduce performance is comparable to NCCL as both use log-latency algorithms.
+      </p>
+      <div class="figures-row">
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/heatmap_pccl_nccl_ag.png" alt="PCCL vs NCCL all-gather heatmap (Perlmutter)" />
+          </div>
+          <figcaption>Speedup heatmap: PCCL vs. NCCL all-gather (Perlmutter)</figcaption>
+        </figure>
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/heatmap_pccl_nccl_ar_pm.png" alt="PCCL vs NCCL all-reduce heatmap (Perlmutter)" />
+          </div>
+          <figcaption>Speedup heatmap: PCCL vs. NCCL all-reduce (Perlmutter)</figcaption>
+        </figure>
+      </div>
+      <div class="speedup-summary">
+        <div class="speedup-item">
+          <span class="speedup-label">All-gather vs NCCL</span>
+          <div class="speedup-bar-container">
+            <div class="speedup-bar" style="width:57%">5.7×</div>
+          </div>
+        </div>
+        <div class="speedup-item">
+          <span class="speedup-label">All-gather vs Cray-MPICH</span>
+          <div class="speedup-bar-container">
+            <div class="speedup-bar bar-2" style="width:100%">15×</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- End-to-end tab -->
+    <div id="tab-e2e" class="tab-content">
+      <p class="tab-desc">
+        The collective speedups translate directly to faster large-scale DL training.
+        We benchmark GPT-3 style models (7B, 13B parameters) with DeepSpeed ZeRO-3
+        and a 1.3B model with PyTorch DDP on both Frontier and Perlmutter.
+      </p>
+      <div class="figures-row">
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/strong_scale_7B_13B_frontier.png" alt="DeepSpeed ZeRO-3 GPT-3 7B & 13B on Frontier" />
+          </div>
+          <figcaption>DeepSpeed ZeRO-3: GPT-3 7B &amp; 13B strong scaling on Frontier</figcaption>
+        </figure>
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/strong_scale_7B_13B_perlmutter.png" alt="DeepSpeed ZeRO-3 GPT-3 7B & 13B on Perlmutter" />
+          </div>
+          <figcaption>DeepSpeed ZeRO-3: GPT-3 7B &amp; 13B strong scaling on Perlmutter</figcaption>
+        </figure>
+      </div>
+      <div class="figures-row" style="margin-top:24px;">
+        <figure class="result-figure">
+          <div class="figure-embed">
+            <img src="assets/figures/strong_scale_ddp_1.3B-top3_frontier.png" alt="PyTorch DDP GPT-3 1.3B on Frontier" />
+          </div>
+          <figcaption>PyTorch DDP: GPT-3 1.3B strong scaling on Frontier</figcaption>
+        </figure>
+      </div>
+      <div class="e2e-table-wrapper">
+        <table class="e2e-table">
+          <thead>
+            <tr>
+              <th>Workload</th>
+              <th>System</th>
+              <th>Model</th>
+              <th>Max Speedup over RCCL/NCCL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DeepSpeed ZeRO-3</td>
+              <td>Frontier</td>
+              <td>GPT-3 13B</td>
+              <td class="speedup-cell">4.9×</td>
+            </tr>
+            <tr>
+              <td>DeepSpeed ZeRO-3</td>
+              <td>Frontier</td>
+              <td>GPT-3 7B</td>
+              <td class="speedup-cell">3.6×</td>
+            </tr>
+            <tr>
+              <td>DeepSpeed ZeRO-3</td>
+              <td>Perlmutter</td>
+              <td>GPT-3 7B</td>
+              <td class="speedup-cell">1.37×</td>
+            </tr>
+            <tr>
+              <td>PyTorch DDP</td>
+              <td>Frontier</td>
+              <td>GPT-3 1.3B</td>
+              <td class="speedup-cell">2.4×</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── KEY CONTRIBUTIONS ──────────────────────────────────────── -->
+<section id="contributions" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Key Contributions</h2>
+    <div class="contrib-grid">
+      <div class="contrib-item">
+        <div class="contrib-num">01</div>
+        <div class="contrib-body">
+          <h4>Empirical Analysis of Existing Libraries</h4>
+          <p>
+            Systematic analysis of Cray-MPICH, NCCL, and RCCL on Perlmutter and Frontier
+            for all-gather and reduce-scatter in parallel deep learning workloads,
+            revealing specific performance bottlenecks.
+          </p>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-num">02</div>
+        <div class="contrib-body">
+          <h4>PCCL: New Collective Communication Library</h4>
+          <p>
+            Highly optimized implementations of all-gather, reduce-scatter, and all-reduce
+            in a new library focused on large messages (&gt;10&nbsp;MB) and large GPU counts,
+            using hierarchical algorithms and CUDA/ROCm kernels.
+          </p>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-num">03</div>
+        <div class="contrib-body">
+          <h4>Substantial Performance Improvements</h4>
+          <p>
+            6–160× speedups over RCCL and 28–70× over Cray-MPICH for all-gather on
+            2048 GCDs of Frontier, with consistent improvements across message sizes
+            and GPU architectures.
+          </p>
+        </div>
+      </div>
+      <div class="contrib-item">
+        <div class="contrib-num">04</div>
+        <div class="contrib-body">
+          <h4>End-to-end DL Training Validation</h4>
+          <p>
+            Large-scale benchmarking of multi-billion-parameter LLM training with
+            DeepSpeed ZeRO-3 and PyTorch DDP, demonstrating real-world impact of
+            collective communication improvements on training throughput.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BIBTEX ─────────────────────────────────────────────────── -->
+<section id="bibtex" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-wrap">
+      <button class="copy-btn" onclick="copyBib()" id="copyBtn">Copy</button>
+      <pre class="bibtex-block" id="bibtexBlock">@inproceedings{singh2026pccl,
+  title     = {The Big Send-off: Scalable and Performant
+               Collectives for Deep Learning},
+  author    = {Singh, Siddharth and Pradeep, Keshav
+               and Singh, Mahua and Wei, Cunyang
+               and Bhatele, Abhinav},
+  booktitle = {Proceedings of the IEEE International Parallel and
+               Distributed Processing Symposium (IPDPS)},
+  year      = {2026},
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-affil">
+      <div class="umd-badge">
+        <span class="umd-text">University of Maryland, College Park &nbsp;&bull;&nbsp; IIT Guwahati</span>
+        <span class="umd-sub">Department of Computer Science &nbsp;&bull;&nbsp; PSSG Lab</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── JS ────────────────────────────────────────────────────── -->
+<script>
+  // Tab switcher
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    });
+  });
+
+  // Sticky nav active link highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.sticky-nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    });
+  });
+
+  // Copy BibTeX
+  function copyBib() {
+    const text = document.getElementById('bibtexBlock').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
