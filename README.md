@@ -6,11 +6,11 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 
 ## Conference Papers
 
-- [**The Big Send-off: Scalable and Performant Collectives for Deep Learning**](./papers/pccl-ipdps26/)  
+- **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
   Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Abhinav Bhatele  
   *IPDPS 2026* &middot; [pdf](./files/pccl/pccl-ipdps26.pdf) &middot; [website](./papers/pccl-ipdps26/)
 
-- [**The Case of the Elusive Application Performance on Production GPU Supercomputers**](./papers/perf-variability-ipdps26/)  
+- **The Case of the Elusive Application Performance on Production GPU Supercomputers**  
   Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
   *IPDPS 2026* &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
 
