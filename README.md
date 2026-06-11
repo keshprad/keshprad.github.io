@@ -4,6 +4,11 @@ Previously, I completed my undergrad in CS & Math at the [University of Maryland
 
 My research interests include Systems for ML, High-Performance Computing, and AI Agents.
 
+## Projects
+
+- **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**  
+  Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation. 2.5k+ GitHub stars.
+
 ## Conference Papers
 
 - **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
