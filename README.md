@@ -1,4 +1,6 @@
-I’m an engineer at [NVIDIA](https://nvidia.com/) focused on Agentic AI, working on multi-agent systems, agent harnesses, agent skills, hooks for enforcing development standards with enterprise-scale use of agents.
+I'm an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
+
+
 
 Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
