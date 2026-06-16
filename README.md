@@ -1,4 +1,4 @@
-Currently, I'm an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
+I'm currently an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
 
 Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
@@ -7,7 +7,7 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 ## Projects
 
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**  
-  Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation. 4k+ GitHub stars.
+  Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation. Went trending on GitHub with 6k+ GitHub stars ✨
 
 ## Conference Papers
 
