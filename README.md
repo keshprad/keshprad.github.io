@@ -8,7 +8,7 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**  
   Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.  
-  Was briefly trending on GitHub with 6k+ stars ✨
+  Was briefly trending on GitHub with 10k+ stars ✨
 
 ## Conference Papers
 
@@ -21,6 +21,10 @@ My research interests include Systems for ML, High-Performance Computing, and AI
   *IPDPS 2026* &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
 
 ## Posters
+
+- **SkillSpector: A Pre-Publication Security Control for Agent Skills**  
+  Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)  
+  *Agent Skills 2026 (Workshop at CAIS 2026)* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf)
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
   Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele  
