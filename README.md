@@ -1,6 +1,6 @@
 I'm currently an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
 
-Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
+Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
 My research interests include Systems for ML, High-Performance Computing, and AI Agents.
 
@@ -13,11 +13,11 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 ## Conference Papers
 
 - **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
-  Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Abhinav Bhatele  
+  Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Dr. Abhinav Bhatele<br>
   *IPDPS 2026* &middot; [pdf](./files/pccl/pccl-ipdps26.pdf) &middot; [website](./papers/pccl-ipdps26/)
 
 - **The Case of the Elusive Application Performance on Production GPU Supercomputers**  
-  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
+  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
   *IPDPS 2026* &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
 
 ## Posters
@@ -31,13 +31,13 @@ My research interests include Systems for ML, High-Performance Computing, and AI
   *Agent Skills Workshop at CAIS 2026: The First Workshop on Agent Skills — Design, Evaluation, and Optimization of Procedural Knowledge for LLM Agents* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [openreview](https://openreview.net/forum?id=rVAPXHmGHN) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
-  Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele  
+  Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
   *SC 2025* &middot; [poster](./files/pccl/pccl-sc25.pdf) &middot; [abstract](./files/pccl/pccl-sc25-abstract.pdf)
 
 - **SC 2025 Best Poster Finalist: Unmasking Performance Variability in GPU Codes on Production Supercomputers**<br>
-  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
+  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
   *SC 2025* &middot; [poster](./files/performance-variability/performance-variability-sc25.pdf) &middot; [abstract](./files/performance-variability/performance-variability-sc25-abstract.pdf)
 
 - **Unmasking Performance Variability in GPU Codes on Production Supercomputers**  
-  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
+  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
   *MUG 2025* &middot; [poster](./files/performance-variability/performance-variability-mug25.pdf)
