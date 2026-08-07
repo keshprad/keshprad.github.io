@@ -28,7 +28,7 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 
 - **SkillSpector: A Pre-Publication Security Control for Agent Skills**<br>
   Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)<br>
-  *Agent Skills Workshop at CAIS 2026: The First Workshop on Agent Skills — Design, Evaluation, and Optimization of Procedural Knowledge for LLM Agents* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [OpenReview](https://openreview.net/forum?id=rVAPXHmGHN)
+  *Agent Skills Workshop at CAIS 2026: The First Workshop on Agent Skills — Design, Evaluation, and Optimization of Procedural Knowledge for LLM Agents* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [OpenReview](https://openreview.net/forum?id=rVAPXHmGHN) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
   Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele  
