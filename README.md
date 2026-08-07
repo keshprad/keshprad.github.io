@@ -13,11 +13,11 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 ## Conference Papers
 
 - **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
-  Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Dr. Abhinav Bhatele<br>
+  Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Abhinav Bhatele<br>
   *IPDPS 2026* &middot; [pdf](./files/pccl/pccl-ipdps26.pdf) &middot; [website](./papers/pccl-ipdps26/)
 
 - **The Case of the Elusive Application Performance on Production GPU Supercomputers**  
-  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
+  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele<br>
   *IPDPS 2026* &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
 
 ## Posters
@@ -31,13 +31,13 @@ My research interests include Systems for ML, High-Performance Computing, and AI
   *Agent Skills Workshop at CAIS 2026: The First Workshop on Agent Skills — Design, Evaluation, and Optimization of Procedural Knowledge for LLM Agents* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [openreview](https://openreview.net/forum?id=rVAPXHmGHN) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
-  Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
+  Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele<br>
   *SC 2025* &middot; [poster](./files/pccl/pccl-sc25.pdf) &middot; [abstract](./files/pccl/pccl-sc25-abstract.pdf)
 
 - **SC 2025 Best Poster Finalist: Unmasking Performance Variability in GPU Codes on Production Supercomputers**<br>
-  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
+  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele<br>
   *SC 2025* &middot; [poster](./files/performance-variability/performance-variability-sc25.pdf) &middot; [abstract](./files/performance-variability/performance-variability-sc25-abstract.pdf)
 
 - **Unmasking Performance Variability in GPU Codes on Production Supercomputers**  
-  Cunyang Wei, **Keshav Pradeep**, Dr. Abhinav Bhatele<br>
+  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele<br>
   *MUG 2025* &middot; [poster](./files/performance-variability/performance-variability-mug25.pdf)
