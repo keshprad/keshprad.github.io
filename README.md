@@ -22,15 +22,19 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 
 ## Posters
 
-- **SkillSpector: A Pre-Publication Security Control for Agent Skills**  
-  Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)  
-  *Agent Skills 2026 (Workshop at CAIS 2026)* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
+- **Centralized AI Resource Platform (Eco)System: Making Skills from idea to trusted use**<br>
+  Mohit Gupta, Yogesh Dangi, **Keshav Pradeep**, Siddharth Itagi, Narendran Raghavan, Yashraj Basavaraj Patil, Wei Luo, Subodh Prabhu, Christopher Kevin, Amanda Burgmeier US, Jean-Francois Puget, Pranita Maske, Moshe Abramovitch, Daniel Major, Alban Douillet, Ryan E. Wong<br>
+  *AI Agents Workshop at KDD 2026: Enterprise AI Agents: From Prototypes to Production*
+
+- **SkillSpector: A Pre-Publication Security Control for Agent Skills**<br>
+  Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)<br>
+  *Agent Skills Workshop at CAIS 2026: The First Workshop on Agent Skills — Design, Evaluation, and Optimization of Procedural Knowledge for LLM Agents* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [OpenReview](https://openreview.net/forum?id=rVAPXHmGHN)
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
   Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele  
   *SC 2025* &middot; [poster](./files/pccl/pccl-sc25.pdf) &middot; [abstract](./files/pccl/pccl-sc25-abstract.pdf)
 
-- **Unmasking Performance Variability in GPU Codes on Production Supercomputers**  
+- **SC 2025 Best Poster Finalist: Unmasking Performance Variability in GPU Codes on Production Supercomputers**<br>
   Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
   *SC 2025* &middot; [poster](./files/performance-variability/performance-variability-sc25.pdf) &middot; [abstract](./files/performance-variability/performance-variability-sc25-abstract.pdf)
 
