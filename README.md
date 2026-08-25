@@ -8,7 +8,7 @@ My research interests include Systems for ML, High-Performance Computing, and AI
 
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**  
   Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.  
-  Was briefly trending on GitHub with 10k+ stars ✨
+  Was briefly trending on GitHub with 15k+ stars ✨
 
 ## Conference Papers
 
