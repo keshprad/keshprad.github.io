@@ -2,7 +2,7 @@ I'm currently a PhD student at [Cornell University](https://www.cornell.edu/), a
 
 Before starting my PhD, I was an engineer at [NVIDIA](https://nvidia.com/) working on scaling Agentic AI, including agent skills, harnesses, multi-agent systems, knowledge graphs, long-term memory, guardrails, and enterprise-scale token savings.
 
-Before that, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I conducted research under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
+Before that, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
 ## Open Source
 
