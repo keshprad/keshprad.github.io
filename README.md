@@ -1,8 +1,6 @@
-I'm currently an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
+I'm currently a PhD student at [Cornell University](https://www.cornell.edu/), advised by [Dr. Rachee Singh](https://www.racheesingh.com/). My research is supported by the [NSF Graduate Research Fellowship Program](https://www.nsf.gov/funding/initiatives/grfp).
 
-Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
-
-My research interests include Systems for ML, High-Performance Computing, and AI Agents.
+Previously, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I conducted research under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
 ## Open Source
 
