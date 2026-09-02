@@ -4,15 +4,6 @@ Before starting my PhD, I was an engineer at [NVIDIA](https://nvidia.com/) worki
 
 Before that, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
 
-## Open Source
-
-- **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**  
-  Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.  
-  SkillSpector was briefly trending on GitHub with 15k+ stars ✨
-
-- **[NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator)**  
-  Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation.
-
 ## Conference Papers
 
 - **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
@@ -44,3 +35,12 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 - **Unmasking Performance Variability in GPU Codes on Production Supercomputers**  
   Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
   *MUG 2025* &middot; [poster](./files/performance-variability/performance-variability-mug25.pdf)
+
+## Open Source
+
+- **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**<br>
+  Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.<br>
+  SkillSpector was briefly trending on GitHub with 15k+ stars ✨
+
+- **[NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator)**<br>
+  Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation.
