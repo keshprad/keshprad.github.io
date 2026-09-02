@@ -8,11 +8,11 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 - **The Big Send-off: Scalable and Performant Collectives for Deep Learning**  
   Siddharth Singh, **Keshav Pradeep**, Mahua Singh, Cunyang Wei, Abhinav Bhatele  
-  *IPDPS 2026* &middot; [pdf](./files/pccl/pccl-ipdps26.pdf) &middot; [website](./papers/pccl-ipdps26/)
+  *IPDPS 2026* &middot; [doi](https://doi.org/10.1109/IPDPS65963.2026.00108) &middot; [pdf](./files/pccl/pccl-ipdps26.pdf) &middot; [website](./papers/pccl-ipdps26/)
 
 - **The Case of the Elusive Application Performance on Production GPU Supercomputers**  
   Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
-  *IPDPS 2026* &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
+  *IPDPS 2026* &middot; [doi](https://doi.org/10.1109/IPDPS65963.2026.00079) &middot; [pdf](./files/performance-variability/performance-variability-ipdps26.pdf) &middot; [website](./papers/perf-variability-ipdps26/)
 
 ## Posters
 
