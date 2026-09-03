@@ -21,7 +21,7 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 ## Posters
 
 - **Centralized AI Resource Platform (Eco)System: Making Skills from idea to trusted use**  
-  Mohit Gupta, Yogesh Dangi, **Keshav Pradeep**, Siddharth Itagi, Narendran Raghavan, Yashraj Basavaraj Patil, Wei Luo, Subodh Prabhu, Christopher Kevin, Amanda Burgmeier US, Jean-Francois Puget, Pranita Maske, Moshe Abramovitch, Daniel Major, Alban Douillet, Ryan E. Wong  
+  Mohit Gupta, Yogesh Dangi, **Keshav Pradeep**, Siddharth Itagi, Narendran Raghavan, Yashraj Basavaraj Patil, Wei Luo, Subodh Prabhu, Christopher Kevin, Amanda Burgmeier, Jean-Francois Puget, Pranita Maske, Moshe Abramovitch, Daniel Major, Alban Douillet, Ryan E. Wong  
   *AI Agents Workshop at KDD 2026*
 
 - **SkillSpector: A Pre-Publication Security Control for Agent Skills**  
