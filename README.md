@@ -1,4 +1,4 @@
-<img src="./assets/pfp.png" alt="Portrait of Keshav Pradeep" width="240" align="right" style="width: min(240px, 38vw); height: auto; margin: 0 0 1rem 2rem; border-radius: 12px;">
+<img src="./assets/pfp.png" alt="Portrait of Keshav Pradeep" width="240" style="float: right; width: min(240px, 38vw); height: auto; margin: 0 0 1rem 2rem; border-radius: 12px;">
 
 I'm currently an engineer working on scaling Agentic AI at [NVIDIA](https://nvidia.com/) including agent skills, harnesses, multi-agent systems, long-term memory, guardrails, enterprise-scale token savings.
 
