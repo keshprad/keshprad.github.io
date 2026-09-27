@@ -1,10 +1,12 @@
 <img src="./assets/pfp.png" alt="Portrait of Keshav Pradeep" width="240" style="float: right; width: min(240px, 38vw); height: auto; margin: 0 0 1rem 2rem; border-radius: 12px;">
 
-I'm currently a PhD student at [Cornell University](https://www.cornell.edu/), advised by [Dr. Rachee Singh](https://www.racheesingh.com/). My research is supported by the [NSF Graduate Research Fellowship Program](https://www.nsf.gov/funding/initiatives/grfp).
+I'm currently a PhD student at [Cornell University](https://www.cornell.edu/), advised by [Dr. Rachee Singh](https://www.racheesingh.com/). My research interests include systems, networking, and systems for machine learning. My work is supported by the [NSF Graduate Research Fellowship Program](https://www.nsf.gov/funding/initiatives/grfp).
 
 Before starting my PhD, I was an engineer at [NVIDIA](https://nvidia.com/) working on scaling Agentic AI, including agent skills, harnesses, multi-agent systems, knowledge graphs, long-term memory, guardrails, and enterprise-scale token savings.
 
 Before that, I completed my undergrad in CS & Math at the [University of Maryland](https://umd.edu/), where I researched collective communication in deep learning workloads and network-induced variability in exascale GPU-accelerated supercomputers under [Dr. Abhinav Bhatele](https://www.cs.umd.edu/~bhatele/) in the [Parallel Software and Systems Group](https://pssg.cs.umd.edu/).
+
+[Google Scholar](https://scholar.google.com/citations?hl=en&user=2aUdEo0AAAAJ) &middot; [LinkedIn](https://www.linkedin.com/in/keshav-pradeep/) &middot; [GitHub](https://github.com/keshprad/) &middot; Email: rkp64 [at] cornell [dot] edu
 
 <div style="clear: both;"></div>
 
@@ -26,7 +28,8 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 - **SkillSpector: A Pre-Publication Security Control for Agent Skills**  
   Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)  
-  *Agent Skills Workshop at CAIS 2026* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [openreview](https://openreview.net/forum?id=rVAPXHmGHN) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
+  *Agent Skills Workshop at CAIS 2026* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
+  <!-- OpenReview: https://openreview.net/forum?id=rVAPXHmGHN -->
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
   Siddharth Singh, Mahua Singh, **Keshav Pradeep**, Abhinav Bhatele  
