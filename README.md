@@ -1,6 +1,6 @@
 <img src="./assets/pfp.png" alt="Portrait of Keshav Pradeep" width="240" style="float: right; width: min(240px, 38vw); height: auto; margin: 0 0 1rem 2rem; border-radius: 12px;">
 
-I'm currently a PhD student at [Cornell University](https://www.cornell.edu/), advised by [Dr. Rachee Singh](https://www.racheesingh.com/). My research interests include systems, networking, and systems for machine learning. My work is supported by the [NSF Graduate Research Fellowship Program](https://www.nsf.gov/funding/initiatives/grfp).
+I'm currently a PhD student at [Cornell University](https://www.cornell.edu/) in the [SysPhotonics group](https://cornell.network/), advised by [Dr. Rachee Singh](https://www.racheesingh.com/). My research interests include systems, networking, and systems for machine learning. My work is supported by the [NSF Graduate Research Fellowship Program](https://www.nsf.gov/funding/initiatives/grfp).
 
 Before starting my PhD, I was an engineer at [NVIDIA](https://nvidia.com/) working on scaling Agentic AI, including agent skills, harnesses, multi-agent systems, knowledge graphs, long-term memory, guardrails, and enterprise-scale token savings.
 
