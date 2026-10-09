@@ -28,7 +28,7 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 - **SkillSpector: A Pre-Publication Security Control for Agent Skills**  
   Nir Paz\*, **Keshav Pradeep**\*, Narendran Raghavan, Ashley Nikirk, Mohit Gupta (\*equal contribution)  
-  *Agent Skills Workshop at CAIS 2026* &middot; [poster](./files/skillspector/skillspector-poster-agentskills26.pdf) &middot; [repo](https://github.com/NVIDIA/SkillSpector)
+  *Agent Skills Workshop at CAIS 2026* &middot; [repo](https://github.com/NVIDIA/SkillSpector)
   <!-- OpenReview: https://openreview.net/forum?id=rVAPXHmGHN -->
 
 - **Optimizing Collectives with Large Payloads on GPU-based Supercomputers**  
