@@ -14,7 +14,7 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 - **OMRC: Multipath Reliability for Direct-Connect Optical Interconnects**  
   Eric Ding, **Keshav Pradeep**, Rachee Singh  
-  *arXiv 2026* &middot; [doi](https://doi.org/10.48550/arXiv.2610.30551) &middot; [pdf](https://arxiv.org/pdf/2610.30551)
+  *arXiv 2026* &middot; [doi](https://doi.org/10.48550/arXiv.2610.30551) &middot; [pdf](./files/omrc/omrc.pdf)
 
 ## Conference Papers
 
