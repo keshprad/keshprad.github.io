@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="OMRC adapts collective schedules and optical circuits after network failures, preserving training throughput and restoring stalled inference in direct-connect optical datacenters." />
+  <meta name="citation_title" content="OMRC: Multipath Reliability for Direct-Connect Optical Interconnects" />
+  <meta name="citation_author" content="Eric Ding" />
+  <meta name="citation_author" content="Keshav Pradeep" />
+  <meta name="citation_author" content="Rachee Singh" />
+  <meta name="citation_publication_date" content="2026/10/22" />
+  <meta name="citation_doi" content="10.48550/arXiv.2610.30551" />
+  <title>OMRC: Multipath Reliability for Direct-Connect Optical Interconnects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="hero">
+  <div class="container hero-inner">
+    <a class="back-link" href="../../">← Keshav Pradeep · All publications</a>
+    <p class="venue-badge">arXiv Preprint · 2026</p>
+    <h1 class="hero-title">OMRC: Multipath Reliability for<br class="desktop-break" /> Direct-Connect Optical Interconnects</h1>
+    <div class="authors" aria-label="Authors">
+      <div class="author-card"><div class="author-name">Eric Ding</div><div class="author-info">Cornell University</div><a class="author-email" href="mailto:ericding@cs.cornell.edu">ericding@cs.cornell.edu</a></div>
+      <div class="author-card"><div class="author-name">Keshav Pradeep</div><div class="author-info">Cornell University</div></div>
+      <div class="author-card"><div class="author-name">Rachee Singh</div><div class="author-info">Cornell University</div></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="../../files/omrc/omrc.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>Paper PDF
+      </a>
+      <a href="https://doi.org/10.48550/arXiv.2610.30551" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3h7v7M10 14L21 3M21 14v5a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h5"/></svg>DOI
+      </a>
+      <a href="#bibtex" class="btn btn-secondary">BibTeX</a>
+    </div>
+    <div class="keyword-row"><span class="kw">Optical Circuit Switching</span><span class="kw">Fault Tolerance</span><span class="kw">Collective Communication</span><span class="kw">Distributed ML</span></div>
+  </div>
+</header>
+
+<nav class="sticky-nav" aria-label="Paper sections">
+  <div class="nav-inner">
+    <a href="#abstract">Abstract</a><a href="#motivation">Motivation</a><a href="#design">Design</a><a href="#evaluation">Testbed</a><a href="#results">Results</a><a href="#contributions">Contributions</a><a href="#bibtex">BibTeX</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="abstract" class="section">
+  <div class="container">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">Network failures degrade Multipath Reliable Connection (MRC) in direct-connect optical datacenters. We propose Optical MRC (OMRC), which remaps collectives and circuits, preserving 95.7% of training throughput, restoring stalled inference, and achieving 4.7× MRC’s simulated bandwidth.</p>
+  </div>
+</section>
+
+<div class="stats-strip" aria-label="Key results">
+  <div class="container stats-inner">
+    <div class="stat-pill"><span class="stat-num">95.7%</span><span class="stat-label">Healthy training throughput retained<br />during a temporary link failure</span></div>
+    <div class="stat-pill"><span class="stat-num">99.3%</span><span class="stat-label">Pre-failure inference throughput restored<br />where MRC stalls</span></div>
+    <div class="stat-pill"><span class="stat-num">4.74×</span><span class="stat-label">MRC’s simulated Allreduce bandwidth<br />64 ranks · 4 planes · 4 failed links</span></div>
+  </div>
+</div>
+
+<section id="motivation" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Why Optical Networks Need More Than Rerouting</h2>
+    <p class="section-intro">Different planes can have different neighbors. A healthy alternate path may be longer, or unavailable to the affected group.</p>
+    <div class="two-col">
+      <div class="col-text">
+        <p>In electrical datacenters, MRC spreads traffic across independent packet-switched planes. When a path fails, traffic moves to another path of the same length, losing only the failed path’s bandwidth.</p>
+        <p>Direct-connect optical datacenters replace packet switches with <strong>optical circuit switches (OCSes)</strong>. Each plane connects accelerators in a ring, and different planes use different ring orders. Communication groups receive dedicated subsets of these planes.</p>
+      </div>
+      <div class="issue-list motivation-issues">
+        <div class="issue-card"><span class="issue-icon ring" aria-hidden="true">01</span><div><strong>Different ring orders cause detours</strong><p>A pair of neighboring GPUs in one plane may be several hops apart in another. Preserving the original collective schedule adds forwarding traffic and latency.</p></div></div>
+        <div class="issue-card"><span class="issue-icon nic" aria-hidden="true">02</span><div><strong>Isolated groups cannot borrow connectivity</strong><p>A group that loses all its planes stalls under MRC, even when another communication group still has healthy planes.</p></div></div>
+      </div>
+    </div>
+    <!-- Original diagrams from Figure 1 of the paper. -->
+    <figure class="figure-center wide-figure">
+      <button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 1: MRC limitations and OMRC recovery">
+        <img src="assets/figures/failure-overview.png" width="1510" height="496" alt="Electrical and optical planes, followed by two failure examples: OMRC changes the ring order to avoid a two-hop detour and reallocates planes to reconnect isolated data-parallel pairs." loading="lazy" />
+      </button>
+      <figcaption>Figure 1. MRC versus OMRC in direct-connect optical networks. OMRC remaps the collective to avoid detours, or reallocates planes when connectivity is lost. TP: tensor parallelism; DP: data parallelism. Select any figure to enlarge it.</figcaption>
+    </figure>
+    <div class="takeaway-box"><strong>Core idea:</strong> Adapt the collective schedule to the surviving network; adapt the network itself when the group is disconnected.</div>
+  </div>
+</section>
+
+<section id="design" class="section">
+  <div class="container">
+    <h2 class="section-title">Design of OMRC</h2>
+    <p class="section-intro">A topology-aware control layer extends MRC across collective scheduling and optical circuit allocation.</p>
+    <div class="design-grid">
+      <article class="design-card"><span class="step-badge">1</span><h3>Match channels to physical rings</h3><p>Each channel defines a collective schedule. OMRC matches the logical ring order to a physical plane so scheduled neighbor exchanges take one direct hop. Ring collectives produce the same result for any ring order.</p></article>
+      <article class="design-card"><span class="step-badge">2</span><h3>Remap at collective boundaries</h3><p>After a failure, OMRC can move a channel onto an intact plane within its group and rebalance data across channels. Connected Alltoall groups keep their schedule and use transport rerouting.</p></article>
+      <article class="design-card"><span class="step-badge">3</span><h3>Reallocate planes across groups</h3><p>If a group cannot route its required flows, the controller reconfigures the OCS to obtain planes from another group. It updates allocations, and the transport rebuilds its path sets.</p></article>
+    </div>
+    <figure class="figure-center wide-figure">
+      <button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 2: OMRC architecture and failure-handling workflow">
+        <img src="assets/figures/architecture-workflow.png" width="1203" height="303" alt="The OMRC controller coordinates group allocations and topology updates with a host-side sidecar, the GPU collective library, and MRC transport. The workflow checks group connectivity and hop-count spread before choosing reconfiguration, rerouting, or channel remapping." loading="lazy" />
+      </button>
+      <figcaption>Figure 2(a,b). A host-side sidecar per accelerator rank supplies topology-aware schedules. The controller coordinates network status and plane allocations. AR, AG, RS: Allreduce, Allgather, ReduceScatter.</figcaption>
+    </figure>
+    <details class="method-details">
+      <summary>When does OMRC remap a channel?</summary>
+      <div><p>For an Allreduce channel <var>c</var>, let <var>h<sub>f</sub></var> be the shortest available path for flow <var>f</var>. The hop-count spread is:</p>
+      <p class="equation">Δh<sub>c</sub> = max<sub>f ∈ c</sub> h<sub>f</sub> − min<sub>f ∈ c</sub> h<sub>f</sub></p>
+      <p>If the spread exceeds a threshold <var>τ</var>, OMRC looks for a plane in the group’s allocation whose topology-matched schedule has spread at most <var>τ</var>. If one exists, OMRC remaps at a collective boundary; otherwise, it keeps the schedule and uses transport rerouting. The experiments use <var>τ</var> = 0 on the testbed and <var>τ</var> = 2 in simulation.</p></div>
+    </details>
+  </div>
+</section>
+
+<section id="evaluation" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Prototype &amp; Experimental Setup</h2>
+    <div class="two-col">
+      <div class="col-text">
+        <p>The prototype runs on <strong>four hosts with one NVIDIA L40 GPU each</strong>. Each host has four 100 Gb/s RDMA ports connected through a <strong>32 × 32 Polatis 6000n OCS</strong>.</p>
+        <p>Collectives use <strong>MSCCL++</strong> with RoCEv2 transport. Both OMRC and the MRC baseline use software-emulated multipath transport with GPU store-and-forward because the testbed NICs lack the required forwarding capability.</p>
+        <p>Training and inference use <strong>Qwen1.5-MoE-A2.7B-Chat</strong>: 14.3B total parameters, 24 layers, and 60 experts per layer with top-4 routing, using WikiText-2 tokens.</p>
+        <p>Large-scale experiments extend <strong>ASTRA-sim’s congestion-aware analytical network backend</strong> to model direct-connect optical planes, multipath forwarding, channel remapping, and circuit reconfiguration.</p>
+      </div>
+      <figure class="testbed-figure">
+        <button class="figure-trigger figure-embed" type="button" aria-label="Enlarge the four-GPU optical testbed photograph">
+          <img src="assets/figures/testbed.jpg" width="1400" height="1067" alt="Photograph from the paper showing the GPU server rack and the Polatis optical circuit switch, labeled GPU servers and OCS." loading="lazy" />
+        </button>
+        <figcaption>Figure 2(c). The physical testbed: four NVIDIA L40 GPUs connected through a Polatis OCS.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="results" class="section">
+  <div class="container">
+    <h2 class="section-title">Results</h2>
+    <p class="section-intro">Measured training and inference on the optical testbed, followed by failure scaling in simulation.</p>
+    <div class="tab-bar" role="tablist" aria-label="Evaluation results" hidden>
+      <button id="tab-training" class="tab-btn active" type="button" role="tab" aria-selected="true" aria-controls="training" tabindex="0">Training</button>
+      <button id="tab-inference" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="inference" tabindex="-1">Inference</button>
+      <button id="tab-simulation" class="tab-btn" type="button" role="tab" aria-selected="false" aria-controls="simulation" tabindex="-1">Simulation</button>
+    </div>
+    <div id="training" class="result-panel" role="tabpanel" aria-labelledby="tab-training" tabindex="0">
+      <h3 class="result-title">Temporary link failure during training</h3>
+      <div class="two-col result-layout">
+        <div class="col-text"><p>Four-rank tensor and expert parallelism (TP4/EP4) spans two planes with four channels. A link is cut at 25 seconds and restored 40 seconds later.</p><p>MRC reroutes the affected flow. OMRC instead remaps the affected channel, reducing mean hop count from <strong>1.125 to 1.0</strong>.</p>
+          <dl class="result-metrics"><div><dt>Training throughput during failure</dt><dd>1.53k vs. 1.45k tokens/s <span>OMRC vs. MRC · 5.3% gain</span></dd></div><div><dt>Median 8 MiB Allreduce bandwidth</dt><dd>4.97 vs. 4.00 GB/s <span>OMRC vs. MRC · 24% gain</span></dd></div></dl>
+          <p>Alltoall bandwidth differs by less than 4% between the two policies.</p>
+        </div>
+        <figure><button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 3a: training throughput"><img src="assets/figures/training-throughput.png" width="576" height="433" alt="Training throughput over time. During the temporary link failure, OMRC sustains higher throughput than MRC; both recover when the link is restored." loading="lazy" /></button><figcaption>Figure 3(a). Training throughput on the testbed, with τ = 0.</figcaption></figure>
+      </div>
+      <div class="takeaway-box"><strong>Takeaway:</strong> Collective remapping preserves 95.7% of healthy training throughput during the degraded phase.</div>
+    </div>
+    <div id="inference" class="result-panel" role="tabpanel" aria-labelledby="tab-inference" tabindex="0">
+      <h3 class="result-title">Permanent link failure during disaggregated inference</h3>
+      <div class="two-col result-layout">
+        <div class="col-text"><p>Prefill runs on ranks [0, 1] and decode on [2, 3]. Each stage uses TP2/EP2 with one plane. Each KV-cache transfer pair starts with three planes.</p><p>The sole TP/EP plane is disabled after 80 seconds. <strong>MRC stalls.</strong> OMRC reconfigures the OCS to move a plane from the KV-cache transfer pairs and restore TP/EP connectivity.</p>
+          <dl class="result-metrics"><div><dt>OMRC median throughput</dt><dd>3.335k → 3.311k tokens/s <span>Before vs. after failure · 0.7% decrease</span></dd></div><div><dt>Inference workload</dt><dd>32 prompts · 12 GiB KV state/batch <span>2,048 input tokens · 64 generated tokens/request</span></dd></div></dl>
+        </div>
+        <figure><button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 3b: inference throughput"><img src="assets/figures/inference-throughput.png" width="576" height="433" alt="Inference throughput over time. MRC drops to zero after the link failure. OMRC resumes near its pre-failure throughput after circuit reconfiguration." loading="lazy" /></button><figcaption>Figure 3(b). Disaggregated inference on the testbed, with τ = 0.</figcaption></figure>
+      </div>
+      <div class="takeaway-box"><strong>Takeaway:</strong> Plane reallocation restores 99.3% of pre-failure inference throughput where transport rerouting alone cannot recover connectivity.</div>
+    </div>
+    <div id="simulation" class="result-panel" role="tabpanel" aria-labelledby="tab-simulation" tabindex="0">
+      <h3 class="result-title">Scaling under compounding link failures</h3>
+      <p class="tab-desc">ASTRA-sim evaluates 64 MB Allreduce while varying rank count and plane count. Links are randomly selected and disabled; each configuration is sampled four times, and the plots show the means. The remapping threshold is τ = 2.</p>
+      <div class="figures-row">
+        <figure><button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 3c: simulated bandwidth across plane counts"><img src="assets/figures/scaling-planes.png" width="576" height="433" alt="Percentage of healthy Allreduce bandwidth as failed links increase from zero to four, comparing MRC and OMRC for 2, 4, and 8 planes at 16 ranks." loading="lazy" /></button><figcaption>Figure 3(c). Fixed 16 ranks; varying the number of planes.</figcaption></figure>
+        <figure><button class="figure-trigger figure-embed" type="button" aria-label="Enlarge Figure 3d: simulated bandwidth across rank counts"><img src="assets/figures/scaling-ranks.png" width="576" height="433" alt="Percentage of healthy Allreduce bandwidth as failed links increase from zero to four, comparing MRC and OMRC for 4, 16, and 64 ranks with 4 planes." loading="lazy" /></button><figcaption>Figure 3(d). Fixed 4 planes; varying the number of ranks.</figcaption></figure>
+      </div>
+      <div class="takeaway-box"><strong>Takeaway:</strong> With four planes and four failed links, OMRC achieves 1.74× MRC’s Allreduce bandwidth at 16 ranks and 4.74× at 64 ranks. These are simulated collective bandwidth results.</div>
+    </div>
+  </div>
+</section>
+
+<section id="contributions" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Key Contributions</h2>
+    <div class="contrib-grid">
+      <div class="contrib-item"><span class="contrib-num" aria-hidden="true">01</span><div class="contrib-body"><h3>Expose the limits of transport-only recovery</h3><p>Unequal path lengths and dedicated group allocations make direct-connect optical networks different from the packet-switched planes MRC was designed for.</p></div></div>
+      <div class="contrib-item"><span class="contrib-num" aria-hidden="true">02</span><div class="contrib-body"><h3>Coordinate collective schedules and optical topology</h3><p>OMRC combines topology-aware channel remapping within a group with OCS plane reallocation across groups, supported by per-rank sidecars and a central controller.</p></div></div>
+      <div class="contrib-item"><span class="contrib-num" aria-hidden="true">03</span><div class="contrib-body"><h3>Evaluate application recovery and collective scaling</h3><p>An MSCCL++ prototype demonstrates training and inference resilience on a four-GPU optical testbed. ASTRA-sim experiments evaluate bandwidth under compounding failures at larger group sizes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="bibtex" class="section">
+  <div class="container">
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-wrap">
+      <button class="copy-btn" type="button" id="copyBtn">Copy</button>
+      <pre class="bibtex-block" id="bibtexBlock">@misc{ding2026omrc,
+  title         = {{OMRC}: Multipath Reliability for
+                   Direct-Connect Optical Interconnects},
+  author        = {Eric Ding and Keshav Pradeep and Rachee Singh},
+  year          = {2026},
+  eprint        = {2610.30551},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NI},
+  doi           = {10.48550/arXiv.2610.30551},
+  url           = {https://arxiv.org/abs/2610.30551}
+}</pre>
+    </div>
+    <p class="copy-status" id="copyStatus" role="status"></p>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container"><p class="footer-university">Cornell University</p><p>Department of Computer Science · <a href="https://cornell.network/">SysPhotonics Group</a></p><a class="footer-home" href="../../">← Back to all publications</a></div>
+</footer>
+
+<dialog id="figureDialog" aria-labelledby="figureTitle">
+  <div class="dialog-toolbar"><h2 id="figureTitle">Paper figure</h2><button id="closeFigure" type="button" aria-label="Close enlarged figure">Close ×</button></div>
+  <div class="dialog-image-wrap"><img id="enlargedFigure" alt="" /></div>
+  <p id="figureCaption"></p>
+</dialog>
+</body>
+</html>
