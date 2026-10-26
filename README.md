@@ -48,6 +48,3 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**<br>
   Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.<br>
   SkillSpector was briefly trending on GitHub with 15k+ stars ✨
-
-- **[NVIDIA/SkillEvaluator](https://github.com/NVIDIA/SkillEvaluator)**<br>
-  Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation.
