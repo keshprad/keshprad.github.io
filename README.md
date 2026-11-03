@@ -45,10 +45,6 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
   Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
   *SC 2025* &middot; [poster](./files/performance-variability/performance-variability-sc25.pdf) &middot; [abstract](./files/performance-variability/performance-variability-sc25-abstract.pdf)
 
-- **Unmasking Performance Variability in GPU Codes on Production Supercomputers**  
-  Cunyang Wei, **Keshav Pradeep**, Abhinav Bhatele  
-  *MUG 2025* &middot; [poster](./files/performance-variability/performance-variability-mug25.pdf)
-
 ## Open Source
 
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**<br>
