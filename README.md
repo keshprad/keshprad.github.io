@@ -10,6 +10,10 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 <div style="clear: both;"></div>
 
+## Writing
+
+- [What made “your life’s work” feel true at NVIDIA](./writing/nvidia-workplace-culture/) — November 19, 2026
+
 ## Preprints
 
 - **OMRC: Multipath Reliability for Direct-Connect Optical Interconnects**  
