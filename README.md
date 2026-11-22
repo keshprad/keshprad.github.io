@@ -10,10 +10,6 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 <div style="clear: both;"></div>
 
-## Writing
-
-- [What made “your life’s work” feel true at NVIDIA](./writing/nvidia-workplace-culture/) — November 19, 2026
-
 ## Preprints
 
 - **OMRC: Multipath Reliability for Direct-Connect Optical Interconnects**  
@@ -54,3 +50,7 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 - **[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)**<br>
   Security scanner for AI agent skills that detects vulnerabilities, malicious patterns, and security risks before installation.<br>
   SkillSpector was briefly trending on GitHub with 15k+ stars ✨
+
+## Writing
+
+- [What made “your life’s work” feel true at NVIDIA](./writing/nvidia-workplace-culture/) — November 19, 2026
