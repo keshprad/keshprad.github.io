@@ -6,7 +6,7 @@ title: What made your life’s work feel true at NVIDIA
 
 # What made “your life’s work” feel true at NVIDIA
 
-November 19, 2026
+Keshav Pradeep · November 19, 2026
 
 NVIDIA is the place where you can do your life’s work. You’ve heard Jensen and other leaders at NVIDIA repeat this like it’s gospel. But any company’s leadership can make those types of claims, so what about NVIDIA made that promise feel *true to me*?
 
