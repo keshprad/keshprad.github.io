@@ -47,4 +47,4 @@ Before that, I completed my undergrad in CS & Math at the [University of Marylan
 
 ## Writing
 
-- [What made “your life’s work” feel true at NVIDIA](./writing/nvidia-workplace-culture/) — November 19, 2026
+- [What made “your life’s work” feel true at NVIDIA](./writing/nvidia-workplace-culture/) — November 22, 2026
