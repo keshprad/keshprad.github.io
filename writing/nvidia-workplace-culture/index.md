@@ -1,7 +1,7 @@
 ---
 layout: default
 hide_site_title: true
-title: What made your life’s work feel true at NVIDIA
+title: What made “your life’s work” feel true at NVIDIA
 ---
 
 # What made “your life’s work” feel true at NVIDIA
